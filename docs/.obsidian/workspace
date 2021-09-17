@@ -1,0 +1,102 @@
+{
+  "main": {
+    "id": "b207d1a89f450c5a",
+    "type": "split",
+    "children": [
+      {
+        "id": "dc2944a4c483aa7f",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "20672 대세는 바이러스야.md",
+            "mode": "preview"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "33b5bdc3f7c08ac4",
+    "type": "split",
+    "children": [
+      {
+        "id": "6c525926a257c793",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "749cc01e68a8c385",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "addf4e8f4d46af28",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "131d150d91ac72d5",
+    "type": "split",
+    "children": [
+      {
+        "id": "ea1a416f40854260",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ddc8595a43d4dcf9",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "20672 대세는 바이러스야.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "dc2944a4c483aa7f",
+  "lastOpenFiles": [
+    "20672 대세는 바이러스야.md",
+    "18796 이동하기 4.md",
+    "18700-18799.md",
+    "18000-18999.md",
+    "_HOME.md",
+    "17070 Islands.md",
+    "17000-17099.md",
+    "17000-17999.md",
+    "BOJ 문제풀이.md",
+    "BOJ 문제풀이/17000-17099.md"
+  ]
+}
