@@ -9,9 +9,9 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "문제풀이/20672 대세는 바이러스야.md",
+            "file": "알고리즘.md",
             "mode": "preview",
-            "source": false
+            "source": true
           }
         }
       }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "문제풀이/20672 대세는 바이러스야.md",
+                "file": "알고리즘.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,15 +89,15 @@
   },
   "active": "d276e3df865d36f9",
   "lastOpenFiles": [
-    "문제풀이/20672 대세는 바이러스야.md",
-    "pdf/20672 대세는 바이러스야.pdf",
+    "알고리즘.md",
     "BOJ 문제풀이.md",
-    "문제풀이/Pasted image 20220514204126.png",
-    "문제풀이/18796 이동하기 4.md",
-    "문제풀이/1974 Jump Jump Championship.md",
-    "문제풀이/11064 Diameter.md",
-    "문제풀이/17070 Islands.md",
-    "문제풀이/20846 수열과 쿼리 40.md",
-    "알고리즘.md"
+    "index.md",
+    "알고리즘/HLD 하나로 경로 쿼리와 서브트리 쿼리 모두 지원하기.md",
+    "알고리즘/Connection profile DP.md",
+    "알고리즘/Pasted image 20220514214107.png",
+    "알고리즘/스킵 리스트.md",
+    "Pasted image 20220514211630.png",
+    "Pasted image 20220514211508.png",
+    "알고리즘/Pasted image 20210919105157.png"
   ]
 }
