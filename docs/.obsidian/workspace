@@ -7,9 +7,11 @@
         "id": "d276e3df865d36f9",
         "type": "leaf",
         "state": {
-          "type": "image",
+          "type": "markdown",
           "state": {
-            "file": "문제풀이/Pasted image 20220514204126.png"
+            "file": "문제풀이/20672 대세는 바이러스야.md",
+            "mode": "preview",
+            "source": false
           }
         }
       }
@@ -67,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "문제풀이/Pasted image 20220514204126.png",
+                "file": "문제풀이/20672 대세는 바이러스야.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -87,15 +89,15 @@
   },
   "active": "d276e3df865d36f9",
   "lastOpenFiles": [
+    "문제풀이/20672 대세는 바이러스야.md",
+    "pdf/20672 대세는 바이러스야.pdf",
+    "BOJ 문제풀이.md",
     "문제풀이/Pasted image 20220514204126.png",
     "문제풀이/18796 이동하기 4.md",
     "문제풀이/1974 Jump Jump Championship.md",
     "문제풀이/11064 Diameter.md",
     "문제풀이/17070 Islands.md",
     "문제풀이/20846 수열과 쿼리 40.md",
-    "문제풀이/20672 대세는 바이러스야.md",
-    "BOJ 문제풀이.md",
-    "알고리즘.md",
-    "알고리즘/Persistent Data Structures.md"
+    "알고리즘.md"
   ]
 }
