@@ -1,4 +1,6 @@
-# Persistent Introduction
+# Persistent Data Structures
+
+*이 글은 [secmem.org](http://www.secmem.org/blog/2021/09/04/persistent/)에서도 읽어볼 수 있습니다.*
 
 과거의 상태를 보존하는 자료구조를 **persistent data structure**라고 합니다. 예를 들어, persistent array는 과거의 배열의 상태를 담고 있는 "버전"을 갖고 있습니다. 여기에 "버전 $x$에서 $i$번째 원소를 $d$로 바꿔서 버전 $y$를 만들어라", 또는 "버전 $x$에서 $i$번째 원소의 값을 반환해라" 등의 연산을 적용할 수 있습니다.
 
@@ -223,11 +225,5 @@ Union-find를 배열 두 개로 구현할 수 있으므로, persistent union-fin
 
 [Python 구현](https://judge.yosupo.jp/submission/58752)
 
-# Persistent Conclusion
-
-이 글에서는 서술하지 않았지만, 다음 자료구조도 똑같은 테크닉으로 구현할 수 있습니다. 한번 생각해 보세요!
-- Persistent priority queue, 연산 당 $O(\log N)$
-- Persistent segment tree with lazy propagation, 연산 당 $O(\log N)$
-- Persistent sqrt decomposition, 연산 당 $O(\sqrt N)$
-
-한편, $S$의 크기에 관계 없이 $O(\log N)$ 시간에 노드를 업데이트할 수 있으며, in-degree가 $O(1)$이라는 가정 하에 $O(1)$ 시간에도 노드를 업데이트할 수 있음이 알려져 있습니다. 관심 있으신 분은 다음 논문을 참조하세요: James R. Driscoll, Neil Sarnak, Daniel D. Sleator, Robert E. Tarjan, *Making data structures persistent*, Journal of Computer and System Sciences, Volume 38, Issue 1, 1989, Pages 86-124.
+# More Efficient DSes?
+$S$의 크기에 관계 없이 $O(\log N)$ 시간에 노드를 업데이트할 수 있으며, in-degree가 $O(1)$이라는 가정 하에 $O(1)$ 시간에도 노드를 업데이트할 수 있음이 알려져 있습니다. 관심 있으신 분은 다음 논문을 참조하세요: James R. Driscoll, Neil Sarnak, Daniel D. Sleator, Robert E. Tarjan, *Making data structures persistent*, Journal of Computer and System Sciences, Volume 38, Issue 1, 1989, Pages 86-124.

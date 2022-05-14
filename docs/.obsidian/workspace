@@ -7,11 +7,9 @@
         "id": "d276e3df865d36f9",
         "type": "leaf",
         "state": {
-          "type": "markdown",
+          "type": "image",
           "state": {
-            "file": "index.md",
-            "mode": "source",
-            "source": false
+            "file": "문제풀이/Pasted image 20220514204126.png"
           }
         }
       }
@@ -69,7 +67,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "index.md",
+                "file": "문제풀이/Pasted image 20220514204126.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,15 +87,15 @@
   },
   "active": "d276e3df865d36f9",
   "lastOpenFiles": [
-    "index.md",
-    "알고리즘.md",
-    "BOJ 문제풀이.md",
+    "문제풀이/Pasted image 20220514204126.png",
+    "문제풀이/18796 이동하기 4.md",
     "문제풀이/1974 Jump Jump Championship.md",
-    "알고리즘/Persistent Data Structures.md",
-    "문제풀이/Pasted image 20210906005042.png",
+    "문제풀이/11064 Diameter.md",
+    "문제풀이/17070 Islands.md",
     "문제풀이/20846 수열과 쿼리 40.md",
     "문제풀이/20672 대세는 바이러스야.md",
-    "문제풀이/20000-20999.md",
-    "문제풀이/18796 이동하기 4.md"
+    "BOJ 문제풀이.md",
+    "알고리즘.md",
+    "알고리즘/Persistent Data Structures.md"
   ]
 }
