@@ -1,4 +1,4 @@
-# 17070 Islands
+# BOJ 17070 Islands
 https://acmicpc.net/problem/17070
 
 # 문제의 재구성

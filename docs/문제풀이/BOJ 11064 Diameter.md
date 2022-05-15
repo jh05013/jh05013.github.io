@@ -1,4 +1,4 @@
-# 11064 Diameter
+# BOJ 11064 Diameter
 https://acmicpc.net/problem/11064
 
 [[11064 Diameter.pdf|pdf로 보기]]
