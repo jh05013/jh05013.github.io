@@ -1,5 +1,5 @@
-# BOJ 17070 Islands
-https://acmicpc.net/problem/17070
+# BOJ 17970 Islands
+https://acmicpc.net/problem/17970
 
 # 문제의 재구성
 일반성을 잃지 않고, 첫 번째 섬에는 1 2 ... N이 차례로 쓰여 있다고 가정하겠습니다. 그냥 그에 맞춰서 두 번째 섬에 번호를 다시 붙여 주면 됩니다.
