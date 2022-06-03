@@ -6,11 +6,11 @@ https://docs.google.com/spreadsheets/d/1iXAzJ8bIZ8kGNivCuS2paTazVdX9YHEolSqkQ6H7
 
 # 블로그 풀이 (개별 문제)
 
+* [[BOJ 5811 낙하산 고리들]]
 * [[BOJ 11064 Diameter]]
 * [[BOJ 14755 Pseudoknot]]
 * [[BOJ 17970 Islands]]
 * [[BOJ 18796 이동하기 4]]
-* [[BOJ 20672 대세는 바이러스야]]
 * [[BOJ 20846 수열과 쿼리 40]]
 * [[BOJ 22906 장난감 오렌지 만들기]]
 * [[BOJ 24943 Sightseeing in Kyoto]]
