@@ -1,9 +1,15 @@
+# ICPC World Finals 2021
+
+![[Pasted image 20221112214241.png]]
+
+oh hi
+
 # 팀 구성
 각기 다른 강점을 가진 셋이 모이면 좋은 시너지가 만들어집니다. 이번 월파를 결정지은 ICPC Seoul 2020은 제 팀원들의 강점이 골고루 부각된 대회였습니다.
 
 - [jh05013](https://solved.ac/ko/profile/jh05013) (최재민): 접니다. 사전지식을 다량 보유하고 있으며, 긴 코드를 안정적으로 짤 수 있습니다. 서울 2020 때는 A, H, J를 풀었습니다. 월파 팀노트는 저 혼자 만들었습니다.
 - [easrui](https://solved.ac/profile/easrui) (이재웅): [코드포스 레이팅 2454입니다.](https://codeforces.com/profile/l0tus) 쉬운 문제를 빠르게, 그리고 어려운 문제도 잘 풉니다. 본인 말로는 DP 최적화에 자신있다고 합니다. 서울 2020 때는 C, E, L을 풀고, I의 풀이도 알아냈습니다.
-- [dillon0108](https://solved.ac/profile/dillon0108) (김홍녕): [IMO 금메달 출신인 만큼.](https://www.imo-official.org/participant_r.aspx?id=28256) 수학 문제를 잘 풉니다. 서울 2020 때는 B, G, K(!!)를 풀었습니다.
+- [dillon0108](https://solved.ac/profile/dillon0108) (김홍녕): [IMO 금메달 출신인 만큼](https://www.imo-official.org/participant_r.aspx?id=28256) 수학 문제를 잘 풉니다. 서울 2020 때는 B, G, K(!!)를 풀었습니다.
 
 이번 월파도 고난도 문제에 사전지식이랑 DP 최적화랑 수학 문제가 하나씩 나오면 동메달을 딸 수 있지 않을까??라고 생각했습니다.
 
@@ -107,6 +113,7 @@ Key랑 trap이 없다고 하면, 문제의 답은 `2 * (전체 간선의 가중�
 # 결과
 
 한국 팀의 결과는 다음과 같습니다.
+
 - 서울대: 9솔브 1303페널티 4등
 - KAIST (우리 팀): 6솔브 1004페널티 31등
 - 고려대: 3솔브 485페널티 76등
