@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "문제풀이/BOJ 18796 이동하기 4.md",
+            "file": "알고리즘/도형의 합집합과 넓이.md",
             "mode": "preview",
             "source": true
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "문제풀이/BOJ 18796 이동하기 4.md",
+                "file": "알고리즘/도형의 합집합과 넓이.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,15 +89,15 @@
   },
   "active": "2b9797aaf2fe9470",
   "lastOpenFiles": [
-    "문제풀이/BOJ 18796 이동하기 4.md",
+    "알고리즘.md",
     "BOJ 문제풀이.md",
-    "문제풀이/BOJ 24943 Sightseeing in Kyoto.md",
-    "문제풀이/BOJ 5811 낙하산 고리들.md",
-    "문제풀이_미완성/BOJ 1906 자리 바꾸기.md",
-    "문제풀이/BOJ 18766-18771, 19529, 19240-19244, 19592-19597.md",
-    "문제풀이/BOJ 18221-18227 2019 Overflow Programming Contest (OPC).md",
-    "문제풀이/BOJ 17838-17845 제1회 UNIST 알고리즘 프로그래밍 경시대회 Uni-CODE.md",
-    "문제풀이/BOJ 20665-20672 shake! 2020.md",
-    "문제풀이/BOJ 20672 대세는 바이러스야.md"
+    "알고리즘/도형의 합집합과 넓이.md",
+    "알고리즘/HLD 하나로 경로 쿼리와 서브트리 쿼리 모두 지원하기.md",
+    "index.md",
+    "퍼즐 헌트 참가 기록.md",
+    "문제풀이_미완성/BOJ 22899-22908 Orange Cup.md",
+    "SCP-3505.md",
+    "기타/번역.md",
+    "기타/SCP-5776.md"
   ]
 }

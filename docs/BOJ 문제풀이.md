@@ -7,6 +7,7 @@ https://docs.google.com/spreadsheets/d/1iXAzJ8bIZ8kGNivCuS2paTazVdX9YHEolSqkQ6H7
 # 블로그 풀이 (개별 문제)
 
 * [[BOJ 5811 낙하산 고리들]]
+* [[BOJ 10049 切り取り線 (Cutting)]]
 * [[BOJ 11064 Diameter]]
 * [[BOJ 14755 Pseudoknot]]
 * [[BOJ 17970 Islands]]
@@ -22,3 +23,4 @@ https://docs.google.com/spreadsheets/d/1iXAzJ8bIZ8kGNivCuS2paTazVdX9YHEolSqkQ6H7
 * [[BOJ 18857-18867 제1회 논산 코드 페스티벌]]
 * [[BOJ 18766-18771, 19529, 19240-19244, 19592-19597]]
 * [[BOJ 20665-20672 shake! 2020]]
+* [[BOJ 22899-22908 Orange Cup]] (미완성)
