@@ -24,3 +24,4 @@ https://docs.google.com/spreadsheets/d/1iXAzJ8bIZ8kGNivCuS2paTazVdX9YHEolSqkQ6H7
 * [[BOJ 18766-18771, 19529, 19240-19244, 19592-19597]]
 * [[BOJ 20665-20672 shake! 2020]]
 * [[BOJ 22899-22908 Orange Cup]] (미완성)
+* [[ICPC World Finals 2021 풀이]]
