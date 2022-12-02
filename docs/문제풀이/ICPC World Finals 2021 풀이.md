@@ -1,4 +1,6 @@
 # ICPC World Finals 2021 풀이
+[[ICPC World Finals 2021 풀이.pdf|pdf로 보기]]
+
 11월에 [ICPC World Finals 2021에 참가했습니다](https://jh05013.github.io/%EA%B8%B0%ED%83%80/ICPC%20World%20Finals%202021/). 이후 11월 말까지 한 문제를 제외한 나머지를 모두 풀었고, 이 글에서 모든 문제의 풀이를 정리합니다.
 
 최근 3년과 달리 상대적으로 쉬운 (플래 하급 이하) 문제가 좀 더 많이 나왔는데, 그것들을 푸느라 더 어려운 문제에 쓸 시간이 부족했습니다.
