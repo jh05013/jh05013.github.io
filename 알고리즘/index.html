@@ -1,0 +1,1846 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../BOJ%20%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/">
+      
+      
+        <link rel="next" href="../%EA%B8%B0%ED%83%80/ICPC%20Seoul%20Regional%202022%20%EB%AF%B8%EB%9F%AC/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.12">
+    
+    
+      
+        <title>자료구조 및 알고리즘 튜토리얼 - obsidian-mkdocs template</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.fad675c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="obsidian-mkdocs template" class="md-header__button md-logo" aria-label="obsidian-mkdocs template" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            obsidian-mkdocs template
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              자료구조 및 알고리즘 튜토리얼
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="pink" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="obsidian-mkdocs template" class="md-nav__button md-logo" aria-label="obsidian-mkdocs template" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    obsidian-mkdocs template
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BOJ%20%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 문제풀이
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    자료구조 및 알고리즘 튜토리얼
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    자료구조 및 알고리즘 튜토리얼
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#silver-easy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Silver Easy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#silver-hard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Silver Hard
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gold-easy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gold Easy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gold-hard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gold Hard
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#platinum-easy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Platinum Easy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#platinum-hard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Platinum Hard
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diamond-easy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diamond Easy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diamond-hard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diamond Hard
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ruby-easy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ruby Easy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ruby-hard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ruby Hard
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      아직 추가 안 한 것들
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="아직 추가 안 한 것들">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      브론즈
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      실버 이지
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      실버 하드
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      골드 이지
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      골드 하드
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      플래 이지
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      플래 하드
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      다이아 이지
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      다이아 하드
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      루비 이지
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      루비 하드
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    기타
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            기타
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EA%B8%B0%ED%83%80/ICPC%20Seoul%20Regional%202022%20%EB%AF%B8%EB%9F%AC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ICPC Seoul Regional 2022 미러
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EA%B8%B0%ED%83%80/ICPC%20Seoul%20Regional%202023%20%EB%AF%B8%EB%9F%AC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ICPC Seoul Regional 2023 미러
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EA%B8%B0%ED%83%80/ICPC%20World%20Finals%202021/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ICPC World Finals 2021
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EA%B8%B0%ED%83%80/%ED%94%BC%EB%B3%B4%EB%82%98%EC%B9%98%20%EC%88%98%EC%97%B4%20mod%20M%EC%9D%98%20%EC%A3%BC%EA%B8%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    피보나치 수열 mod M의 주기
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    문제풀이
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            문제풀이
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/BOJ%2010049%20%E5%88%87%E3%82%8A%E5%8F%96%E3%82%8A%E7%B7%9A%20%28Cutting%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 10049 切り取り線 (Cutting)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/BOJ%2011064%20Diameter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 11064 Diameter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/BOJ%2014755%20Pseudoknot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 14755 Pseudoknot
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/BOJ%2017838-17845%20%EC%A0%9C1%ED%9A%8C%20UNIST%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%20%EA%B2%BD%EC%8B%9C%EB%8C%80%ED%9A%8C%20Uni-CODE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 17838-17845 제1회 UNIST 알고리즘 프로그래밍 경시대회 Uni-CODE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/BOJ%2017970%20Islands/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 17970 Islands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/BOJ%2018221-18227%202019%20Overflow%20Programming%20Contest%20%28OPC%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 18221-18227 2019 Overflow Programming Contest (OPC)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/BOJ%2018766-18771%2C%2019529%2C%2019240-19244%2C%2019592-19597/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 18766-18771, 19529, 19240-19244, 19592-19597
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/BOJ%2018796%20%EC%9D%B4%EB%8F%99%ED%95%98%EA%B8%B0%204/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 18796 이동하기 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/BOJ%2018857-18867%20%EC%A0%9C1%ED%9A%8C%20%EB%85%BC%EC%82%B0%20%EC%BD%94%EB%93%9C%20%ED%8E%98%EC%8A%A4%ED%8B%B0%EB%B2%8C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 18857-18867 제1회 논산 코드 페스티벌
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/BOJ%2020665-20672%20shake%21%202020/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 20665-20672 shake! 2020
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/BOJ%2020672%20%EB%8C%80%EC%84%B8%EB%8A%94%20%EB%B0%94%EC%9D%B4%EB%9F%AC%EC%8A%A4%EC%95%BC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 20672 대세는 바이러스야
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/BOJ%2020846%20%EC%88%98%EC%97%B4%EA%B3%BC%20%EC%BF%BC%EB%A6%AC%2040/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 20846 수열과 쿼리 40
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/BOJ%2022906%20%EC%9E%A5%EB%82%9C%EA%B0%90%20%EC%98%A4%EB%A0%8C%EC%A7%80%20%EB%A7%8C%EB%93%A4%EA%B8%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 22906 장난감 오렌지 만들기
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/BOJ%2024943%20Sightseeing%20in%20Kyoto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 24943 Sightseeing in Kyoto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/BOJ%205811%20%EB%82%99%ED%95%98%EC%82%B0%20%EA%B3%A0%EB%A6%AC%EB%93%A4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 5811 낙하산 고리들
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/ICPC%20World%20Finals%202021%20%ED%92%80%EC%9D%B4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ICPC World Finals 2021 풀이
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    문제풀이 미완성
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            문제풀이 미완성
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4_%EB%AF%B8%EC%99%84%EC%84%B1/BOJ%201906%20%EC%9E%90%EB%A6%AC%20%EB%B0%94%EA%BE%B8%EA%B8%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 1906 자리 바꾸기
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4_%EB%AF%B8%EC%99%84%EC%84%B1/BOJ%2019657%20Explore/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 19657 Explore
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4_%EB%AF%B8%EC%99%84%EC%84%B1/BOJ%2022899-22908%20Orange%20Cup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 22899-22908 Orange Cup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    알고리즘
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            알고리즘
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Connection%20profile%20DP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Connection Profile DP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="HLD%20%ED%95%98%EB%82%98%EB%A1%9C%20%EA%B2%BD%EB%A1%9C%20%EC%BF%BC%EB%A6%AC%EC%99%80%20%EC%84%9C%EB%B8%8C%ED%8A%B8%EB%A6%AC%20%EC%BF%BC%EB%A6%AC%20%EB%AA%A8%EB%91%90%20%EC%A7%80%EC%9B%90%ED%95%98%EA%B8%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HLD 하나로 경로 쿼리와 서브트리 쿼리 모두 지원하기
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%EB%8F%84%ED%98%95%EC%9D%98%20%ED%95%A9%EC%A7%91%ED%95%A9%EA%B3%BC%20%EB%84%93%EC%9D%B4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    도형의 합집합과 넓이
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%EB%A7%81%ED%81%AC-%EC%BB%B7%20%ED%8A%B8%EB%A6%AC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    링크/컷 트리
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%EB%B0%98%EC%A0%84%EC%9D%98%20%EA%B0%9C%EC%88%98/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    반전
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%EB%B3%BC%EB%A1%9D%EB%8B%A4%EA%B0%81%ED%98%95%20%EB%82%B4%EB%B6%80%20%EC%A0%90%20%EB%B9%A0%EB%A5%B4%EA%B2%8C%20%ED%8C%90%EB%B3%84/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    볼록다각형 내부 점 빠르게 판별
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%EC%82%BC%EA%B0%81%ED%98%95%20%EC%B0%BE%EA%B8%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    삼각형 찾기
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%EC%8A%A4%ED%82%B5%20%EB%A6%AC%EC%8A%A4%ED%8A%B8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    스킵 리스트
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%EC%9E%AC%EA%B7%80%EC%A0%81%20%EA%B5%AC%EC%A1%B0%EC%9D%98%20k%EB%B2%88%EC%A7%B8%20%EC%9B%90%EC%86%8C%20%EA%B5%AC%ED%95%98%EA%B8%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    재귀적 구조의 k번째 원소 구하기
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#silver-easy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Silver Easy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#silver-hard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Silver Hard
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gold-easy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gold Easy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gold-hard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gold Hard
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#platinum-easy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Platinum Easy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#platinum-hard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Platinum Hard
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diamond-easy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diamond Easy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diamond-hard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diamond Hard
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ruby-easy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ruby Easy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ruby-hard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ruby Hard
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      아직 추가 안 한 것들
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="아직 추가 안 한 것들">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      브론즈
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      실버 이지
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      실버 하드
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      골드 이지
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      골드 하드
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      플래 이지
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      플래 하드
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      다이아 이지
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      다이아 하드
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      루비 이지
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      루비 하드
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="_1">자료구조 및 알고리즘 튜토리얼<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>각 항목에는 다음과 같이 이모지를 붙여 놓았습니다.</p>
+<ul>
+<li>🧮 수학</li>
+<li>♻️ 쿼리 및 자료구조</li>
+<li>⚡ DP</li>
+<li>🗺️ 그래프</li>
+<li>🧵 문자열</li>
+<li>🧭 기하</li>
+<li>📪 기타</li>
+</ul>
+<h2 id="silver-easy">Silver Easy<a class="headerlink" href="#silver-easy" title="Permanent link">&para;</a></h2>
+<h2 id="silver-hard">Silver Hard<a class="headerlink" href="#silver-hard" title="Permanent link">&para;</a></h2>
+<h2 id="gold-easy">Gold Easy<a class="headerlink" href="#gold-easy" title="Permanent link">&para;</a></h2>
+<h2 id="gold-hard">Gold Hard<a class="headerlink" href="#gold-hard" title="Permanent link">&para;</a></h2>
+<ul>
+<li>♻️ <a href="%EC%8A%A4%ED%82%B5%20%EB%A6%AC%EC%8A%A4%ED%8A%B8/">스킵 리스트</a> by jh05013</li>
+</ul>
+<h2 id="platinum-easy">Platinum Easy<a class="headerlink" href="#platinum-easy" title="Permanent link">&para;</a></h2>
+<ul>
+<li>🧮 <a href="https://rkm0959.tistory.com/180?category=828364">중국인의 나머지 정리</a> by rkm0959</li>
+<li>♻️ <a href="https://www.acmicpc.net/blog/view/88">펜윅 트리 구간 덧셈과 점 쿼리</a> by jh05013</li>
+<li>♻️ <a href="https://www.acmicpc.net/blog/view/88">펜윅 트리 구간 덧셈과 구간 쿼리</a> by jh05013</li>
+</ul>
+<h2 id="platinum-hard">Platinum Hard<a class="headerlink" href="#platinum-hard" title="Permanent link">&para;</a></h2>
+<ul>
+<li>♻️ <a href="http://www.secmem.org/blog/2019/02/09/mo%27s-algorithm/">Mo's 알고리즘</a> by djm03178</li>
+<li>♻️ <a href="https://www.secmem.org/blog/2021/09/04/persistent/">Persistent data structures</a> by jh05013</li>
+</ul>
+<h2 id="diamond-easy">Diamond Easy<a class="headerlink" href="#diamond-easy" title="Permanent link">&para;</a></h2>
+<ul>
+<li>🧮 <a href="https://algoshitpo.github.io/2020/05/20/fft-ntt/">정밀도 높은 고속 푸리에 변환</a> by jhnah917</li>
+<li>🧮 <a href="https://algoshitpo.github.io/2020/05/20/fft-ntt/">Number-theoretic transform</a> by jhnah917</li>
+<li>🧮 <a href="https://www.secmem.org/blog/2021/12/21/Bostan-Mori_Algorithm/">보스탄-모리 알고리즘</a> by aeren</li>
+<li>♻️ <a href="HLD%20%ED%95%98%EB%82%98%EB%A1%9C%20%EA%B2%BD%EB%A1%9C%20%EC%BF%BC%EB%A6%AC%EC%99%80%20%EC%84%9C%EB%B8%8C%ED%8A%B8%EB%A6%AC%20%EC%BF%BC%EB%A6%AC%20%EB%AA%A8%EB%91%90%20%EC%A7%80%EC%9B%90%ED%95%98%EA%B8%B0/">HLD 하나로 경로 쿼리와 서브트리 쿼리 모두 지원하기</a> by jh05013</li>
+<li>🗺️ <a href="%EC%82%BC%EA%B0%81%ED%98%95%20%EC%B0%BE%EA%B8%B0/">삼각형 찾기</a> by jh05013</li>
+<li>⚡ <a href="https://jwvg0425.github.io/ps_slope_trick">Slope trick</a> by jwvg0425</li>
+<li>🧵 <a href="https://koosaga.com/249">회문 트리</a> by koosaga</li>
+<li>🧭 <a href="%EB%8F%84%ED%98%95%EC%9D%98%20%ED%95%A9%EC%A7%91%ED%95%A9%EA%B3%BC%20%EB%84%93%EC%9D%B4/">도형의 합집합과 넓이</a> by jh05013</li>
+</ul>
+<h2 id="diamond-hard">Diamond Hard<a class="headerlink" href="#diamond-hard" title="Permanent link">&para;</a></h2>
+<ul>
+<li>🧮 <a href="https://koosaga.com/231">벌레캠프-매시 알고리즘</a> by koosaga</li>
+<li>🧮 <a href="https://rkm0959.tistory.com/141">특성다항식 계산</a> by rkm0959</li>
+<li>♻️ <a href="http://www.secmem.org/blog/2019/10/19/Segment-Tree-Beats/">세그먼트 트리 비츠</a> by rdd6584</li>
+<li>♻️ <a href="%EB%A7%81%ED%81%AC-%EC%BB%B7%20%ED%8A%B8%EB%A6%AC/">링크-컷 트리</a></li>
+<li>⚡ <a href="Connection%20profile%20DP/">Connection profile DP</a> by jh05013</li>
+<li>⚡ <a href="https://koosaga.com/243">Hirshberg</a> by koosaga</li>
+<li>⚡ <a href="https://koosaga.com/243">Aliens 트릭</a> by koosaga</li>
+<li>🗺️ <a href="https://koosaga.com/201">도미네이터 트리</a> by koosaga</li>
+<li>🗺️ <a href="https://koosaga.com/258">일반 매칭</a> by koosaga</li>
+</ul>
+<h2 id="ruby-easy">Ruby Easy<a class="headerlink" href="#ruby-easy" title="Permanent link">&para;</a></h2>
+<ul>
+<li>🧮 <a href="https://rkm0959.tistory.com/139">Blue-red Hackenbush</a> by rkm0959</li>
+<li>🧵 접미사 트리 <a href="https://www.secmem.org/blog/2021/02/20/suffix-tree/">part 1</a> <a href="https://www.secmem.org/blog/2021/04/11/suffix-tree-2/">part 2</a> by jh05013</li>
+<li>🗺️ <a href="https://www.secmem.org/blog/2019/03/10/Finding-perfect-elimination-ordering-in-choral-graphs/">Chordal graph</a> by ainta</li>
+</ul>
+<h2 id="ruby-hard">Ruby Hard<a class="headerlink" href="#ruby-hard" title="Permanent link">&para;</a></h2>
+<ul>
+<li>♻️ <a href="http://www.secmem.org/blog/2021/03/21/toptree/">탑 트리</a> by koosaga</li>
+</ul>
+<h2 id="_2">아직 추가 안 한 것들<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_3">브론즈<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>📪 시간 복잡도</li>
+<li>📪 브루트 포스</li>
+<li>🧮 정수론 기초</li>
+<li>🧮 조합론 기초</li>
+<li>🧭 기하 기초</li>
+</ul>
+<h3 id="_4">실버 이지<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>📪 정렬</li>
+<li>📪 이분 탐색</li>
+<li>📪 그리디</li>
+<li>📪 비트마스크</li>
+<li>🧮 에라토스테네스의 체</li>
+<li>🧮 유클리드 알고리즘</li>
+<li>♻️ 스택, 큐, 덱</li>
+<li>♻️ 우선순위 큐</li>
+<li>♻️ 집합과 맵</li>
+<li>🗺️ 그래프</li>
+<li>🗺️ 트리</li>
+<li>📪 두 포인터와 슬라이딩 윈도우</li>
+</ul>
+<h3 id="_5">실버 하드<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>📪 백트래킹</li>
+<li>📪 분할 정복</li>
+<li>🧮 빠른 거듭제곱</li>
+<li>♻️ std::set의 이분 탐색</li>
+<li>⚡ 다이나믹 프로그래밍</li>
+<li>🗺️ 너비 우선 순회</li>
+<li>🗺️ 깊이 우선 순회</li>
+<li>📪 삼분 탐색</li>
+</ul>
+<h3 id="_6">골드 이지<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>🧮 페르마 소정리</li>
+<li>🧮 포함 배제의 원리</li>
+<li>🧮 오일러 phi 함수</li>
+<li>🧮 기댓값</li>
+<li>♻️ 분리 집합</li>
+<li>🗺️ 다익스트라</li>
+<li>🗺️ 벨만-포드</li>
+<li>🗺️ 플로이드-워셜</li>
+<li>🗺️ 0-1 BFS</li>
+<li>🗺️ 최소 스패닝 트리</li>
+<li>🗺️ 위상 정렬</li>
+<li>🧭 CCW</li>
+<li>🧭 다각형의 넓이</li>
+<li>🧭 볼록다각형 내부의 점 판별</li>
+</ul>
+<h3 id="_7">골드 하드<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li>♻️ 희소 배열</li>
+<li>♻️ 제곱근 분할</li>
+<li>♻️ 세그먼트 트리</li>
+<li>♻️ 펜윅 트리</li>
+<li>⚡ 트리에서의 다이나믹 프로그래밍</li>
+<li>⚡ 비트마스크 다이나믹 프로그래밍</li>
+<li>⚡ 게임 다이나믹 프로그래밍</li>
+<li>🗺️ 오일러 경로</li>
+<li>🧵 트라이</li>
+<li>🧭 선분 교차</li>
+<li>🧭 오목다각형 내부의 점 판별</li>
+<li>🧭 픽의 정리</li>
+<li>📪 O(NlogN) LIS</li>
+<li>📪 Meet in the middle</li>
+<li>📪 bitset</li>
+</ul>
+<h3 id="_8">플래 이지<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li>🧮 뤼카 정리</li>
+<li>🧮 가우스 소거법</li>
+<li>🧮 확장 유클리드 알고리즘</li>
+<li>♻️ 펜윅 트리</li>
+<li>♻️ 오프라인 쿼리</li>
+<li>♻️ 느리게 갱신되는 세그먼트 트리</li>
+<li>♻️ 오일러 투어 트릭</li>
+<li>♻️ 병합 정렬 트리</li>
+<li>♻️ 다차원 세그먼트 트리</li>
+<li>🗺️ 강한 연결 요소</li>
+<li>🗺️ 최소 공통 조상</li>
+<li>🗺️ 이분 매칭</li>
+<li>🗺️ 최대 유량</li>
+<li>🗺️ 최대 유량 최소 컷 정리</li>
+<li>🗺️ 이중 연결 요소</li>
+<li>🧵 KMP</li>
+<li>🧵 라빈-카프 해싱</li>
+<li>🧵 카프-밀러-로젠버그 해싱</li>
+<li>🧵 매내처</li>
+<li>🧵 Z 알고리즘</li>
+<li>🧭 볼록 껍질</li>
+<li>🧭 볼록 다각형의 이분 탐색</li>
+<li>🧭 회전하는 캘리퍼스</li>
+<li>📪 2-SAT</li>
+<li>📪 Smaller-to-larger</li>
+</ul>
+<h3 id="_9">플래 하드<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<ul>
+<li>🧮 고속 푸리에 변환</li>
+<li>🧮 밀러-라빈 소수 판별 알고리즘</li>
+<li>🧮 스프라그-그런디 정리</li>
+<li>🧮 뫼비우스 반전</li>
+<li>🧮 번사이드 보조정리</li>
+<li>🧮 이산 로그</li>
+<li>⚡ 분할 정복 트릭</li>
+<li>⚡ 크누스 트릭</li>
+<li>♻️ 볼록 껍질 트릭</li>
+<li>♻️ Heavy-light decomposition</li>
+<li>🗺️ 최소 비용 최대 유량</li>
+<li>🗺️ 디닉 알고리즘</li>
+<li>🧵 접미사 배열</li>
+<li>🧵 아호-코라식</li>
+<li>🧵 로프</li>
+<li>📪 병렬 이분 탐색</li>
+<li>📪 Stable matching</li>
+</ul>
+<h3 id="_10">다이아 이지<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<ul>
+<li>🧮 폴라드-로 소인수분해 알고리즘</li>
+<li>🧮 생성함수</li>
+<li>🧮 라그랑주 보간법</li>
+<li>♻️ 스플레이 트리</li>
+<li>♻️ 리-차오 트리</li>
+<li>🗺️ 동적 연결성 판정</li>
+<li>🗺️ Centroid decomposition</li>
+<li>🗺️ 선인장</li>
+<li>🗺️ 전역 최소 컷</li>
+<li>🧭 동적 볼록 껍질</li>
+<li>🧭 그린 정리</li>
+<li>📪 헝가리안 알고리즘</li>
+</ul>
+<h3 id="_11">다이아 하드<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<ul>
+<li>🧮 이산 제곱근</li>
+<li>🧮 고속 다항식 나눗셈</li>
+<li>🧮 고속 다항식 다중계산</li>
+<li>🧮 온라인 FFT</li>
+<li>⚡ Monotone queue optimization</li>
+<li>🗺️ 유향 MST</li>
+<li>🗺️ 홀의 정리</li>
+<li>🧭 반평면 교집합</li>
+<li>🧭 k-d 트리</li>
+<li>🧭 평면 그래프의 쌍대성</li>
+<li>📪 크누스 X와 댄싱 링크</li>
+</ul>
+<h3 id="_12">루비 이지<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<ul>
+<li>🧮 매트로이드</li>
+<li>🧮 매트로이드 교집합</li>
+<li>🧭 보로노이 다이어그램</li>
+<li>🧭 델로네 삼각 분할</li>
+</ul>
+<h3 id="_13">루비 하드<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<ul>
+<li>🗺️ 온라인 동적 연결성 판정</li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.6c14ae12.min.js"></script>
+      
+    
+  </body>
+</html>

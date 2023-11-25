@@ -1,0 +1,1299 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../BOJ%2018766-18771%2C%2019529%2C%2019240-19244%2C%2019592-19597/">
+      
+      
+        <link rel="next" href="../BOJ%2018857-18867%20%EC%A0%9C1%ED%9A%8C%20%EB%85%BC%EC%82%B0%20%EC%BD%94%EB%93%9C%20%ED%8E%98%EC%8A%A4%ED%8B%B0%EB%B2%8C/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.12">
+    
+    
+      
+        <title>BOJ 18796 이동하기 4 - obsidian-mkdocs template</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.fad675c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#boj-18796-4" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="obsidian-mkdocs template" class="md-header__button md-logo" aria-label="obsidian-mkdocs template" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            obsidian-mkdocs template
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              BOJ 18796 이동하기 4
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="pink" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="obsidian-mkdocs template" class="md-nav__button md-logo" aria-label="obsidian-mkdocs template" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    obsidian-mkdocs template
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BOJ%20%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 문제풀이
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    자료구조 및 알고리즘 튜토리얼
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    기타
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            기타
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EA%B8%B0%ED%83%80/ICPC%20Seoul%20Regional%202022%20%EB%AF%B8%EB%9F%AC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ICPC Seoul Regional 2022 미러
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EA%B8%B0%ED%83%80/ICPC%20Seoul%20Regional%202023%20%EB%AF%B8%EB%9F%AC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ICPC Seoul Regional 2023 미러
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EA%B8%B0%ED%83%80/ICPC%20World%20Finals%202021/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ICPC World Finals 2021
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EA%B8%B0%ED%83%80/%ED%94%BC%EB%B3%B4%EB%82%98%EC%B9%98%20%EC%88%98%EC%97%B4%20mod%20M%EC%9D%98%20%EC%A3%BC%EA%B8%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    피보나치 수열 mod M의 주기
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    문제풀이
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            문제풀이
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BOJ%2010049%20%E5%88%87%E3%82%8A%E5%8F%96%E3%82%8A%E7%B7%9A%20%28Cutting%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 10049 切り取り線 (Cutting)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BOJ%2011064%20Diameter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 11064 Diameter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BOJ%2014755%20Pseudoknot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 14755 Pseudoknot
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BOJ%2017838-17845%20%EC%A0%9C1%ED%9A%8C%20UNIST%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%20%EA%B2%BD%EC%8B%9C%EB%8C%80%ED%9A%8C%20Uni-CODE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 17838-17845 제1회 UNIST 알고리즘 프로그래밍 경시대회 Uni-CODE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BOJ%2017970%20Islands/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 17970 Islands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BOJ%2018221-18227%202019%20Overflow%20Programming%20Contest%20%28OPC%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 18221-18227 2019 Overflow Programming Contest (OPC)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BOJ%2018766-18771%2C%2019529%2C%2019240-19244%2C%2019592-19597/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 18766-18771, 19529, 19240-19244, 19592-19597
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 18796 이동하기 4
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BOJ%2018857-18867%20%EC%A0%9C1%ED%9A%8C%20%EB%85%BC%EC%82%B0%20%EC%BD%94%EB%93%9C%20%ED%8E%98%EC%8A%A4%ED%8B%B0%EB%B2%8C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 18857-18867 제1회 논산 코드 페스티벌
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BOJ%2020665-20672%20shake%21%202020/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 20665-20672 shake! 2020
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BOJ%2020672%20%EB%8C%80%EC%84%B8%EB%8A%94%20%EB%B0%94%EC%9D%B4%EB%9F%AC%EC%8A%A4%EC%95%BC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 20672 대세는 바이러스야
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BOJ%2020846%20%EC%88%98%EC%97%B4%EA%B3%BC%20%EC%BF%BC%EB%A6%AC%2040/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 20846 수열과 쿼리 40
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BOJ%2022906%20%EC%9E%A5%EB%82%9C%EA%B0%90%20%EC%98%A4%EB%A0%8C%EC%A7%80%20%EB%A7%8C%EB%93%A4%EA%B8%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 22906 장난감 오렌지 만들기
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BOJ%2024943%20Sightseeing%20in%20Kyoto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 24943 Sightseeing in Kyoto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BOJ%205811%20%EB%82%99%ED%95%98%EC%82%B0%20%EA%B3%A0%EB%A6%AC%EB%93%A4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 5811 낙하산 고리들
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ICPC%20World%20Finals%202021%20%ED%92%80%EC%9D%B4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ICPC World Finals 2021 풀이
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    문제풀이 미완성
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            문제풀이 미완성
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4_%EB%AF%B8%EC%99%84%EC%84%B1/BOJ%201906%20%EC%9E%90%EB%A6%AC%20%EB%B0%94%EA%BE%B8%EA%B8%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 1906 자리 바꾸기
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4_%EB%AF%B8%EC%99%84%EC%84%B1/BOJ%2019657%20Explore/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 19657 Explore
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4_%EB%AF%B8%EC%99%84%EC%84%B1/BOJ%2022899-22908%20Orange%20Cup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 22899-22908 Orange Cup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    알고리즘
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            알고리즘
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/Connection%20profile%20DP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Connection Profile DP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/HLD%20%ED%95%98%EB%82%98%EB%A1%9C%20%EA%B2%BD%EB%A1%9C%20%EC%BF%BC%EB%A6%AC%EC%99%80%20%EC%84%9C%EB%B8%8C%ED%8A%B8%EB%A6%AC%20%EC%BF%BC%EB%A6%AC%20%EB%AA%A8%EB%91%90%20%EC%A7%80%EC%9B%90%ED%95%98%EA%B8%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HLD 하나로 경로 쿼리와 서브트리 쿼리 모두 지원하기
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%8F%84%ED%98%95%EC%9D%98%20%ED%95%A9%EC%A7%91%ED%95%A9%EA%B3%BC%20%EB%84%93%EC%9D%B4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    도형의 합집합과 넓이
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%A7%81%ED%81%AC-%EC%BB%B7%20%ED%8A%B8%EB%A6%AC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    링크/컷 트리
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%98%EC%A0%84%EC%9D%98%20%EA%B0%9C%EC%88%98/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    반전
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B3%BC%EB%A1%9D%EB%8B%A4%EA%B0%81%ED%98%95%20%EB%82%B4%EB%B6%80%20%EC%A0%90%20%EB%B9%A0%EB%A5%B4%EA%B2%8C%20%ED%8C%90%EB%B3%84/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    볼록다각형 내부 점 빠르게 판별
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%82%BC%EA%B0%81%ED%98%95%20%EC%B0%BE%EA%B8%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    삼각형 찾기
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%8A%A4%ED%82%B5%20%EB%A6%AC%EC%8A%A4%ED%8A%B8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    스킵 리스트
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%9E%AC%EA%B7%80%EC%A0%81%20%EA%B5%AC%EC%A1%B0%EC%9D%98%20k%EB%B2%88%EC%A7%B8%20%EC%9B%90%EC%86%8C%20%EA%B5%AC%ED%95%98%EA%B8%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    재귀적 구조의 k번째 원소 구하기
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="boj-18796-4">BOJ 18796 이동하기 4<a class="headerlink" href="#boj-18796-4" title="Permanent link">&para;</a></h1>
+<p>https://acmicpc.net/problem/18796</p>
+<p><a href="../../pdf/18796%20%EC%9D%B4%EB%8F%99%ED%95%98%EA%B8%B0%204.pdf">pdf로 보기</a></p>
+<pre><code>60  +---+---+---+       +60-+60-+60-+
+    |   |   |   |       10  90  80  70
+20  +---+---+---+       +20-+20-+20-+
+    |   |   |   |       10  90  80  70
+90  +---+---+---+       +90-+90-+90-+
+    10  90  80  70
+</code></pre>
+<p>예제 입력 1과 각 이동의 비용을 그림으로 나타내면 위와 같습니다. 출력은 <span class="arithmatex"><span class="MathJax_Preview">10 + 20 + 20 + 20 + 70 = 140</span><script type="math/tex">10 + 20 + 20 + 20 + 70 = 140</script></span>입니다.</p>
+<h1 id="_1">문제의 재구성<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>먼저, 생각하기 쉽도록 문제를 조금 변형해 봅시다.</p>
+<p>맨 처음에 경로 하나가 주어집니다. 이 경로는 아래로 쭉 이동한 다음 오른쪽으로 쭉 이동합니다.</p>
+<pre><code>60  +
+    |
+20  +
+    |
+90  +---+---+---&gt;
+    10  90  80  70
+</code></pre>
+<p>이 경로가 아래, 오른쪽 순서로 지나간 칸이 있으면 이 칸을 오른쪽, 아래 순서로 지나가도록 경로를 변경할 수 있습니다. 이때 경로의 비용도 변화하는데, 그 변화량은 인접한 두 <span class="arithmatex"><span class="MathJax_Preview">B_c</span><script type="math/tex">B_c</script></span> 값의 차와 인접한 두 <span class="arithmatex"><span class="MathJax_Preview">A_r</span><script type="math/tex">A_r</script></span> 값의 차를 합하여 계산할 수 있습니다.</p>
+<pre><code>60  +
+    |
+20  +---+          cost = (20-90) + (90-10)
+        |               = 10
+90      +---+---&gt;
+    10  90  80  70
+</code></pre>
+<p>이제 문제는 이렇게 바뀝니다.
+- 격자가 있습니다. 칸 <span class="arithmatex"><span class="MathJax_Preview">(x, y)</span><script type="math/tex">(x, y)</script></span>를 칠하는 비용은 <span class="arithmatex"><span class="MathJax_Preview">Cost[x,y] := R[x] + C[y]</span><script type="math/tex">Cost[x,y] := R[x] + C[y]</script></span>입니다.
+- 몇 개의 칸을 색칠할 건데, 색칠한 칸은 첫 열부터 마지막 열까지 높이가 단조감소하는 히스토그램을 이루어야 합니다.
+- 비용을 최소화하세요.
+- 편의를 위해, 비용이 최소이더라도 칸을 더 칠하면서 비용을 유지시킬 수 있다면 최적해가 아니라고 간주합시다.</p>
+<p>이 최소 비용을 계산한 다음, 초기 경로의 비용에 더하면 원래 문제의 답을 얻습니다.</p>
+<pre><code>    +---+---+---+
+ 40 |120|30 |30 |
+    +---+---+---+
+-70 |10 |-80|-80|
+    +---+---+---+
+     80  -10 -10
+</code></pre>
+<p>예제 입력 1을 히스토그램 버전으로 재구성하면 위와 같이 됩니다. <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span>은 (-70, 40), <span class="arithmatex"><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>는 (80, -10, -10)입니다. 이 문제의 최적해는 아래 세 칸을 칠하는 것으로 -150의 비용이 들고, 초기 경로의 비용은 <span class="arithmatex"><span class="MathJax_Preview">10 \times 2 + 90 \times 3 = 290</span><script type="math/tex">10 \times 2 + 90 \times 3 = 290</script></span>이므로 출력은 <span class="arithmatex"><span class="MathJax_Preview">290 - 150 = 140</span><script type="math/tex">290 - 150 = 140</script></span>입니다.</p>
+<h1 id="_2">몇 가지 관찰<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
+<p>우선 첫 번째 열부터 봅시다. 최적해에서 첫 번째 열의 높이가 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>라고 합시다. 즉 <span class="arithmatex"><span class="MathJax_Preview">(1, 1), (2, 1), \cdots, (i, 1)</span><script type="math/tex">(1, 1), (2, 1), \cdots, (i, 1)</script></span>을 칠했고 <span class="arithmatex"><span class="MathJax_Preview">(i+1, 1)</span><script type="math/tex">(i+1, 1)</script></span>은 칠하지 않은 상태입니다.</p>
+<p>그러면 다음이 성립합니다.
+* <span class="arithmatex"><span class="MathJax_Preview">Cost[i+1, 1] &gt; 0</span><script type="math/tex">Cost[i+1, 1] > 0</script></span>. 안 그러면 <span class="arithmatex"><span class="MathJax_Preview">(i+1, 1)</span><script type="math/tex">(i+1, 1)</script></span>을 칠하지 않을 이유가 없습니다.
+* 만약 두 번째 열이 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>층을 칠하지 않았다면, <span class="arithmatex"><span class="MathJax_Preview">Cost[i, 1] \leq 0 \wedge Cost[i, 2] &gt; 0</span><script type="math/tex">Cost[i, 1] \leq 0 \wedge Cost[i, 2] > 0</script></span>. 첫 번째 부등식이 성립하지 않으면 <span class="arithmatex"><span class="MathJax_Preview">(i, 1)</span><script type="math/tex">(i, 1)</script></span>을 지우는 것이 더 좋고, 두 번째 부등식이 성립하지 않으면 <span class="arithmatex"><span class="MathJax_Preview">(i, 2)</span><script type="math/tex">(i, 2)</script></span>를 칠하는 것이 더 좋습니다.
+* 만약 두 번째 열도 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>층을 칠했다면, <span class="arithmatex"><span class="MathJax_Preview">Cost[i+1,1] + Cost[i+1,2] &gt; 0</span><script type="math/tex">Cost[i+1,1] + Cost[i+1,2] > 0</script></span>. 안 그러면 <span class="arithmatex"><span class="MathJax_Preview">(i, 1)</span><script type="math/tex">(i, 1)</script></span>과 <span class="arithmatex"><span class="MathJax_Preview">(i, 2)</span><script type="math/tex">(i, 2)</script></span>를 칠하지 않는 것이 더 좋습니다.</p>
+<pre><code>   +---+---+---+      +---+---+---+
+i+1|   |   |   |   i+1|   |   |   |
+   +---+---+---+      +---+---+---+
+i  |###|   |   |   i  |###|###|   |
+   +---+---+---+      +---+---+---+
+i-1|###|   |   |   i+1|###|###|   |
+   +---+---+---+      +---+---+---+
+   |###|###|   |      |###|###|   |
+   +---+---+---+      +---+---+---+
+    1   2              1   2
+</code></pre>
+<h2 id="_3">일반화<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>이를 일반화해봅시다. 만약 1, 2, 3, ..., <span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span>번째 열이 정확히 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>층까지 칠했고 <span class="arithmatex"><span class="MathJax_Preview">k+1</span><script type="math/tex">k+1</script></span>번째 열이 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>층을 칠하지 않았다면,
+* <span class="arithmatex"><span class="MathJax_Preview">Cost[i, 1] + \cdots + Cost[i, k] \leq 0</span><script type="math/tex">Cost[i, 1] + \cdots + Cost[i, k] \leq 0</script></span>. 안 그러면 <span class="arithmatex"><span class="MathJax_Preview">(i, 1), \cdots, (i, k)</span><script type="math/tex">(i, 1), \cdots, (i, k)</script></span>를 지우는 것이 더 좋습니다.
+* <span class="arithmatex"><span class="MathJax_Preview">Cost[i+1, 1] + \cdots + Cost[i+1, k] &gt; 0</span><script type="math/tex">Cost[i+1, 1] + \cdots + Cost[i+1, k] > 0</script></span>. 안 그러면 <span class="arithmatex"><span class="MathJax_Preview">(i+1, 1), \cdots, (i+1, k)</span><script type="math/tex">(i+1, 1), \cdots, (i+1, k)</script></span>를 칠하는 것이 더 좋습니다.</p>
+<pre><code>   +---+---+---+---+---+
+i+1|   |   |   |   |   |
+   +---+---+---+---+---+
+i  |###|###|###|   |   |
+   +---+---+---+---+---+
+i-1|###|###|###|###|   |
+   +---+---+---+---+---+
+   |###|###|###|###|###|
+   +---+---+---+---+---+
+    1       k   k+1
+</code></pre>
+<h2 id="_4">그러면 무엇을 알 수 있나요?<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>두 부등식을 정리하면 <span class="arithmatex"><span class="MathJax_Preview">kR[i] + C[1] + \cdots + C[k] \leq 0 &lt; kR[i+1] + C[1] + \cdots + C[k]</span><script type="math/tex">kR[i] + C[1] + \cdots + C[k] \leq 0 < kR[i+1] + C[1] + \cdots + C[k]</script></span>이므로, <span class="arithmatex"><span class="MathJax_Preview">R[i] &lt; R[i+1]</span><script type="math/tex">R[i] < R[i+1]</script></span>임을 알 수 있습니다. 히스토그램을 어떻게 칠하든 위에서 제시한 <span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span>는 반드시 존재하므로, 이는 <strong>최적해의 첫 번째 열이 정확히 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>층까지 칠했다면 <span class="arithmatex"><span class="MathJax_Preview">R[i] &lt; R[i+1]</span><script type="math/tex">R[i] < R[i+1]</script></span></strong>임을 의미합니다. 그리고 이 관찰은 꼭 첫 번째 열에서만 적용되는 건 아닙니다. <strong>최적해의 어느 열이 정확히 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>층까지 칠했을 경우, <span class="arithmatex"><span class="MathJax_Preview">R[i] &lt; R[i+1]</span><script type="math/tex">R[i] < R[i+1]</script></span></strong>입니다.</p>
+<p>반대로 말하면, <strong><span class="arithmatex"><span class="MathJax_Preview">R[i] \geq R[i+1]</span><script type="math/tex">R[i] \geq R[i+1]</script></span>이면 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>층에서 멈출 일이 없습니다</strong>. 즉 어떤 열이든 i층을 칠하면 i+1층도 반드시 칠해야 합니다.</p>
+<h1 id="i">그러므로 i층을 지웁시다<a class="headerlink" href="#i" title="Permanent link">&para;</a></h1>
+<p><span class="arithmatex"><span class="MathJax_Preview">R[i] \geq R[i+1]</span><script type="math/tex">R[i] \geq R[i+1]</script></span>이라면 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>층과 <span class="arithmatex"><span class="MathJax_Preview">i+1</span><script type="math/tex">i+1</script></span>층을 아예 "합체"해줍시다. 즉
+- 기존의 <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> 배열이 <span class="arithmatex"><span class="MathJax_Preview">[R[1], \cdots, R[i], R[i+1], R[i+2], \cdots, R[N]]</span><script type="math/tex">[R[1], \cdots, R[i], R[i+1], R[i+2], \cdots, R[N]]</script></span>이었다면,
+- 새로운 <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> 배열은 <span class="arithmatex"><span class="MathJax_Preview">[R[1], \cdots, R[i] + R[i+1], R[i+2], \cdots, R[N]]</span><script type="math/tex">[R[1], \cdots, R[i] + R[i+1], R[i+2], \cdots, R[N]]</script></span>이 됩니다.</p>
+<p>그런데 이렇게 그냥 합체해 버리면 칸을 칠하는 비용이 전과 맞지 않게 됩니다. 왜냐하면 합체 전에 <span class="arithmatex"><span class="MathJax_Preview">(i, 1)</span><script type="math/tex">(i, 1)</script></span>과 <span class="arithmatex"><span class="MathJax_Preview">(i+1, 1)</span><script type="math/tex">(i+1, 1)</script></span>을 칠하는 비용은 <span class="arithmatex"><span class="MathJax_Preview">R[i] + R[i+1] + 2C[1]</span><script type="math/tex">R[i] + R[i+1] + 2C[1]</script></span>이었는데, 합체 후에 <span class="arithmatex"><span class="MathJax_Preview">(i, 1)</span><script type="math/tex">(i, 1)</script></span>을 칠하는 비용은 <span class="arithmatex"><span class="MathJax_Preview">R[i] + R[i+1] + C[1]</span><script type="math/tex">R[i] + R[i+1] + C[1]</script></span>이기 때문입니다.</p>
+<h2 id="_5">해결 방법<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>이를 해결하기 위해, 각 층마다 <strong>높이</strong> 값을 도입합니다. <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>층의 높이를 <span class="arithmatex"><span class="MathJax_Preview">H[i]</span><script type="math/tex">H[i]</script></span>라고 할 때, <span class="arithmatex"><span class="MathJax_Preview">Cost[i, j] := R[i] + H[i]C[j]</span><script type="math/tex">Cost[i, j] := R[i] + H[i]C[j]</script></span>로 정의하고, 두 층을 합칠 때는 <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span>과 <span class="arithmatex"><span class="MathJax_Preview">H</span><script type="math/tex">H</script></span> 값을 모두 합치면 됩니다.</p>
+<pre><code>   +---+---+---+---+---+
+i  |###|###|###|   |   |
+   |###|###|###|   |   |
+   +---+---+---+---+---+
+i-1|###|###|###|###|   |
+   +---+---+---+---+---+
+   |###|###|###|###|###|
+   +---+---+---+---+---+
+    1       k   k+1
+</code></pre>
+<h2 id="v2">몇 가지 관찰 v2<a class="headerlink" href="#v2" title="Permanent link">&para;</a></h2>
+<p>이제 위에서 본 그리디 전략을 다시 적용해 봅시다. 만약 1, 2, 3, ..., <span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span>번째 열이 정확히 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>층까지 칠했고 <span class="arithmatex"><span class="MathJax_Preview">k+1</span><script type="math/tex">k+1</script></span>번째 열이 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>층을 칠하지 않았다면,
+* <span class="arithmatex"><span class="MathJax_Preview">Cost[i, 1] + \cdots + Cost[i, k] = kR[i] + H[i]\mathscr{C} \leq 0</span><script type="math/tex">Cost[i, 1] + \cdots + Cost[i, k] = kR[i] + H[i]\mathscr{C} \leq 0</script></span> (<span class="arithmatex"><span class="MathJax_Preview">\mathscr{C} := C[1] + \cdots + C[k]</span><script type="math/tex">\mathscr{C} := C[1] + \cdots + C[k]</script></span>).
+* <span class="arithmatex"><span class="MathJax_Preview">Cost[i+1, 1] + \cdots + Cost[i+1, k] = kR[i+1] + H[i+1]\mathscr{C} &gt; 0</span><script type="math/tex">Cost[i+1, 1] + \cdots + Cost[i+1, k] = kR[i+1] + H[i+1]\mathscr{C} > 0</script></span>.</p>
+<p>따라서 <span class="arithmatex"><span class="MathJax_Preview">k \frac{R[i]}{H[i]} + \mathscr{C} \leq 0 &lt; k \frac{R[i+1]}{H[i+1]} + \mathscr{C}</span><script type="math/tex">k \frac{R[i]}{H[i]} + \mathscr{C} \leq 0 < k \frac{R[i+1]}{H[i+1]} + \mathscr{C}</script></span>이므로, <span class="arithmatex"><span class="MathJax_Preview">\frac{R[i]}{H[i]} &lt; \frac{R[i+1]}{H[i+1]}</span><script type="math/tex">\frac{R[i]}{H[i]} < \frac{R[i+1]}{H[i+1]}</script></span>입니다. 같은 이유로, <span class="arithmatex"><span class="MathJax_Preview">\frac{R[i]}{H[i]} \geq \frac{R[i+1]}{H[i+1]}</span><script type="math/tex">\frac{R[i]}{H[i]} \geq \frac{R[i+1]}{H[i+1]}</script></span>이면 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>층과 <span class="arithmatex"><span class="MathJax_Preview">i+1</span><script type="math/tex">i+1</script></span>층을 합체해줄 수 있습니다.</p>
+<h1 id="_6">어떻게 합체해야 하는가?<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h1>
+<p>이제 우리가 할 일은 <span class="arithmatex"><span class="MathJax_Preview">\frac{R[i]}{H[i]} \geq \frac{R[i+1]}{H[i+1]}</span><script type="math/tex">\frac{R[i]}{H[i]} \geq \frac{R[i+1]}{H[i+1]}</script></span>인 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>를 찾아 합체하는 과정을 이러한 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>가 존재하지 않을 때까지 반복하는 것입니다. 그런데 이러한 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>가 여러 개라면 무엇을 먼저 합체해야 할까요?</p>
+<p>그 답은... 상관없습니다. <strong>어떤 순서로 합체를 하더라도 최종적으로는 똑같은 배열이 됩니다.</strong> 왜일까요? <span class="arithmatex"><span class="MathJax_Preview">H</span><script type="math/tex">H</script></span>의 누적합을 <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>좌표, <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span>의 누적합을 <span class="arithmatex"><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span>좌표로 두고 점을 찍어봅시다.</p>
+<p><img alt="Pasted image 20220514204126.png" src="../Pasted%20image%2020220514204126.png" /></p>
+<p>각각의 <span class="arithmatex"><span class="MathJax_Preview">H[i]</span><script type="math/tex">H[i]</script></span>, <span class="arithmatex"><span class="MathJax_Preview">R[i]</span><script type="math/tex">R[i]</script></span> 쌍은 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>번째와 <span class="arithmatex"><span class="MathJax_Preview">i+1</span><script type="math/tex">i+1</script></span>번째 점을 잇는 선분에 해당되고, 어떤 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>에 대해 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>번째 선분의 기울기가 <span class="arithmatex"><span class="MathJax_Preview">i+1</span><script type="math/tex">i+1</script></span>번째 선분의 기울기보다 크거나 같으면 <span class="arithmatex"><span class="MathJax_Preview">i+1</span><script type="math/tex">i+1</script></span>번째 점을 제거할 수 있습니다. 최종적으로는 선분들의 기울기가 단조증가하게 됩니다. 따라서, 어떤 순서로 합체를 하더라도 결국에는 아래로 볼록한 볼록 껍질만 남습니다.</p>
+<p>합체 과정은 monotone chain 알고리즘처럼 스택으로 구현할 수 있습니다.</p>
+<p><img alt="Pasted image 20220514204132.png" src="../Pasted%20image%2020220514204132.png" /></p>
+<p>이렇게 분수를 직선의 기울기로 생각하는 발상은 <a href="https://www.acmicpc.net/problem/16760">이 문제</a>, <a href="https://www.acmicpc.net/problem/12122">이 문제</a>, <a href="https://codeforces.com/contest/1300/problem/E">이 문제</a> 등에서도 쓸 수 있습니다.</p>
+<h1 id="_7">열 합체<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h1>
+<p>지금까지의 논리를 <span class="arithmatex"><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>에도 적용할 수 있습니다. 각 열마다 <strong>너비</strong> <span class="arithmatex"><span class="MathJax_Preview">W[j]</span><script type="math/tex">W[j]</script></span> 값을 도입하고, <span class="arithmatex"><span class="MathJax_Preview">Cost[i, j] := R[i]W[j] + C[j]H[i]</span><script type="math/tex">Cost[i, j] := R[i]W[j] + C[j]H[i]</script></span>로 정의한 뒤, <span class="arithmatex"><span class="MathJax_Preview">\frac{C[j]}{W[j]}</span><script type="math/tex">\frac{C[j]}{W[j]}</script></span> 값이 단조증가하도록 열을 합쳐 줍시다.</p>
+<p>거의 다 왔습니다!</p>
+<h1 id="_8">분해<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h1>
+<p>이제 아주 중요한 일이 일어납니다. 볼록 껍질의 둘레를 따라 각 <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>좌표마다 다시 점을 찍어서 볼록 껍질을 다시 <span class="arithmatex"><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span>개의 선분으로 분해해 봅시다.</p>
+<p><img alt="Pasted image 20220514204141.png" src="../Pasted%20image%2020220514204141.png" /></p>
+<p>그러면 볼록 껍질은 바뀌지 않았기 때문에 최적해도 바뀌지 않습니다. 선분들의 기울기는 여전히 단조증가합니다. 그런데 이제 모든 <span class="arithmatex"><span class="MathJax_Preview">H[i]</span><script type="math/tex">H[i]</script></span>가 1이기 때문에, 이는 <span class="arithmatex"><span class="MathJax_Preview">R[i]</span><script type="math/tex">R[i]</script></span>가 단조증가함을 의미합니다. 마찬가지로 모든 <span class="arithmatex"><span class="MathJax_Preview">W[j]</span><script type="math/tex">W[j]</script></span>가 1이면서 <span class="arithmatex"><span class="MathJax_Preview">C[j]</span><script type="math/tex">C[j]</script></span>도 단조증가하도록 바꿀 수 있습니다. 답을 바꾸지 않으면서 <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span>과 <span class="arithmatex"><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>가 단조증가한다는 매우 강력한 조건을 추가한 것입니다.</p>
+<h2 id="_9">마무리<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>이제 나머지는 간단합니다. <span class="arithmatex"><span class="MathJax_Preview">Cost[i, j] &gt; 0</span><script type="math/tex">Cost[i, j] > 0</script></span>이라면 <span class="arithmatex"><span class="MathJax_Preview">Cost[i+1, j]</span><script type="math/tex">Cost[i+1, j]</script></span>와 <span class="arithmatex"><span class="MathJax_Preview">Cost[i, j+1]</span><script type="math/tex">Cost[i, j+1]</script></span>도 모두 양수이기 때문에, <span class="arithmatex"><span class="MathJax_Preview">Cost[i, j] \leq 0</span><script type="math/tex">Cost[i, j] \leq 0</script></span>인 모든 <span class="arithmatex"><span class="MathJax_Preview">(i, j)</span><script type="math/tex">(i, j)</script></span>는 높이가 단조감소하는 히스토그램의 형태를 갖습니다. <strong>따라서 그 히스토그램이 그냥 최적해입니다.</strong> 히스토그램 및 비용은 투 포인터와 누적합으로 찾을 수 있습니다.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.6c14ae12.min.js"></script>
+      
+    
+  </body>
+</html>
