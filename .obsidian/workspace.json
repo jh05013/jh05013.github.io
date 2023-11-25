@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "c4e9b99e4a0a1609",
+        "id": "eb775c0331e1a89e",
         "type": "tabs",
         "children": [
           {
-            "id": "86e9a6bcc010ce5c",
+            "id": "cf2cfa2b47d4e8aa",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/알고리즘/삼각형 찾기.md",
+                "file": "docs/BOJ 문제풀이.md",
                 "mode": "preview",
                 "source": true
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/알고리즘/삼각형 찾기.md",
+                "file": "docs/BOJ 문제풀이.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/알고리즘/삼각형 찾기.md",
+                "file": "docs/BOJ 문제풀이.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/알고리즘/삼각형 찾기.md"
+                "file": "docs/BOJ 문제풀이.md"
               }
             }
           }
@@ -146,24 +146,28 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "86e9a6bcc010ce5c",
+  "active": "cf2cfa2b47d4e8aa",
   "lastOpenFiles": [
-    "Pasted image 20231002212453.png",
+    "docs/index.md",
+    "docs/알고리즘.md",
+    "docs/기타/ICPC Seoul Regional 2023 미러.md",
+    "README.md",
+    "docs/기타/Pasted image 20231125165121.png",
+    "docs/기타/Pasted image 20231125180123.png",
+    "docs/기타/ICPC Seoul Regional 2022 미러.md",
+    "docs/기타/Pasted image 20231125174749.png",
+    "docs/기타/Pasted image 20231125173945.png",
+    "docs/기타/Pasted image 20231125173935.png",
+    "docs/기타/Pasted image 20231125173619.png",
+    "docs/기타/Pasted image 20231125173543.png",
+    "docs/기타/ICPC World Finals 2021.md",
+    "docs/기타/Pasted image 20231125165546.png",
+    "docs/기타/Pasted image 20231125162458.png",
+    "docs/알고리즘/Pasted image 20231002212453.png",
+    "docs/알고리즘/삼각형 찾기.md",
     "docs/문제풀이/BOJ 18796 이동하기 4.md",
     "docs/BOJ 문제풀이.md",
-    "docs/알고리즘/삼각형 찾기.md",
-    "docs/알고리즘.md",
-    "README.md",
     "docs/pdf/삼각형 찾기.pdf",
-    "docs/알고리즘/Pasted image 20230923182906.png",
-    "docs/알고리즘/Pasted image 20230923185408.png",
-    "Pasted image 20230923185221.png",
-    "docs/알고리즘/Pasted image 20230923183556.png",
-    "Pasted image 20230923181928.png",
-    "Pasted image 20230923181535.png",
-    "Pasted image 20230923181417.png",
-    "docs/index.md",
-    "docs/기타/ICPC Seoul Regional 2022 미러.md",
     "docs/알고리즘/링크-컷 트리.md"
   ]
 }
