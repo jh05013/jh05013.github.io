@@ -11,9 +11,11 @@
             "id": "cf2cfa2b47d4e8aa",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "docs/문제풀이/Pasted image 20240420224606.png"
+                "file": "README.md",
+                "mode": "preview",
+                "source": true
               }
             }
           }
@@ -83,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/문제풀이/Pasted image 20240420224606.png",
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/문제풀이/Pasted image 20240420224606.png",
+                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -123,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/문제풀이/Pasted image 20240420224606.png"
+                "file": "README.md"
               }
             }
           }
@@ -144,22 +146,23 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "d5c9f7116d31d581",
+  "active": "cf2cfa2b47d4e8aa",
   "lastOpenFiles": [
+    "docs/index.md",
+    "docs/문제풀이/ICPC World Finals 2022&2023 풀이.md",
+    "docs/문제풀이/ICPC World Finals 2021 풀이.md",
+    "docs/문제풀이/ICPC World Finals 2022&2023 풀이.pdf",
+    "docs/문제풀이/Pasted image 20240420224606.png",
     "docs/문제풀이/Pasted image 20240420223604.png",
     "docs/문제풀이/Pasted image 20240420223508.png",
-    "docs/문제풀이/ICPC World Finals 2022&2023 풀이.md",
-    "docs/문제풀이/Pasted image 20240420224606.png",
     "docs/문제풀이/Pasted image 20240420214336.png",
     "docs/BOJ 문제풀이.md",
-    "docs/index.md",
     "docs/문제풀이/BOJ 17970 Islands.md",
     "docs/문제풀이/BOJ 20846 수열과 쿼리 40.md",
     "docs/문제풀이/BOJ 18796 이동하기 4.md",
     "docs/문제풀이/BOJ 11064 Diameter.md",
     "docs/문제풀이/BOJ 14755 Pseudoknot.md",
     "docs/문제풀이/BOJ 18857-18867 제1회 논산 코드 페스티벌.md",
-    "docs/문제풀이/ICPC World Finals 2021 풀이.md",
     "docs/문제풀이_미완성/BOJ 19657 Explore.md",
     "docs/문제풀이_미완성/BOJ 22899-22908 Orange Cup.md",
     "docs/문제풀이_미완성/BOJ 1906 자리 바꾸기.md",
