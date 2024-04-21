@@ -11,11 +11,9 @@
             "id": "cf2cfa2b47d4e8aa",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "docs/문제풀이/ICPC World Finals 2022&2023 풀이.md",
-                "mode": "preview",
-                "source": true
+                "file": "docs/문제풀이/Pasted image 20240420224606.png"
               }
             }
           }
@@ -85,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/문제풀이/ICPC World Finals 2022&2023 풀이.md",
+                "file": "docs/문제풀이/Pasted image 20240420224606.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +100,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "docs/문제풀이/ICPC World Finals 2022&2023 풀이.md",
+                "file": "docs/문제풀이/Pasted image 20240420224606.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "docs/문제풀이/ICPC World Finals 2022&2023 풀이.md"
+                "file": "docs/문제풀이/Pasted image 20240420224606.png"
               }
             }
           }
@@ -146,9 +144,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "cf2cfa2b47d4e8aa",
+  "active": "d5c9f7116d31d581",
   "lastOpenFiles": [
+    "docs/문제풀이/Pasted image 20240420223604.png",
+    "docs/문제풀이/Pasted image 20240420223508.png",
+    "docs/문제풀이/ICPC World Finals 2022&2023 풀이.md",
+    "docs/문제풀이/Pasted image 20240420224606.png",
+    "docs/문제풀이/Pasted image 20240420214336.png",
     "docs/BOJ 문제풀이.md",
+    "docs/index.md",
     "docs/문제풀이/BOJ 17970 Islands.md",
     "docs/문제풀이/BOJ 20846 수열과 쿼리 40.md",
     "docs/문제풀이/BOJ 18796 이동하기 4.md",
@@ -156,12 +160,10 @@
     "docs/문제풀이/BOJ 14755 Pseudoknot.md",
     "docs/문제풀이/BOJ 18857-18867 제1회 논산 코드 페스티벌.md",
     "docs/문제풀이/ICPC World Finals 2021 풀이.md",
-    "docs/문제풀이/ICPC World Finals 2022&2023 풀이.md",
     "docs/문제풀이_미완성/BOJ 19657 Explore.md",
     "docs/문제풀이_미완성/BOJ 22899-22908 Orange Cup.md",
     "docs/문제풀이_미완성/BOJ 1906 자리 바꾸기.md",
     "docs/기타/ICPC Seoul Regional 2023 미러.md",
-    "docs/index.md",
     "README.md",
     "docs/알고리즘.md",
     "docs/기타/Pasted image 20231125165121.png",
@@ -171,11 +173,7 @@
     "docs/기타/Pasted image 20231125173945.png",
     "docs/기타/Pasted image 20231125173935.png",
     "docs/기타/Pasted image 20231125173619.png",
-    "docs/기타/Pasted image 20231125173543.png",
     "docs/기타/ICPC World Finals 2021.md",
-    "docs/기타/Pasted image 20231125165546.png",
-    "docs/기타/Pasted image 20231125162458.png",
-    "docs/알고리즘/Pasted image 20231002212453.png",
     "docs/알고리즘/삼각형 찾기.md",
     "docs/pdf/삼각형 찾기.pdf",
     "docs/알고리즘/링크-컷 트리.md"
