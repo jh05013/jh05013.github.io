@@ -1,0 +1,1277 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../BOJ%2017970%20Islands/">
+      
+      
+        <link rel="next" href="../BOJ%2018766-18771%2C%2019529%2C%2019240-19244%2C%2019592-19597/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
+    
+    
+      
+        <title>BOJ 18221-18227 2019 Overflow Programming Contest (OPC) - obsidian-mkdocs template</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#boj-18221-18227-2019-overflow-programming-contest-opc" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="obsidian-mkdocs template" class="md-header__button md-logo" aria-label="obsidian-mkdocs template" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            obsidian-mkdocs template
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              BOJ 18221-18227 2019 Overflow Programming Contest (OPC)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="pink" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="obsidian-mkdocs template" class="md-nav__button md-logo" aria-label="obsidian-mkdocs template" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    obsidian-mkdocs template
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BOJ%20%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 문제풀이
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    자료구조 및 알고리즘 튜토리얼
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    기타
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            기타
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EA%B8%B0%ED%83%80/ICPC%20Seoul%20Regional%202022%20%EB%AF%B8%EB%9F%AC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ICPC Seoul Regional 2022 미러
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EA%B8%B0%ED%83%80/ICPC%20Seoul%20Regional%202023%20%EB%AF%B8%EB%9F%AC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ICPC Seoul Regional 2023 미러
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EA%B8%B0%ED%83%80/ICPC%20World%20Finals%202021/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ICPC World Finals 2021
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EA%B8%B0%ED%83%80/%ED%94%BC%EB%B3%B4%EB%82%98%EC%B9%98%20%EC%88%98%EC%97%B4%20mod%20M%EC%9D%98%20%EC%A3%BC%EA%B8%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    피보나치 수열 mod M의 주기
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    문제풀이
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            문제풀이
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BOJ%2010049%20%E5%88%87%E3%82%8A%E5%8F%96%E3%82%8A%E7%B7%9A%20%28Cutting%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 10049 切り取り線 (Cutting)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BOJ%2011064%20Diameter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 11064 Diameter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BOJ%2014755%20Pseudoknot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 14755 Pseudoknot
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BOJ%2017838-17845%20%EC%A0%9C1%ED%9A%8C%20UNIST%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%20%EA%B2%BD%EC%8B%9C%EB%8C%80%ED%9A%8C%20Uni-CODE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 17838-17845 제1회 UNIST 알고리즘 프로그래밍 경시대회 Uni-CODE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BOJ%2017970%20Islands/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 17970 Islands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 18221-18227 2019 Overflow Programming Contest (OPC)
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BOJ%2018766-18771%2C%2019529%2C%2019240-19244%2C%2019592-19597/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 18766-18771, 19529, 19240-19244, 19592-19597
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BOJ%2018796%20%EC%9D%B4%EB%8F%99%ED%95%98%EA%B8%B0%204/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 18796 이동하기 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BOJ%2018857-18867%20%EC%A0%9C1%ED%9A%8C%20%EB%85%BC%EC%82%B0%20%EC%BD%94%EB%93%9C%20%ED%8E%98%EC%8A%A4%ED%8B%B0%EB%B2%8C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 18857-18867 제1회 논산 코드 페스티벌
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BOJ%2020665-20672%20shake%21%202020/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 20665-20672 shake! 2020
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BOJ%2020672%20%EB%8C%80%EC%84%B8%EB%8A%94%20%EB%B0%94%EC%9D%B4%EB%9F%AC%EC%8A%A4%EC%95%BC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 20672 대세는 바이러스야
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BOJ%2020846%20%EC%88%98%EC%97%B4%EA%B3%BC%20%EC%BF%BC%EB%A6%AC%2040/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 20846 수열과 쿼리 40
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BOJ%2022906%20%EC%9E%A5%EB%82%9C%EA%B0%90%20%EC%98%A4%EB%A0%8C%EC%A7%80%20%EB%A7%8C%EB%93%A4%EA%B8%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 22906 장난감 오렌지 만들기
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BOJ%2024943%20Sightseeing%20in%20Kyoto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 24943 Sightseeing in Kyoto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BOJ%205811%20%EB%82%99%ED%95%98%EC%82%B0%20%EA%B3%A0%EB%A6%AC%EB%93%A4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 5811 낙하산 고리들
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ICPC%20World%20Finals%202021%20%ED%92%80%EC%9D%B4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ICPC World Finals 2021 풀이
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ICPC%20World%20Finals%202022%262023%20%ED%92%80%EC%9D%B4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ICPC World Finals 2022&2023 풀이
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    문제풀이 미완성
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            문제풀이 미완성
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4_%EB%AF%B8%EC%99%84%EC%84%B1/BOJ%201906%20%EC%9E%90%EB%A6%AC%20%EB%B0%94%EA%BE%B8%EA%B8%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 1906 자리 바꾸기
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4_%EB%AF%B8%EC%99%84%EC%84%B1/BOJ%2019657%20Explore/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 19657 Explore
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4_%EB%AF%B8%EC%99%84%EC%84%B1/BOJ%2022899-22908%20Orange%20Cup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 22899-22908 Orange Cup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    알고리즘
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            알고리즘
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/Connection%20profile%20DP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Connection Profile DP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/HLD%20%ED%95%98%EB%82%98%EB%A1%9C%20%EA%B2%BD%EB%A1%9C%20%EC%BF%BC%EB%A6%AC%EC%99%80%20%EC%84%9C%EB%B8%8C%ED%8A%B8%EB%A6%AC%20%EC%BF%BC%EB%A6%AC%20%EB%AA%A8%EB%91%90%20%EC%A7%80%EC%9B%90%ED%95%98%EA%B8%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HLD 하나로 경로 쿼리와 서브트리 쿼리 모두 지원하기
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%8F%84%ED%98%95%EC%9D%98%20%ED%95%A9%EC%A7%91%ED%95%A9%EA%B3%BC%20%EB%84%93%EC%9D%B4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    도형의 합집합과 넓이
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%A7%81%ED%81%AC-%EC%BB%B7%20%ED%8A%B8%EB%A6%AC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    링크/컷 트리
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B0%98%EC%A0%84%EC%9D%98%20%EA%B0%9C%EC%88%98/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    반전
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EB%B3%BC%EB%A1%9D%EB%8B%A4%EA%B0%81%ED%98%95%20%EB%82%B4%EB%B6%80%20%EC%A0%90%20%EB%B9%A0%EB%A5%B4%EA%B2%8C%20%ED%8C%90%EB%B3%84/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    볼록다각형 내부 점 빠르게 판별
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%82%BC%EA%B0%81%ED%98%95%20%EC%B0%BE%EA%B8%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    삼각형 찾기
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%8A%A4%ED%82%B5%20%EB%A6%AC%EC%8A%A4%ED%8A%B8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    스킵 리스트
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%9E%AC%EA%B7%80%EC%A0%81%20%EA%B5%AC%EC%A1%B0%EC%9D%98%20k%EB%B2%88%EC%A7%B8%20%EC%9B%90%EC%86%8C%20%EA%B5%AC%ED%95%98%EA%B8%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    재귀적 구조의 k번째 원소 구하기
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="boj-18221-18227-2019-overflow-programming-contest-opc">BOJ 18221-18227 2019 Overflow Programming Contest (OPC)<a class="headerlink" href="#boj-18221-18227-2019-overflow-programming-contest-opc" title="Permanent link">&para;</a></h1>
+<p>https://www.acmicpc.net/category/detail/2139</p>
+<h1 id="boj-18221">BOJ 18221 교수님 저는 취업할래요<a class="headerlink" href="#boj-18221" title="Permanent link">&para;</a></h1>
+<p>그냥 구현 문제입니다.</p>
+<h1 id="boj-18222-">BOJ 18222 투에-모스 문자열<a class="headerlink" href="#boj-18222-" title="Permanent link">&para;</a></h1>
+<p><a href="../../%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%9E%AC%EA%B7%80%EC%A0%81%20%EA%B5%AC%EC%A1%B0%EC%9D%98%20k%EB%B2%88%EC%A7%B8%20%EC%9B%90%EC%86%8C%20%EA%B5%AC%ED%95%98%EA%B8%B0/">재귀적 구조의 k번째 원소 구하기</a></p>
+<h1 id="boj-18223">BOJ 18223 민준이와 마산 그리고 건우<a class="headerlink" href="#boj-18223" title="Permanent link">&para;</a></h1>
+<p>정점 a에서 b로 가는 최단거리를 dist(a, b)라고 했을 때, dist(1, N) = dist(1, P) + dist(P, N)이면 건우를 도울 수 있고, 아니면 건우를 도울 수 없습니다. dist는 [[다익스트라 알고리즘]]으로 구하면 됩니다.</p>
+<h1 id="boj-18224">BOJ 18224 미로에 갇힌 건우<a class="headerlink" href="#boj-18224" title="Permanent link">&para;</a></h1>
+<p>하루를 2m초라고 하고, 0, 1, ..., m-1초는 낮, m, ..., 2m-1초는 밤이라고 합시다. 이제 (행 번호, 열 번호, 현재 시각)을 하나의 상태로 보고 [[BFS]]를 돌립니다. 이러면 O(N^2M)개의 상태가 등장합니다.</p>
+<p>이걸 그냥 하면 하나의 상태에서 다음 상태로 가는 데 O(N)이 들어서 안 되고, 각 위치에서 벽을 넘었을 때의 도착점을 미리 계산해 둬야 합니다. 그건 O(N^3)만에 끝낼 수 있고, 그 후에는 한 상태에서 다음 상태로 가는 데 O(1)이 들기 때문에 시간 내에 돌아갑니다.</p>
+<p>구현량이 조금 있습니다.</p>
+<h1 id="boj-18225">BOJ 18225 당구공을 넣자<a class="headerlink" href="#boj-18225" title="Permanent link">&para;</a></h1>
+<p>우선 꼭짓점을 언제 치는지를 구합니다. p와 q가 서로소이므로, 당구공이 정수 좌표 점을 지나는 시간은 무조건 정수입니다. 따라서 다음 두 방정식을 만족하는 최소의 자연수 t를 찾으면 됩니다.</p>
+<p>(1) x + tp = 0 (mod W)</p>
+<p>(2) y + tq = 0 (mod H)</p>
+<p>좌표 범위가 작기 때문에 O(W+H)에 풀 수 있습니다.</p>
+<p>우선 t를 1씩 늘려 가면서 (1)이 성립하는지 봅니다. t가 100만을 넘어갔는데도 (1)이 성립하지 않으면 꼭짓점을 칠 수 없습니다.</p>
+<p>(1)이 성립하는 순간의 t를 구했다고 하면, 그 후로부터는 W/gcd(W, p)의 주기로 (1)이 성립하게 됩니다. 따라서 t를 W/gcd(W, p)씩 늘려가면서 (2)가 성립하는지 봅니다. 그 늘리는 작업을 100만 번 넘게 했는데도 (2)가 성립하지 않으면 꼭짓점을 칠 수 없습니다. (2)가 성립하는 순간의 t가 꼭짓점을 최초로 치는 순간입니다.</p>
+<p>이제 t초까지 당구공이 가로 방향 변을 치는 횟수와 세로 방향 변을 치는 횟수를 더하고 1을 빼면 됩니다. (1을 빼는 이유는 꼭짓점 때문입니다.)</p>
+<h1 id="boj-18226">BOJ 18226 안 읽은 사람은 누구?<a class="headerlink" href="#boj-18226" title="Permanent link">&para;</a></h1>
+<p>우선 안 읽은 사람의 수가 한 번이라도 감소하면 답은 0입니다.</p>
+<p>이제 각 사람마다 "마지막으로 읽은 메시지 번호"를 구하려고 합니다. 편의상 "마지막 번호"라고 부르겠습니다. 한 메시지도 읽지 않았다고 하면 그 번호를 0이라고 합시다.</p>
+<p>우선 각 사람마다 마지막 번호의 최솟값이 정해져 있습니다. 한 사람이 마지막으로 보낸 메시지 번호가 x이면, 그 사람의 마지막 번호는 x 이상이여야 합니다. 또한 모든 사람의 마지막 번호를 정렬했을 때 무슨 배열이 나와야 하는지도 정해져 있습니다. 안 읽은 사람의 수가 어떻게 변하는지를 살펴보면 됩니다.</p>
+<p>그러므로 우리는 이런 문제를 풀어야 합니다. "배열 A의 각 원소에 0 이상 m 이하의 정수를 써넣되, 원소마다 최솟값이 정해져 있고, 배열을 정렬했을 때 배열 B가 나와야 한다. 가능한 배열의 개수를 구하시오."</p>
+<p>이것은 A의 각 원소에서 B로 매칭을 하는 것으로 해석할 수 있습니다. 예를 들어 m=2, A의 각 원소의 최솟값이 0, 0, 1, 2이고, B = [0, 1, 2, 2]라고 할 때, 이런 그림을 생각할 수 있습니다.</p>
+<p><img alt="Pasted image 20220529164901.png" src="../Pasted%20image%2020220529164901.png" /></p>
+<p>이런 표에서 가능한 매칭의 개수를 세면 되는데, 사실 첫 번째 2와 두 번째 2를 구별하면 안 되기 때문에 전체 매칭의 개수에서 2를 나눠야 합니다. 구체적으로, B에서 같은 원소가 N개 들어있으면 N!로 나눠야 합니다. 나눠야 한다는 걸 염두에 두고, 매칭의 개수를 구해서 잘 나눠 주면 됩니다.</p>
+<p>그래서 매칭의 개수는 어떻게 구할까요? 일반성을 잃지 않고 A의 각 원소의 최솟값이 정렬되어 있다고 가정합시다. 그러면 각 원소가 B의 원소 몇 개와 매칭될 수 있는지를 이분 탐색으로 찾을 수 있고, 그 범위는 점차 증가하는 형태가 됩니다. 따라서 A의 x번째 원소가 B의 원소 y개와 매칭될 수 있으면, x번째 이전까지의 모든 원소가 매칭된 상태에서 남은 원소의 개수는 y-(x-1)입니다. 한 순간이라도 y &lt;= 0이 나오면 답은 0입니다.</p>
+<h1 id="boj-18227">BOJ 18227 성대나라의 물탱크<a class="headerlink" href="#boj-18227" title="Permanent link">&para;</a></h1>
+<p>각 정점에 물을 부을 때 항상 그 정점의 깊이 만큼 물을 붓기 때문에, 전부 1L씩이 아니라 차례대로 1L, 2L, ...이 채워진다고 해서 어려워지는 점은 없습니다. 그냥 1L씩 부어 놓고 정점의 깊이를 곱해서 출력하면 됩니다.</p>
+<p>그 상태에서 잘 생각해 보면, 문제를 이렇게 바꿀 수 있습니다. 쿼리의 내용은 다르지만 결국 출력하는 값은 동일함을 알 수 있습니다.</p>
+<p>1 A: 트리의 정점 중 하나의 값에 x를 더한다.</p>
+<p>2 A: 한 서브트리 내 정점의 값의 합을 구한다.</p>
+<p>이제 트리에 [[오일러 투어 트릭]]을 써서 일자로 펴면 전형적인 [[세그먼트 트리]] 문제가 됩니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+    
+  </body>
+</html>

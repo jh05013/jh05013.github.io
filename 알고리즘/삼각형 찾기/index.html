@@ -1,0 +1,1309 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../%EB%B3%BC%EB%A1%9D%EB%8B%A4%EA%B0%81%ED%98%95%20%EB%82%B4%EB%B6%80%20%EC%A0%90%20%EB%B9%A0%EB%A5%B4%EA%B2%8C%20%ED%8C%90%EB%B3%84/">
+      
+      
+        <link rel="next" href="../%EC%8A%A4%ED%82%B5%20%EB%A6%AC%EC%8A%A4%ED%8A%B8/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
+    
+    
+      
+        <title>삼각형 찾기 - obsidian-mkdocs template</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="obsidian-mkdocs template" class="md-header__button md-logo" aria-label="obsidian-mkdocs template" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            obsidian-mkdocs template
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              삼각형 찾기
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="pink" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="obsidian-mkdocs template" class="md-nav__button md-logo" aria-label="obsidian-mkdocs template" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    obsidian-mkdocs template
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BOJ%20%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 문제풀이
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    자료구조 및 알고리즘 튜토리얼
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    기타
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            기타
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EA%B8%B0%ED%83%80/ICPC%20Seoul%20Regional%202022%20%EB%AF%B8%EB%9F%AC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ICPC Seoul Regional 2022 미러
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EA%B8%B0%ED%83%80/ICPC%20Seoul%20Regional%202023%20%EB%AF%B8%EB%9F%AC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ICPC Seoul Regional 2023 미러
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EA%B8%B0%ED%83%80/ICPC%20World%20Finals%202021/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ICPC World Finals 2021
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EA%B8%B0%ED%83%80/%ED%94%BC%EB%B3%B4%EB%82%98%EC%B9%98%20%EC%88%98%EC%97%B4%20mod%20M%EC%9D%98%20%EC%A3%BC%EA%B8%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    피보나치 수열 mod M의 주기
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    문제풀이
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            문제풀이
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/BOJ%2010049%20%E5%88%87%E3%82%8A%E5%8F%96%E3%82%8A%E7%B7%9A%20%28Cutting%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 10049 切り取り線 (Cutting)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/BOJ%2011064%20Diameter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 11064 Diameter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/BOJ%2014755%20Pseudoknot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 14755 Pseudoknot
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/BOJ%2017838-17845%20%EC%A0%9C1%ED%9A%8C%20UNIST%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%20%EA%B2%BD%EC%8B%9C%EB%8C%80%ED%9A%8C%20Uni-CODE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 17838-17845 제1회 UNIST 알고리즘 프로그래밍 경시대회 Uni-CODE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/BOJ%2017970%20Islands/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 17970 Islands
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/BOJ%2018221-18227%202019%20Overflow%20Programming%20Contest%20%28OPC%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 18221-18227 2019 Overflow Programming Contest (OPC)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/BOJ%2018766-18771%2C%2019529%2C%2019240-19244%2C%2019592-19597/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 18766-18771, 19529, 19240-19244, 19592-19597
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/BOJ%2018796%20%EC%9D%B4%EB%8F%99%ED%95%98%EA%B8%B0%204/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 18796 이동하기 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/BOJ%2018857-18867%20%EC%A0%9C1%ED%9A%8C%20%EB%85%BC%EC%82%B0%20%EC%BD%94%EB%93%9C%20%ED%8E%98%EC%8A%A4%ED%8B%B0%EB%B2%8C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 18857-18867 제1회 논산 코드 페스티벌
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/BOJ%2020665-20672%20shake%21%202020/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 20665-20672 shake! 2020
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/BOJ%2020672%20%EB%8C%80%EC%84%B8%EB%8A%94%20%EB%B0%94%EC%9D%B4%EB%9F%AC%EC%8A%A4%EC%95%BC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 20672 대세는 바이러스야
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/BOJ%2020846%20%EC%88%98%EC%97%B4%EA%B3%BC%20%EC%BF%BC%EB%A6%AC%2040/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 20846 수열과 쿼리 40
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/BOJ%2022906%20%EC%9E%A5%EB%82%9C%EA%B0%90%20%EC%98%A4%EB%A0%8C%EC%A7%80%20%EB%A7%8C%EB%93%A4%EA%B8%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 22906 장난감 오렌지 만들기
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/BOJ%2024943%20Sightseeing%20in%20Kyoto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 24943 Sightseeing in Kyoto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/BOJ%205811%20%EB%82%99%ED%95%98%EC%82%B0%20%EA%B3%A0%EB%A6%AC%EB%93%A4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 5811 낙하산 고리들
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/ICPC%20World%20Finals%202021%20%ED%92%80%EC%9D%B4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ICPC World Finals 2021 풀이
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/ICPC%20World%20Finals%202022%262023%20%ED%92%80%EC%9D%B4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ICPC World Finals 2022&2023 풀이
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    문제풀이 미완성
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            문제풀이 미완성
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4_%EB%AF%B8%EC%99%84%EC%84%B1/BOJ%201906%20%EC%9E%90%EB%A6%AC%20%EB%B0%94%EA%BE%B8%EA%B8%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 1906 자리 바꾸기
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4_%EB%AF%B8%EC%99%84%EC%84%B1/BOJ%2019657%20Explore/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 19657 Explore
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4_%EB%AF%B8%EC%99%84%EC%84%B1/BOJ%2022899-22908%20Orange%20Cup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BOJ 22899-22908 Orange Cup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    알고리즘
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            알고리즘
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Connection%20profile%20DP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Connection Profile DP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HLD%20%ED%95%98%EB%82%98%EB%A1%9C%20%EA%B2%BD%EB%A1%9C%20%EC%BF%BC%EB%A6%AC%EC%99%80%20%EC%84%9C%EB%B8%8C%ED%8A%B8%EB%A6%AC%20%EC%BF%BC%EB%A6%AC%20%EB%AA%A8%EB%91%90%20%EC%A7%80%EC%9B%90%ED%95%98%EA%B8%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HLD 하나로 경로 쿼리와 서브트리 쿼리 모두 지원하기
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EB%8F%84%ED%98%95%EC%9D%98%20%ED%95%A9%EC%A7%91%ED%95%A9%EA%B3%BC%20%EB%84%93%EC%9D%B4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    도형의 합집합과 넓이
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EB%A7%81%ED%81%AC-%EC%BB%B7%20%ED%8A%B8%EB%A6%AC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    링크/컷 트리
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EB%B0%98%EC%A0%84%EC%9D%98%20%EA%B0%9C%EC%88%98/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    반전
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EB%B3%BC%EB%A1%9D%EB%8B%A4%EA%B0%81%ED%98%95%20%EB%82%B4%EB%B6%80%20%EC%A0%90%20%EB%B9%A0%EB%A5%B4%EA%B2%8C%20%ED%8C%90%EB%B3%84/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    볼록다각형 내부 점 빠르게 판별
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    삼각형 찾기
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EC%8A%A4%ED%82%B5%20%EB%A6%AC%EC%8A%A4%ED%8A%B8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    스킵 리스트
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EC%9E%AC%EA%B7%80%EC%A0%81%20%EA%B5%AC%EC%A1%B0%EC%9D%98%20k%EB%B2%88%EC%A7%B8%20%EC%9B%90%EC%86%8C%20%EA%B5%AC%ED%95%98%EA%B8%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    재귀적 구조의 k번째 원소 구하기
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="_1">삼각형 찾기<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p><a href="../../pdf/%EC%82%BC%EA%B0%81%ED%98%95%20%EC%B0%BE%EA%B8%B0.pdf">pdf로 보기</a></p>
+<p>단순 그래프의 정점의 개수를 <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span>, 간선의 개수를 <span class="arithmatex"><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span>이라고 합시다. 이 그래프에 있는 삼각형, 즉 길이 3의 사이클을 모두 찾을 수 있을까요?</p>
+<h1 id="ofracnmwofracnmw"><span class="arithmatex"><span class="MathJax_Preview">O(\frac{nm}{w})</span><script type="math/tex">O(\frac{nm}{w})</script></span><a class="headerlink" href="#ofracnmwofracnmw" title="Permanent link">&para;</a></h1>
+<p>간선 하나 <span class="arithmatex"><span class="MathJax_Preview">uv</span><script type="math/tex">uv</script></span>를 고정하고, 그 간선을 포함하는 삼각형을 찾아봅시다.</p>
+<p>인접 행렬을 만듭니다. 그러면 <span class="arithmatex"><span class="MathJax_Preview">u</span><script type="math/tex">u</script></span>와 <span class="arithmatex"><span class="MathJax_Preview">v</span><script type="math/tex">v</script></span>에 인접한 모든 정점 <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span>에 대해 삼각형 <span class="arithmatex"><span class="MathJax_Preview">uva</span><script type="math/tex">uva</script></span>를 찾을 수 있습니다. 인접 행렬의 <span class="arithmatex"><span class="MathJax_Preview">u</span><script type="math/tex">u</script></span>행과 <span class="arithmatex"><span class="MathJax_Preview">v</span><script type="math/tex">v</script></span>행에서 둘 다 인접 표시가 된 열을 찾으면 됩니다. 시간 복잡도는 <span class="arithmatex"><span class="MathJax_Preview">O(nm)</span><script type="math/tex">O(nm)</script></span>입니다.</p>
+<p>이 과정을 비트셋의 교집합 연산으로 최적화하면 시간 복잡도 <span class="arithmatex"><span class="MathJax_Preview">O(\frac{nm}{w})</span><script type="math/tex">O(\frac{nm}{w})</script></span>에 모든 삼각형을 찾을 수 있습니다. 64비트 컴퓨터에서 <span class="arithmatex"><span class="MathJax_Preview">w = 64</span><script type="math/tex">w = 64</script></span>입니다.</p>
+<h2 id="_2">구현<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>TODO</p>
+<h2 id="_3">연습문제<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://www.acmicpc.net/problem/20501">BOJ 20501 Facebook</a></li>
+<li><a href="https://atcoder.jp/contests/abc258/tasks/abc258_g">ABC258 Triangle</a></li>
+<li><a href="https://www.acmicpc.net/problem/8907">BOJ 8907 네온 사인</a> / <a href="https://www.acmicpc.net/problem/8096">BOJ 8096 Monochromatic Triangles</a>를 말그대로 붉은색, 파란색 삼각형을 직접 세서 풀 수 있습니다.</li>
+</ul>
+<h1 id="om-sqrt-mom-sqrt-m"><span class="arithmatex"><span class="MathJax_Preview">O(m \sqrt m)</span><script type="math/tex">O(m \sqrt m)</script></span><a class="headerlink" href="#om-sqrt-mom-sqrt-m" title="Permanent link">&para;</a></h1>
+<p>정점 <span class="arithmatex"><span class="MathJax_Preview">v</span><script type="math/tex">v</script></span>의 차수를 <span class="arithmatex"><span class="MathJax_Preview">\deg(v)</span><script type="math/tex">\deg(v)</script></span>라고 할 때, 다음 식을 생각해 봅시다.</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\sum_{uv \in E} \min(\deg(u), \deg(v))</div>
+<script type="math/tex; mode=display">\sum_{uv \in E} \min(\deg(u), \deg(v))</script>
+</div>
+<p>이 값은 <span class="arithmatex"><span class="MathJax_Preview">O(m \sqrt m)</span><script type="math/tex">O(m \sqrt m)</script></span>입니다.</p>
+<p><strong>증명.</strong> <span class="arithmatex"><span class="MathJax_Preview">\sum_{v \in V} \deg(v) = 2m</span><script type="math/tex">\sum_{v \in V} \deg(v) = 2m</script></span>이므로, <span class="arithmatex"><span class="MathJax_Preview">\deg(v) \geq \sqrt m</span><script type="math/tex">\deg(v) \geq \sqrt m</script></span>인 정점은 많아야 <span class="arithmatex"><span class="MathJax_Preview">O(\sqrt m)</span><script type="math/tex">O(\sqrt m)</script></span>개입니다. 그래프가 단순하므로, <span class="arithmatex"><span class="MathJax_Preview">\min(\deg(u), \deg(v)) \geq \sqrt m</span><script type="math/tex">\min(\deg(u), \deg(v)) \geq \sqrt m</script></span>인 간선은 많아야 <span class="arithmatex"><span class="MathJax_Preview">O(m)</span><script type="math/tex">O(m)</script></span>개입니다. 나머지 간선은 <span class="arithmatex"><span class="MathJax_Preview">\min(\deg(u), \deg(v)) \leq \sqrt m</span><script type="math/tex">\min(\deg(u), \deg(v)) \leq \sqrt m</script></span>입니다. ■</p>
+<p>이제 정점을 차수 순으로, 동점일 경우 번호 순으로 정렬해서 위에서 아래로 늘어놓읍시다. 위 <span class="arithmatex"><span class="MathJax_Preview">v</span><script type="math/tex">v</script></span>에서 아래 <span class="arithmatex"><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span>로 가는 간선을 <span class="arithmatex"><span class="MathJax_Preview">v \downarrow p</span><script type="math/tex">v \downarrow p</script></span>라고 합시다.</p>
+<p>모든 간선 <span class="arithmatex"><span class="MathJax_Preview">v \downarrow p</span><script type="math/tex">v \downarrow p</script></span>에 대해 간선 <span class="arithmatex"><span class="MathJax_Preview">pq</span><script type="math/tex">pq</script></span>(위아래 상관없음)를 모두 찾을 수 있습니다. 예를 들면 아래와 같은 경우가 있습니다.</p>
+<p><img alt="Pasted image 20230923182906.png" src="../Pasted%20image%2020230923182906.png" /></p>
+<p>그러한 <span class="arithmatex"><span class="MathJax_Preview">(v, p, q)</span><script type="math/tex">(v, p, q)</script></span> 쌍은 <span class="arithmatex"><span class="MathJax_Preview">O(\sum_{v \rightarrow p \in E} \deg(p)) = O(m \sqrt m)</span><script type="math/tex">O(\sum_{v \rightarrow p \in E} \deg(p)) = O(m \sqrt m)</script></span>개 존재합니다. <span class="arithmatex"><span class="MathJax_Preview">\min(\deg(v), \deg(p)) = \deg(p)</span><script type="math/tex">\min(\deg(v), \deg(p)) = \deg(p)</script></span>이기 때문입니다.</p>
+<p>따라서, 위에서 아래로 가는 <span class="arithmatex"><span class="MathJax_Preview">v \downarrow p \downarrow q</span><script type="math/tex">v \downarrow p \downarrow q</script></span> 꼴의 경로도 당연히 모두 찾을 수 있습니다.</p>
+<p>이제 각 <span class="arithmatex"><span class="MathJax_Preview">v \downarrow p \downarrow q</span><script type="math/tex">v \downarrow p \downarrow q</script></span>에 대해 <span class="arithmatex"><span class="MathJax_Preview">q</span><script type="math/tex">q</script></span>와 <span class="arithmatex"><span class="MathJax_Preview">v</span><script type="math/tex">v</script></span>가 인접한지 확인하면 됩니다. 간단하게는 해시셋으로 구현할 수 있지만 이는 너무 무겁고, 다음과 같은 방법으로 진행할 수 있습니다.
+- 우선 크기 <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span>의 배열 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>를 초기화합니다.
+- 각 <span class="arithmatex"><span class="MathJax_Preview">v</span><script type="math/tex">v</script></span>에 대해...
+  - 각 간선 <span class="arithmatex"><span class="MathJax_Preview">v \downarrow p</span><script type="math/tex">v \downarrow p</script></span>에 대해 <span class="arithmatex"><span class="MathJax_Preview">A[p]</span><script type="math/tex">A[p]</script></span>를 마킹합니다. 즉 <span class="arithmatex"><span class="MathJax_Preview">A[p]</span><script type="math/tex">A[p]</script></span>는 "<span class="arithmatex"><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span>가 <span class="arithmatex"><span class="MathJax_Preview">v</span><script type="math/tex">v</script></span>의 아래에 있으면서 인접하다"라는 뜻입니다.
+  - 다시 각 간선 <span class="arithmatex"><span class="MathJax_Preview">v \downarrow p</span><script type="math/tex">v \downarrow p</script></span>에 대해, 간선 <span class="arithmatex"><span class="MathJax_Preview">p \downarrow q</span><script type="math/tex">p \downarrow q</script></span>들을 순회합니다. <span class="arithmatex"><span class="MathJax_Preview">A[q]</span><script type="math/tex">A[q]</script></span>가 마킹되어 있다면 삼각형 <span class="arithmatex"><span class="MathJax_Preview">vpq</span><script type="math/tex">vpq</script></span>를 찾았습니다.
+  - 다시 각 간선 <span class="arithmatex"><span class="MathJax_Preview">v \downarrow p</span><script type="math/tex">v \downarrow p</script></span>에 대해 <span class="arithmatex"><span class="MathJax_Preview">A[p]</span><script type="math/tex">A[p]</script></span>의 마킹을 지웁니다.</p>
+<p>각 삼각형은 <span class="arithmatex"><span class="MathJax_Preview">a \downarrow b \downarrow c</span><script type="math/tex">a \downarrow b \downarrow c</script></span> 꼴의 경로를 정확히 하나씩 갖고 있으므로, 각 삼각형이 정확히 한 번씩 세어집니다. 총 시간 복잡도는 <span class="arithmatex"><span class="MathJax_Preview">O(m \sqrt m)</span><script type="math/tex">O(m \sqrt m)</script></span>입니다. 같은 방법으로 그래프에는 삼각형이 최대 <span class="arithmatex"><span class="MathJax_Preview">O(m \sqrt m)</span><script type="math/tex">O(m \sqrt m)</script></span>개 있음을 증명할 수 있습니다.</p>
+<h2 id="_4">구현<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p><a href="https://jh05013.github.io/ps_snippets/src/ps_snippets/graph/degree_ordered_graph.rs.html">https://jh05013.github.io/ps_snippets/src/ps_snippets/graph/degree_ordered_graph.rs.html</a></p>
+<h2 id="_5">연습문제<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://judge.yosupo.jp/problem/enumerate_triangles">LC Enumerate Triangles</a></li>
+<li><a href="https://www.acmicpc.net/problem/1762">BOJ 1762 평면그래프와 삼각형</a>을 평면그래프 조건 없이 풀 수 있습니다.</li>
+</ul>
+<h2 id="_6">추가 연습문제<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="boj-14571-in-om-sqrt-mom-sqrt-m"><a href="https://www.acmicpc.net/problem/14571">BOJ 14571 모래시계</a> in <span class="arithmatex"><span class="MathJax_Preview">O(m \sqrt m)</span><script type="math/tex">O(m \sqrt m)</script></span><a class="headerlink" href="#boj-14571-in-om-sqrt-mom-sqrt-m" title="Permanent link">&para;</a></h3>
+<p>모든 삼각형을 <span class="arithmatex"><span class="MathJax_Preview">O(m \sqrt m)</span><script type="math/tex">O(m \sqrt m)</script></span>에 찾습니다. 각 정점 <span class="arithmatex"><span class="MathJax_Preview">v</span><script type="math/tex">v</script></span>에 대해, <span class="arithmatex"><span class="MathJax_Preview">v</span><script type="math/tex">v</script></span>를 포함하는 삼각형 <span class="arithmatex"><span class="MathJax_Preview">vpq</span><script type="math/tex">vpq</script></span>에 대해 간선 <span class="arithmatex"><span class="MathJax_Preview">pq</span><script type="math/tex">pq</script></span>의 목록을 저장해 둡니다.</p>
+<p>모래시계의 중심 <span class="arithmatex"><span class="MathJax_Preview">v</span><script type="math/tex">v</script></span>를 고정하고, <span class="arithmatex"><span class="MathJax_Preview">v</span><script type="math/tex">v</script></span>에 대한 간선 <span class="arithmatex"><span class="MathJax_Preview">pq</span><script type="math/tex">pq</script></span>로 이루어진 부분그래프를 생각해 봅시다. 이 부분그래프의 간선 <span class="arithmatex"><span class="MathJax_Preview">e</span><script type="math/tex">e</script></span>개 중 두 개를 고르되 겹치는 정점이 없도록 하는 경우의 수를 구하면 됩니다. 첫 번째 간선 <span class="arithmatex"><span class="MathJax_Preview">ab</span><script type="math/tex">ab</script></span>를 고르고, 나머지 간선 중 <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span> 또는 <span class="arithmatex"><span class="MathJax_Preview">b</span><script type="math/tex">b</script></span>와 이어지는 것을 모두 제외하면, 남은 간선의 개수는 <span class="arithmatex"><span class="MathJax_Preview">e - \deg(a) - \deg(b) + 1</span><script type="math/tex">e - \deg(a) - \deg(b) + 1</script></span>입니다. 이때 <span class="arithmatex"><span class="MathJax_Preview">\deg</span><script type="math/tex">\deg</script></span>는 부분그래프 기준입니다.</p>
+<p>부분그래프에서 차수를 관리하는 것은 위의 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 배열과 같은 방식으로 진행할 수 있습니다.</p>
+<h3 id="_7">사각형의 개수<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>삼각형뿐만 아니라 사각형도 셀 수 있습니다! 사각형은 최대 <span class="arithmatex"><span class="MathJax_Preview">O(m^2)</span><script type="math/tex">O(m^2)</script></span>개 있을 수 있지만, 개수는 <span class="arithmatex"><span class="MathJax_Preview">O(m \sqrt m)</span><script type="math/tex">O(m \sqrt m)</script></span>에 구할 수 있습니다.</p>
+<p>메인 아이디어는 아래 그림과 같습니다. 사각형을 <span class="arithmatex"><span class="MathJax_Preview">v \downarrow p \rightarrow q</span><script type="math/tex">v \downarrow p \rightarrow q</script></span> 꼴의 경로 두 개로 분할할 수 있으니, 그런 형태의 경로를 세는 것입니다. 각 <span class="arithmatex"><span class="MathJax_Preview">v \downarrow p</span><script type="math/tex">v \downarrow p</script></span>에 대해, <span class="arithmatex"><span class="MathJax_Preview">v</span><script type="math/tex">v</script></span>의 아래에 있으면서 <span class="arithmatex"><span class="MathJax_Preview">v</span><script type="math/tex">v</script></span>와 <span class="arithmatex"><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span>에 인접한 정점 <span class="arithmatex"><span class="MathJax_Preview">q</span><script type="math/tex">q</script></span>의 개수를 <span class="arithmatex"><span class="MathJax_Preview">k_{vp}</span><script type="math/tex">k_{vp}</script></span>라고 하면, 모든 <span class="arithmatex"><span class="MathJax_Preview">\frac{k_{vq}(k_{vq}-1)}{2}</span><script type="math/tex">\frac{k_{vq}(k_{vq}-1)}{2}</script></span>의 합을 구하면 됩니다.</p>
+<p><img alt="Pasted image 20230923185408.png" src="../Pasted%20image%2020230923185408.png" /></p>
+<p>앞에서 보았듯이 <span class="arithmatex"><span class="MathJax_Preview">k_{vq} &gt; 0</span><script type="math/tex">k_{vq} > 0</script></span>인 <span class="arithmatex"><span class="MathJax_Preview">(v, q)</span><script type="math/tex">(v, q)</script></span>는 <span class="arithmatex"><span class="MathJax_Preview">O(m \sqrt m)</span><script type="math/tex">O(m \sqrt m)</script></span>개이고, 0보다 큰 모든 <span class="arithmatex"><span class="MathJax_Preview">k_{vq}</span><script type="math/tex">k_{vq}</script></span>를 <span class="arithmatex"><span class="MathJax_Preview">O(m \sqrt m)</span><script type="math/tex">O(m \sqrt m)</script></span>에 구할 수 있습니다.</p>
+<p>위 과정을 조금 변형하면 각 정점을 포함하는 사각형의 개수도 셀 수 있습니다.</p>
+<h3 id="boj-2390"><a href="https://www.acmicpc.net/problem/2390">BOJ 2390 ⎐</a><a class="headerlink" href="#boj-2390" title="Permanent link">&para;</a></h3>
+<p>제가 이 알고리즘을 배운 계기가 된 문제입니다. 검수하면서 풀이를 고민하다가 "사각형을 <span class="arithmatex"><span class="MathJax_Preview">O(M^2)</span><script type="math/tex">O(M^2)</script></span>보다 빠르게 셀 수 없는데 어떻게 ⎐를 셀 수 있지?"라고 생각했는데, 사각형을 <span class="arithmatex"><span class="MathJax_Preview">O(M \sqrt M)</span><script type="math/tex">O(M \sqrt M)</script></span>에 셀 수 있더라고요...</p>
+<p>바로 위에서 보았듯이, 각 정점 <span class="arithmatex"><span class="MathJax_Preview">v</span><script type="math/tex">v</script></span>에 대해 <span class="arithmatex"><span class="MathJax_Preview">v</span><script type="math/tex">v</script></span>를 포함하는 사각형의 개수를 셉니다. 이제 ⎐에서 차수가 4인 정점을 "⎐의 중심"이라고 하면, 각 정점 <span class="arithmatex"><span class="MathJax_Preview">v</span><script type="math/tex">v</script></span>에 대해 <span class="arithmatex"><span class="MathJax_Preview">v</span><script type="math/tex">v</script></span>가 중심인 ⎐의 개수를 셉니다. 사각형의 개수에 <span class="arithmatex"><span class="MathJax_Preview">deg(v)-2</span><script type="math/tex">deg(v)-2</script></span>를 곱하면 됩니다.</p>
+<p>모든 <span class="arithmatex"><span class="MathJax_Preview">v</span><script type="math/tex">v</script></span>에 대해 위 값을 구하고 합하면, 놀랍게도 크기 5의 완전 그래프에서 출력이 60이 나옵니다. 왜냐하면 다음 🪁 모양 케이스를 제외하지 않았기 때문입니다.</p>
+<p><img alt="Pasted image 20231002212453.png" src="../Pasted%20image%2020231002212453.png" /></p>
+<p>🪁를 세기 위해, 각 간선 <span class="arithmatex"><span class="MathJax_Preview">pq</span><script type="math/tex">pq</script></span>에 대해 <span class="arithmatex"><span class="MathJax_Preview">pq</span><script type="math/tex">pq</script></span>를 포함하는 삼각형의 개수를 셉니다. 그 후 각 간선 <span class="arithmatex"><span class="MathJax_Preview">pq</span><script type="math/tex">pq</script></span>에 대해 <span class="arithmatex"><span class="MathJax_Preview">pq</span><script type="math/tex">pq</script></span>가 사각형의 대각선인 🪁의 개수를 세줍니다. 삼각형의 개수를 <span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span>라고 할 때 <span class="arithmatex"><span class="MathJax_Preview">\binom{k}{2} (deg(p)-3) (deg(q)-3)</span><script type="math/tex">\binom{k}{2} (deg(p)-3) (deg(q)-3)</script></span>이 답입니다.</p>
+<p>참고로 이 ⎐ 문양의 정체는 <a href="https://en.wikipedia.org/wiki/Open_collector">NPN open collector</a>로, 전기회로에서 사용하는 문양입니다.</p>
+<h3 id="boj-28200-4"><a href="https://www.acmicpc.net/problem/28200">BOJ 28200 4</a><a class="headerlink" href="#boj-28200-4" title="Permanent link">&para;</a></h3>
+<p>모든 삼각형을 찾습니다. 각 정점 <span class="arithmatex"><span class="MathJax_Preview">v</span><script type="math/tex">v</script></span>에 대해, <span class="arithmatex"><span class="MathJax_Preview">v</span><script type="math/tex">v</script></span>를 포함하는 삼각형 <span class="arithmatex"><span class="MathJax_Preview">vpq</span><script type="math/tex">vpq</script></span>에 대해 간선 <span class="arithmatex"><span class="MathJax_Preview">pq</span><script type="math/tex">pq</script></span>의 목록을 저장해 둡니다.</p>
+<p>한 점 <span class="arithmatex"><span class="MathJax_Preview">v</span><script type="math/tex">v</script></span>를 고정하고, <span class="arithmatex"><span class="MathJax_Preview">v</span><script type="math/tex">v</script></span>에 대한 간선 <span class="arithmatex"><span class="MathJax_Preview">pq</span><script type="math/tex">pq</script></span>로 이루어진 부분그래프를 생각해 봅시다. 이 부분그래프에서 삼각형의 개수를 세면 되는데, 대부분의 정점에 대해서는 부분그래프가 작을 것이기 때문에 비트셋으로 풀 수 있습니다. 자세한 내용은 <a href="https://qoj.ac/download.php?type=attachments&amp;id=1212&amp;r=2">에디토리얼</a>을 참조하세요.</p>
+<h1 id="_8">참조<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h1>
+<ul>
+<li><a href="https://arxiv.org/abs/2303.06090">Paul Burkhardt, David G. Harris, Simple and efficient four-cycle counting on sparse graphs</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+    
+  </body>
+</html>
