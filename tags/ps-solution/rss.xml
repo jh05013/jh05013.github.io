@@ -1,0 +1,1168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>jh05013 - ps-solution</title>
+      <link>https://jh05013.github.io</link>
+      <description></description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://jh05013.github.io/tags/ps-solution/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Wed, 26 Jun 2024 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>ICPC World Finals 2022&#x2F;23 풀이</title>
+          <pubDate>Wed, 26 Jun 2024 00:00:00 +0000</pubDate>
+          <author>jh05013</author>
+          <link>https://jh05013.github.io/blog/wf2022/</link>
+          <guid>https://jh05013.github.io/blog/wf2022/</guid>
+          <description xml:base="https://jh05013.github.io/blog/wf2022/">&lt;p&gt;구현하지 않은 게 있어서 틀린 내용이 있을 수도 있습니다.
+제가 구현해서 정답 받은 건 ✅로 표시했습니다.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;46p-47g-turning-red&quot;&gt;46P&#x2F;47G. Turning Red&lt;&#x2F;h1&gt;
+&lt;p&gt;스위치 $i$를 누른 횟수를 $x_i$라고 합시다. $x_i$는 0, 1, 2 중 하나여야 최적입니다.&lt;&#x2F;p&gt;
+&lt;p&gt;각 전구가 최대 두 스위치에 연결되어 있다는 점에 주목합시다.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;전구가 아무 스위치에도 연결되지 않았다면, 그 전구가 붉은색이면 무시합니다. 아니라면 impossible입니다.&lt;&#x2F;li&gt;
+&lt;li&gt;전구가 스위치 1개 $i$에만 연결되었다면, $x_i$의 값이 하나로 고정됩니다.&lt;&#x2F;li&gt;
+&lt;li&gt;전구가 스위치 2개 $i, j$에 연결되었다면, $x_i + x_j$ mod 3의 값이 하나로 고정됩니다.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;스위치 1개짜리 전구로 $x_i$ 값들을 고정한 다음, 스위치 2개짜리 전구를 간선 $(i, j)$로 나타내고, 가중치를 그 고정된 $x_i + x_j$ mod 3값으로 둡시다. 이제 이분그래프 판별과 비슷한 방법으로 모든 조건에 맞는 해가 있는지 판별할 수 있습니다.&lt;&#x2F;p&gt;
+&lt;p&gt;조건에 맞는 해가 있다면, 연결 요소마다 가능한 해가 최대 3개입니다. 3개의 후보 중 최적인 것을 골라서 모두 합하면 됩니다.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;white-check-mark-46q-doing-the-container-shuffle&quot;&gt;✅ 46Q. Doing the Container Shuffle&lt;&#x2F;h1&gt;
+&lt;p&gt;기댓값의 선형성에 의해&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;1을 뽑는 데 필요한 행동 수의 기댓값&lt;&#x2F;li&gt;
+&lt;li&gt;모든 $x$에 대해, $x$를 막 뽑은 상태에서 $x+1$을 뽑는 데 필요한 행동 수의 기댓값&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;의 합을 구하면 됩니다. 편의상 스택에서 트럭으로 옮기는 건 제외하고, 최종 답에 $n$을 더해서 출력합시다.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;1을 뽑는 데 필요한 행동 수의 기댓값&lt;&#x2F;strong&gt;은 맨 처음에 1 위에 쌓인 물건 개수의 기댓값과 같습니다. 다시 기댓값의 선형성에 의해 이 값은 (순열에서 1 뒤에 있는 물건의 개수) &#x2F; 2입니다.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;$x$를 막 뽑은 상태에서 $x+1$을 뽑는 데 필요한 행동 수의 기댓값&lt;&#x2F;strong&gt;은 좀 더 복잡합니다. 일반성을 잃지 않고 $x$가 맨 처음에 왼쪽 스택에 들어갔다고 합시다.&lt;&#x2F;p&gt;
+&lt;p&gt;우선 순열에서 $x+1$이 $x$보다 먼저 등장하는 경우를 생각해 봅시다. 순열을 &lt;code&gt;A x+1 B x C&lt;&#x2F;code&gt; 로 나타내면 스택의 맨 처음 상태로는 다음 두 경우가 가능하고, 각각이 나올 확률은 1&#x2F;2입니다.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;wf221.png&quot; alt=&quot;.&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;$x$를 막 뽑은 상태에서 스택의 모습은 다음과 같습니다. $C_L$이 거꾸로 써진 것은 순서가 뒤집혀 있음을 나타냅니다.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;wf223.png&quot; alt=&quot;.&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;$A_L$의 크기를 $|A_L|$, 그 크기의 기댓값을 $E[|A_L|]$이라고 합시다. 그러면 $E[|A_L|] = \frac{|A|}{2}$입니다. $A_R$, $B_L$, $B_R$, $C_L$, $C_R$도 마찬가지입니다. 단, $|A|$를 구할 때는 $x$보다 큰 수만 세어야 합니다. 그보다 작은 수는 이미 제거되었기 때문입니다. 이제 왼쪽의 기댓값은 $\frac{|B|}{2}$, 오른쪽은 $\frac{|B|}{2} + |C|$이므로, 전체 기댓값은 둘의 평균인 $\frac{|B| + |C|}{2}$입니다.&lt;&#x2F;p&gt;
+&lt;p&gt;순열에서 $x+1$이 $x$보다 나중에 나오는 경우도 비슷하게 풀어보면&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;wf224.png&quot; alt=&quot;.&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;이번에도 $\frac{|B| + |C|}{2}$가 나옵니다.&lt;&#x2F;p&gt;
+&lt;p&gt;이를 종합해 보면, 순열에서 $x$와 $x+1$중 먼저 나오는 쪽을 찾고, 그의 오른쪽에 있으면서 $x+1$보다 큰 수의 개수를 구해 2로 나누면 됩니다. 이 값은 펜윅 트리로 구할 수 있습니다.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;46r-zoo-management&quot;&gt;46R. Zoo Management&lt;&#x2F;h1&gt;
+&lt;p&gt;한 번의 행동에서 사용한 간선은 vertex-disjoint cycle들을 이뤄야 합니다. 편의상 한번에 한 사이클만 고른다고 합시다. 그러면 각 행동은 “사이클을 하나 골라서 한 칸 아무 방향으로 회전시킨다“라고 할 수 있습니다.&lt;&#x2F;p&gt;
+&lt;p&gt;아무 사이클에도 속하지 않는 간선, 즉 단절선은 영원히 사용할 수 없으므로 그래프에서 지워버릴 수 있습니다. 그러면 biconnected component 여러 개가 남고, 각각을 독립적으로 풀면 됩니다.&lt;&#x2F;p&gt;
+&lt;p&gt;Biconnected component가 정확히 사이클 1개라면 그냥 회전만 할 수 있습니다. KMP나 해싱 등 아무 방법으로 한 수열이 다른 수열의 회전인지 판별하면 됩니다. 예를 들어 KMP를 쓴다면, “다른 수열“을 복제하고 이어 붙여서 두 배로 늘리고, 거기서 “한 수열“을 찾으면 됩니다.&lt;&#x2F;p&gt;
+&lt;p&gt;Biconnected component가 사이클 2개 이상으로 이루어져 있다면, 모든 순열이 가능할 것처럼 생겼습니다. 하지만 정확히 그렇진 않습니다. 결론부터 말하면, component에 &lt;strong&gt;짝수&lt;&#x2F;strong&gt; 길이 사이클이 없으면 짝순열만 만들 수 있고, 아니면 모든 순열을 만들 수 있습니다. 증명은 생략하나, 사각형 두 개가 정점 하나를 공유하고 있는 그래프를 생각해보면 감이 올 수도 있습니다.&lt;&#x2F;p&gt;
+&lt;p&gt;홀수 길이 사이클은 이분 그래프 판별로 풀 수 있다는 점이 잘 알려져 있는데, 짝수 길이 사이클은 어떻게 찾을까요? 짝수 길이 사이클이 없으면 component 전체가 선인장입니다. 간선을 공유하는 사이클이 2개 있다면 거기서 짝수 길이 사이클을 찾을 수 있기 때문입니다. 따라서 선인장인지 판별하고, 선인장의 각 블록 중 하나라도 짝수 길이 사이클인지 보면 됩니다.&lt;&#x2F;p&gt;
+&lt;p&gt;짝순열을 써서 우리가 원하는 동물 배치를 할 수 있다는 사실은 어떻게 알 수 있을까요? 동물 번호가 중복될 수도 있어서 곤란해 보입니다. 다행히도 생각보다 간단합니다. 중복되는 동물이 있다면, 두 배치가 그냥 순열 관계인지만 확인하면 됩니다. 중복되는 동물 한 쌍을 교환하면 순열의 홀짝성이 바뀌지만 배치는 그대로니까, 어떤 배치를 만들든 홀순열과 짝순열이 모두 가능하기 때문입니다. 중복되는 동물이 없다면 평소에 하던 대로 하면 됩니다.&lt;&#x2F;p&gt;
+&lt;p&gt;혹시나 해서 첨언하자면 순열의 홀짝성을 판별할 때 세그트리&#x2F;펜윅트리를 쓸 필요가 전혀 없습니다. 그냥 순열을 사이클로 분할했을 때 짝수 사이클의 개수의 홀짝성이 답입니다.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;white-check-mark-46s-47j-bridging-the-gap&quot;&gt;✅ 46S&#x2F;47J. Bridging the Gap&lt;&#x2F;h1&gt;
+&lt;p&gt;$N &amp;lt; C$이면 그냥 입력된 수의 최댓값이 답입니다. ($N = C$여도 그렇지만, 상관없습니다.) 이제 $N \geq C$라고 가정합니다. 또한 건너는 시간이 오름차순으로 정렬되어 있다고 가정합니다. 즉 $i &amp;lt; j$이면 사람 $i$가 $j$보다 빠르거나 같습니다.&lt;&#x2F;p&gt;
+&lt;p&gt;$C = 2$의 경우 &lt;a href=&quot;https:&#x2F;&#x2F;www.acmicpc.net&#x2F;problem&#x2F;4381&quot;&gt;이미 BOJ에 있는 문제&lt;&#x2F;a&gt;고, &lt;a href=&quot;https:&#x2F;&#x2F;page.mi.fu-berlin.de&#x2F;rote&#x2F;Papers&#x2F;pdf&#x2F;Crossing+the+bridge+at+night.pdf&quot;&gt;이런 논문&lt;&#x2F;a&gt;이 있습니다. 그 경우의 풀이를 찾고 더 큰 $C$에 대해 일반화하면 &lt;a href=&quot;https:&#x2F;&#x2F;www.sciencedirect.com&#x2F;science&#x2F;article&#x2F;pii&#x2F;S0167642315000118&quot;&gt;다른 논문&lt;&#x2F;a&gt; 및 이 문제의 풀이를 얻습니다. 이 글에서는 $C = 2$일 때의 증명과 일반적인 $C$에서의 결론만 소개하고, 일반적인 $C$에서의 증명은 생략합니다.&lt;&#x2F;p&gt;
+&lt;p&gt;$C = 2$라고 가정합니다. 다리를 건너가는 것을 앞 횡단, 다시 건너 돌아오는 것을 뒤 횡단, 둘을 묶어서 횡단이라고 부릅시다.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;정리 1.&lt;&#x2F;strong&gt; 모든 앞 횡단의 크기가 2명, 모든 뒤 횡단의 크기가 1명인 최적해가 존재합니다.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;증명.&lt;&#x2F;strong&gt; 그렇지 않은 횡단이 있다면, 그중 첫 횡단을 잡아 “문제의 횡단“이라고 합시다. 그럼 다음 4가지 케이스가 있고, 각각 더 좋은 해를 만들 수 있습니다. &lt;code&gt;&quot;&quot;&lt;&#x2F;code&gt; 로 감싼 것이 문제의 횡단입니다.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;z-code&quot;&gt;&lt;code&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Case 1: &amp;quot;앞[x]&amp;quot; 뒤[x] ...
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;  -&amp;gt; ...
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Case 2: ... 앞[y,z] ...&amp;lt;x와 y는 안 움직임&amp;gt;... 뒤[y] &amp;quot;앞[x]&amp;quot; ...
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;  -&amp;gt; ... 앞[x,z] ...&amp;lt;x와 y는 안 움직임&amp;gt;... ...
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Case 3: ... 뒤[x] ...&amp;lt;x와 y는 안 움직임&amp;gt;... 뒤[y] &amp;quot;앞[x]&amp;quot; ...
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;  -&amp;gt; ... 뒤[y] ...&amp;lt;x와 y는 안 움직임&amp;gt;... ...
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Case 4: ... 앞[x,z] ...&amp;lt;x는 안 움직임&amp;gt;... &amp;quot;뒤[x,y]&amp;quot; ...
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;  -&amp;gt; ... 앞[z] ...&amp;lt;x는 안 움직임&amp;gt;... 뒤[y] ...
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;■&lt;&#x2F;p&gt;
+&lt;p&gt;그러한 최적해에서 앞 횡단은 $N-1$개, 뒤 횡단은 $N-2$개입니다.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;정리 2.&lt;&#x2F;strong&gt; 횡단에 소요되는 전체 시간은 (모든 앞 횡단에 대해, 더 느린 사람의 시간의 합) + (모든 사람에 대해, (그 사람이 건너는 시간) &lt;code&gt;*&lt;&#x2F;code&gt; (그 사람이 앞으로 횡단한 횟수 - 1)의 합)입니다.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;증명.&lt;&#x2F;strong&gt; 앞 항은 모든 앞 횡단의 시간의 합입니다. (앞으로 횡단한 횟수 - 1)은 (뒤로 횡단한 횟수)와 같고, 정리 1에 의해 모든 뒤 횡단의 크기는 1이므로, 뒤 항은 모든 뒤 횡단의 시간의 합입니다. ■&lt;&#x2F;p&gt;
+&lt;p&gt;정리 2는 앞 횡단만 가지고 전체 횡단 시간을 계산할 수 있음을 의미합니다. 그렇다면 아예 뒤 횡단을 버리고, 특정 조건이 성립하는 앞 횡단만 잘 정해서 최적해를 탐색할 수 있으면 좋을 것 같습니다. 실제로 그런 데다가, 앞 횡단의 순서도 중요하지 않습니다.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;정리 3.&lt;&#x2F;strong&gt; 두 명짜리 앞 횡단 $p_1q_1, \cdots, p_{N-1}q_{N-1}$이 있을 때, 각 사람이 앞 횡단 중 적어도 하나에 포함된다면, 앞 횡단의 순서가 $p_1q_1, \cdots, p_{N-1}q_{N-1}$ 의 어떤 한 순열인 올바른 횡단 순서가 존재합니다.&lt;&#x2F;p&gt;
+&lt;p&gt;앞 횡단을 $pq$로 표기했는데, 이때 $p$와 $q$ 사이 대소관계는 정해두지 않았습니다. $p &amp;lt; q$일 수도 있고 $p &amp;gt; q$일 수도 있습니다.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;증명.&lt;&#x2F;strong&gt; 앞 횡단을 한 번만 하는 사람을 “정착민”, 그렇지 않은 사람을 “유목민“이라고 합시다.&lt;&#x2F;p&gt;
+&lt;p&gt;$N$에 대한 귀납법을 사용합니다. $N = 2$면 자명합니다.&lt;&#x2F;p&gt;
+&lt;p&gt;$N \geq 3$이라고 합시다. 각 사람의 앞 횡단 횟수의 평균은 $1 &amp;lt; \frac{2N-2}{N} &amp;lt; 2$이므로, 정착민과 유목민이 적어도 한 명씩은 존재합니다. 이제&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;정착민 $x$와 유목민 $y$로 이루어진 앞 횡단 $xy$가 있다면, $xy$를 제거하고 귀납법으로 $N-1$명짜리 횡단 순서를 얻어낸 다음, 뒤 횡단 $x$, 앞 횡단 $xy$를 덧붙이면 됩니다.&lt;&#x2F;li&gt;
+&lt;li&gt;그렇지 않다면 $N \geq 4$이고, 정착민 2명짜리 앞 횡단 $xy$와 유목민 2명짜리 앞 횡단 $zw$가 있습니다. 둘 다 제거하고 귀납법으로 $N-2$명짜리 횡단 순서를 얻어낸 다음, 뒤 횡단 $z$, 앞 횡단 $xy$, 뒤 횡단 $w$, 앞 횡단 $zw$를 덧붙이면 됩니다.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;■&lt;&#x2F;p&gt;
+&lt;p&gt;이제 뒤 횡단을 볼 필요가 없으니, 앞 횡단을 줄여서 그냥 “횡단“이라고 부르겠습니다. 횡단의 순서는 중요하지 않고, 조합만 찾으면 됩니다. 그중에서 구체적으로 어떤 형태가 최적인지 살펴봅시다.&lt;&#x2F;p&gt;
+&lt;p&gt;직관적으로 생각해 보면, 우선 가장 빠른 사람들이 유목민 역할을 해야 할 것 같습니다. 또한 가장 오래 걸리는 사람들끼리 짝지어서 횡단해야 할 것 같고, 횡단 개수를 맞추려면 유목민을 중간에 섞어야 하는데, 유목민과 정착민이 같이 횡단해야 한다면 빠른 정착민들이랑 유목민 1이 같이 가야 할 것 같습니다. 이 성질들을 엄밀하게 정리하면 다음과 같습니다.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;정리 4.&lt;&#x2F;strong&gt; 다음을 모두 만족시키는 최적해가 존재합니다.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;(1) 유목민 $x, y$에 대해 횡단 $xy$가 있을 때, 그 횡단은 $12$입니다.&lt;&#x2F;li&gt;
+&lt;li&gt;(2) 유목민 $x$와 정착민 $y$에 대해 횡단 $xy$가 있을 때, $x = 1$입니다.&lt;&#x2F;li&gt;
+&lt;li&gt;(3) 정착민 $x, y, z$에 대해 횡단 $1x$와 $yz$가 있을 때, $x &amp;lt; y$, $x &amp;lt; z$입니다.&lt;&#x2F;li&gt;
+&lt;li&gt;(4) 정착민 $x, y$에 대해 횡단 $xy$가 있을 때, $|x - y| = 1$입니다.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;다른 말로 하면 $12, 12, \cdots, 12, 13, 14, \cdots, 1k, [k+1][k+2], [k+3][k+4], \cdots, [N-1]N$ 꼴의 최적해가 있습니다.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;증명.&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;(1) 그렇지 않다면 $12$로 바꿔도 됩니다.&lt;&#x2F;li&gt;
+&lt;li&gt;(2) 그렇지 않다면 $1y$로 바꿔도 됩니다.&lt;&#x2F;li&gt;
+&lt;li&gt;(3) 일반성을 잃지 않고 $y &amp;lt; z$라고 합시다. $x &amp;gt; y$라면 $1y$와 $xz$로 바꿔도 됩니다.&lt;&#x2F;li&gt;
+&lt;li&gt;(4) 위의 (1)(2)(3)에 의해, 정착민 2명짜리 횡단에 참여하는 사람들은 특정 $k$에 대해 $k, k+1, \cdots, N$입니다. $k$에 대한 귀납법을 거꾸로 사용합니다. $k &amp;gt; N$이라면 자명합니다. 횡단 $k[k+1]$이 없다면, 정착민 $x, y &amp;gt; k+1$에 대해 횡단 $kx$와 $ky$가 있습니다. 이를 $k[k+1]$과 $xy$로 바꿔도 됩니다. 귀납법에 의해 $k+2$ 또는 그 이후의 정착민에 대해서도 (4)가 성립합니다.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;■&lt;&#x2F;p&gt;
+&lt;p&gt;후보가 대략 $\frac{N}{2}$개이므로 각각의 시간을 계산하여 $O(N^2)$에 풀 수 있습니다.&lt;&#x2F;p&gt;
+&lt;p&gt;위 정리들은 더 큰 $C$에 대해 다음과 같이 일반화됩니다. 증명은 생략합니다.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;정리 1+.&lt;&#x2F;strong&gt; 모든 앞 횡단의 크기가 2명 이상, 모든 뒤 횡단의 크기가 1명인 최적해가 존재합니다.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;정리 2+&lt;&#x2F;strong&gt; 와 &lt;strong&gt;3+&lt;&#x2F;strong&gt; 는 정리 2, 3과 거의 같습니다.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;정리 4+.&lt;&#x2F;strong&gt; 다음을 모두 만족시키는 최적해가 존재합니다.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;(1&amp;amp;2) 횡단에 유목민이 $k$명 있을 때, 그 유목민은 $1, \cdots, k$입니다.&lt;&#x2F;li&gt;
+&lt;li&gt;(4) 각 횡단에서 정착민의 번호는 연속합니다.&lt;&#x2F;li&gt;
+&lt;li&gt;(3) 정착민이 있는 횡단을 가장 느린 사람의 시간에 대한 오름차순으로 정렬하면 유목민의 명수는 내림차순입니다.&lt;&#x2F;li&gt;
+&lt;li&gt;(보너스) 정착민이 있는 횡단 중 크기가 $C$보다 작은 것은 최대 하나이며, 그 횡단은 $1, \cdots, (횡단\ 크기)$입니다.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;이제 알고리즘을 설계할 준비가 되었습니다. 맨 처음에 모든 사람들이 “색칠되지 않았다“고 하고, 추가로 횡단의 개수 조건을 맞추는 데 사용할 “빚“이라는 정수를 초기값 0으로 관리합시다.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;(1) $C$명 이하가 색칠되지 않은 상태로 남을 때까지,
+&lt;ul&gt;
+&lt;li&gt;0 이상 $C-1$ 이하의 정수 $k$를 정합니다. $k$는 단조증가해야 합니다.   - 색칠되지 않은 맨 마지막 사람을 x라고 할 때, 유목민 $1, \cdots, k$와 정착민 $x-(C-k)+1, \cdots, x$를 횡단시키고, 빚에 $1-k$를 더합니다.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;(2) 빚이 0 미만이면 실패입니다. 아니라면 색칠되지 않은 사람들을 모두 횡단시킵니다.&lt;&#x2F;li&gt;
+&lt;li&gt;(3) 빚이 0이 될 때까지,
+&lt;ul&gt;
+&lt;li&gt;2 이상 $C$ 이하의 정수 $k$를 정합니다.&lt;&#x2F;li&gt;
+&lt;li&gt;유목민 $1, \cdots, k$를 횡단시키고, 빚에서 $k-1$을 뺍니다.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;(1)(3)에서 $k$를 잘 정하는 게 목표입니다. DP 식을 세워보면 (색칠되지 않은 사람 수, 빚, (1)에서 마지막으로 정한 $k$값)으로 $O(N^3)$개의 상태가 생길 것처럼 생겼습니다. 하지만&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;빚이 음수인 상태는 고려할 필요가 없습니다. 빚이 감소하려면 $k&amp;gt;1$이어야 하는데, 그러면 단조증가 조건에 의해 빚이 매번 감소해서 0으로 못 돌아오기 때문입니다.&lt;&#x2F;li&gt;
+&lt;li&gt;빚은 $[\frac{N}{C}]$ 이하입니다. 빚이 증가하려면 $k=0$이어야 하는데, 그럴 때마다 빚이 1 증가하고 $C$명이 색칠되기 때문입니다.&lt;&#x2F;li&gt;
+&lt;li&gt;빚이 항상 0이상이라는 조건이 있는 한 $k$가 단조증가해야 한다는 조건은 필요가 없고, 따라서 마지막으로 정한 $k$ 값도 볼 필요가 없습니다.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;그러므로 상태 $O(\frac{N^2}{C})$개에 상태 당 전이 $C$개로 총 $O(N^2)$에 문제를 풀 수 있습니다.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;white-check-mark-46t-47d-carl-s-vacation&quot;&gt;✅ 46T&#x2F;47D. Carl’s Vacation&lt;&#x2F;h1&gt;
+&lt;p&gt;최적의 경로는 (1) 출발 사각뿔의 한 면을 타고 직선을 따라 바닥에 내려가고, (2) 바닥에서 도착 사각뿔의 바닥으로 직선을 따라 이동하고, (3) 도착 사각뿔의 한 면을 타고 직선을 따라 꼭대기로 올라가야 합니다.&lt;&#x2F;p&gt;
+&lt;p&gt;(2)의 시작점과 도착점은 정사각형의 한 변 위에 있습니다. 변을 하나씩 선택하고, 각 변 위의 정확히 어느 지점에서 출발하고 도착할 건지를 변수 $a$와 $b$로 나타내면, (1), (2), (3)의 길이는 모두 $a$와 $b$에 대한 볼록함수입니다. 볼록함수의 합 역시 볼록함수이므로, 전체 길이도 볼록함수입니다. 따라서 삼분탐색을 이중으로 중첩해서 쓰면 됩니다.&lt;&#x2F;p&gt;
+&lt;p&gt;물론 (2)에서 밑면을 뚫고 지나가면서 조건을 어기는 경우도 있겠지만, 그런 경우는 애초에 최적이 아닙니다.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;white-check-mark-46u-toy-train-tracks&quot;&gt;✅ 46U. Toy Train Tracks&lt;&#x2F;h1&gt;
+&lt;p&gt;우선 직선 조각 $S$개, 커브 조각 $C$개를 &lt;strong&gt;다&lt;&#x2F;strong&gt; 써서 루프를 만들 수 있는지 판별해 봅시다. $S$와 $C$가 작은 경우부터 하나씩 손으로 풀어보면 규칙을 찾을 수 있습니다. 결론부터 말하면,&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;$S$는 짝수여야 합니다.&lt;&#x2F;li&gt;
+&lt;li&gt;$C$는 4 이상의 짝수여야 합니다.&lt;&#x2F;li&gt;
+&lt;li&gt;$C \equiv 2 (mod\ 4)$이거나 $C = 8$일 경우, $S$는 2 이상이어야 합니다.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;나머지 경우가 불가능한 이유는 후술합니다.&lt;&#x2F;p&gt;
+&lt;p&gt;가능한 경우는 $C = 4$, $C = 6$, $C = 8$, $C \equiv 2 (mod\ 4)$, $C \equiv 0 (mod\ 4)$로 케이스워크를 하면 됩니다.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;z-code&quot;&gt;&lt;code&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;r---q
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;L---J
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;r----q
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;|r---J
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;LJ
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;rq
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;|L---q
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;|r---J
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;LJ
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt; rq
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;rJLq
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Lq Lq
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt; Lq L---q
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;  Lqr---J
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;   LJ
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;r-q
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;| Lq
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Lq Lq
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt; Lq L---q
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;  Lqr---J
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;   LJ
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;이제 본 문제를 풀어봅시다. 위 가능한 경우들을 정리해 보면 직선 조각을 1개 이하, 커브 조각을 7개 이하로 남기는 해가 존재하므로, $(S, C)$에 따라 최대 16개의 후보를 만들고 그중 가장 긴 것을 출력하면 됩니다.&lt;&#x2F;p&gt;
+&lt;p&gt;불가능한 경우 증명:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;S가 홀수이면 불가능&lt;&#x2F;strong&gt;: 격자를 체스판으로 색칠하고, 루프를 탔을 때 각 칸에 들어오는 방향을 생각해 봅시다. 커브 조각만 사용하면 검은 칸은 항상 가로로, 흰 칸은 항상 세로로 들어옵니다. (물론 그 반대여도 됩니다.) 직선 조각을 하나 타는 순간 두 색의 역할이 바뀝니다. 즉 검은 칸은 세로로, 흰 칸은 가로로 들어오게 됩니다. 루프를 한 바퀴 돌면 두 색의 역할이 유지되어야 하므로 직선 조각은 짝수 번 타야 합니다.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;C가 홀수이면 불가능&lt;&#x2F;strong&gt;: 커브 조각을 탈 때마다 이동 방향이 가로에서 세로로, 세로에서 가로로 바뀝니다. 루프를 한 바퀴 돌면 이동 방향이 유지되어야 하므로 커브 조각은 짝수 번 타야 합니다.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;S가 0, C가 4k+2 꼴이면 불가능&lt;&#x2F;strong&gt;: 한 칸에서 커브 조각을 두 번 타면 그 칸과 대각선 방향으로 인접한 칸으로 가게 됩니다. 커브 조각 4k+2개 대신 대각선 조각 2k+1개가 있다고 생각하고 위의 &lt;em&gt;C가 홀수이면 불가능&lt;&#x2F;em&gt; 논리를 쓰면 됩니다.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;S가 0, C가 8이면 불가능&lt;&#x2F;strong&gt;: 직접 해보면 됩니다.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;white-check-mark-46v-47c-three-kinds-of-dice&quot;&gt;✅ 46V&#x2F;47C. Three Kinds of Dice&lt;&#x2F;h1&gt;
+&lt;p&gt;편의상 1점, 0.5점이 아니라 2점, 1점씩 얻는다고 하고, 맨 마지막에 출력할 때 2로 나눕시다.&lt;&#x2F;p&gt;
+&lt;p&gt;D3를 굴려서 x가 나왔을 때 내(D3)가 얻는 점수의 기댓값을 f(x)라고 하면, f는 같은 값으로 이루어진 $2n+1$개 이하의 구간으로 이루어집니다. 예를 들어 예시의 &lt;code&gt;1 1 6 6 8 8&lt;&#x2F;code&gt;과 &lt;code&gt;2 4 9&lt;&#x2F;code&gt;는&lt;&#x2F;p&gt;
+&lt;pre class=&quot;z-code&quot;&gt;&lt;code&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;x   첫줄 다음줄
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;1   1&#x2F;3  0
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;2   2&#x2F;3  1&#x2F;3
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;3   2&#x2F;3  2&#x2F;3
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;4   2&#x2F;3  1
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;5   2&#x2F;3  4&#x2F;3
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;6   1    4&#x2F;3
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;7   4&#x2F;3  4&#x2F;3
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;8   5&#x2F;3  4&#x2F;3
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;9   2    5&#x2F;3
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;10  2    2
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;11  2    2
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;...
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;D3의 면마다 대응되는 f 값의 평균이 1 이상이면, D3는 그 주사위를 이기거나 비깁니다. 예를 들어 &lt;code&gt;(2&#x2F;3 + 2&#x2F;3 + 2)&#x2F;3 = 1.111...&lt;&#x2F;code&gt; 이므로 두 번째 주사위가 첫 번째 주사위를 이깁니다. 이것으로 둘 중 어느 쪽이 D1이고 어느 쪽이 D2인지 알아낼 수 있습니다.&lt;&#x2F;p&gt;
+&lt;p&gt;이제 우리가 D3를 만들어야 합니다. 면의 개수를 마음대로 정할 수 있으므로, 각 x에 임의의 음이 아닌 유리수 가중치를 부여할 수 있습니다. 그 대신 가중치의 합은 1이라고 합시다. 또한 x의 값 말고 (D1의 f 값, D2의 f 값) 순서쌍이 중요하고, 서로 다른 순서쌍이 $4n+1$개 이하이므로, 가중치를 부여할 대상은 그 $4n+1$개뿐입니다. 이제 우리가 구할 값은&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;D1의 f 값에 대한 (가중치를 고려한) 평균이 1 이상일 때, D2의 f 값에 대한 평균의 최솟값&lt;&#x2F;li&gt;
+&lt;li&gt;D2의 f 값에 대한 평균이 1 이하일 때, D1의 f 값에 대한 평균의 최댓값&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;입니다.&lt;&#x2F;p&gt;
+&lt;p&gt;$(x, y)$ 순서쌍 여러 개에 음이 아닌 가중치를 뒀을 때 ($x$의 평균, $y$의 평균)으로 가능한 값의 영역은, $(x, y)$들을 좌표평면에 놓았을 때 볼록 껍질의 둘레 및 내부입니다.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;wf225.png&quot; alt=&quot;.&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;따라서 답은 그 볼록 껍질과 직선 $x = 1$의 교점, 그리고 볼록 껍질과 직선 $y = 1$의 교점입니다. 가중치에 유리수 조건이 있지만, 교점의 좌표도 유리수이므로 적절한 유리수 가중치가 항상 존재함을 알 수 있습니다. 구체적으로 어느 교점을 출력해야 되는지는 $x$, $y$ 중 어느 쪽이 D1, D2인지에 따라 적절히 정하면 됩니다.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;white-check-mark-46w-47a-riddle-of-the-sphinx&quot;&gt;✅ 46W&#x2F;47A. Riddle of the Sphinx&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;1 0 0을 물어봅니다. 대답을 $a$라고 합시다.&lt;&#x2F;li&gt;
+&lt;li&gt;0 1 0을 물어봅니다. 대답을 $b$라고 합시다.&lt;&#x2F;li&gt;
+&lt;li&gt;0 0 1을 물어봅니다. 대답을 $c$라고 합시다.&lt;&#x2F;li&gt;
+&lt;li&gt;1 1 1을 물어봅니다. 대답을 $d$라고 합시다.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;만약 $a+b+c = d$라면, 스핑크스는 지금까지 참말만 했습니다. 아무거나 물어보고 대답을 들은 다음 $a$ $b$ $c$를 출력하면 됩니다.&lt;&#x2F;p&gt;
+&lt;p&gt;아니라면, 스핑크스는 한 번 거짓말을 했습니다. 이 시점에서 답의 후보는&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;$(a, b, c)$&lt;&#x2F;li&gt;
+&lt;li&gt;$(d-b-c, b, c)$&lt;&#x2F;li&gt;
+&lt;li&gt;$(a, d-a-c, c)$&lt;&#x2F;li&gt;
+&lt;li&gt;$(a, b, d-a-b)$&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;이고, 서로 다른 후보를 모두 구별하는 질의가 존재함을 증명할 수 있습니다. 스핑크스가 다음 질의에서는 참말을 할 것이므로 그걸 물어보면 됩니다.&lt;&#x2F;p&gt;
+&lt;p&gt;사실 경우를 나눌 것도 없이 그냥 1 2 3을 물어봐도 됩니다.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;46x-quartets&quot;&gt;46X. Quartets&lt;&#x2F;h1&gt;
+&lt;p&gt;답이 yes인지 판별할 수 있으면, no일 경우 언제부터 반칙의 존재가 확실한지도 어렵지 않게 구할 수 있습니다. 그러니 답이 yes인지 판별하는 것에 집중합시다.&lt;&#x2F;p&gt;
+&lt;p&gt;예제 2를 따라가면서 풀이를 설명하면 좋을 것 같습니다. 맨 처음에 각 플레이어가 8장씩 나눠갖지만 각각이 무슨 카드인지 모르니, 다음과 같이 표기합시다. 정체를 알 수 없는 카드는 “모르는 카드”, 아니면 “아는 카드“라고 지칭합시다.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;z-code&quot;&gt;&lt;code&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;P1 [!1 !2 !3 !4 !5 !6 !7 !8]
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;P2 [@1 @2 @3 @4 @5 @6 @7 @8]
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;P3 [#1 #2 #3 #4 #5 #6 #7 #8]
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;P4 [$1 $2 $3 $4 $5 $6 $7 $8]
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;첫 기록은 &lt;code&gt;1 A 2 3C no&lt;&#x2F;code&gt; 입니다. &lt;code&gt;p A q ks no&lt;&#x2F;code&gt; 형태의 기록은 다음과 같은 정보를 제공합니다.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;플레이어 &lt;code&gt;p&lt;&#x2F;code&gt;의 손에 &lt;code&gt;k*&lt;&#x2F;code&gt; 꼴의 카드가 있습니다. &lt;code&gt;p&lt;&#x2F;code&gt;의 손에 있는 아는 카드 중 &lt;code&gt;k*&lt;&#x2F;code&gt; 꼴이 있다면, 이는 아무 정보도 주지 않습니다. 없다면, &lt;code&gt;p&lt;&#x2F;code&gt;의 손에 있는 모르는 카드 중 하나가 &lt;code&gt;k*&lt;&#x2F;code&gt; 꼴입니다. 모르는 카드가 없다면 반칙의 존재가 확실합니다.&lt;&#x2F;li&gt;
+&lt;li&gt;플레이어 &lt;code&gt;q&lt;&#x2F;code&gt;의 손에 &lt;code&gt;ks&lt;&#x2F;code&gt; 카드가 없습니다. &lt;code&gt;q&lt;&#x2F;code&gt;의 손에 있는 아는 카드 중에 &lt;code&gt;ks&lt;&#x2F;code&gt;가 있다면 반칙의 존재가 확실합니다. 없다면, &lt;code&gt;q&lt;&#x2F;code&gt;의 손에 있는 모르는 카드 중 아무것도 &lt;code&gt;ks&lt;&#x2F;code&gt;가 아닙니다. 모르는 카드가 없다면 아무 정보도 주지 않습니다.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;다른 사람의 손으로 옮겨진 카드는 무조건 아는 카드가 되기 때문에, &lt;code&gt;!1..8 + @1..3 has 3*&lt;&#x2F;code&gt; 같이 여러 플레이어에 걸쳐서 주어지는 정보는 없습니다.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;z-code&quot;&gt;&lt;code&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;P1 [!1 !2 !3 !4 !5 !6 !7 !8] -- !1..8 has 3*
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;P2 [@1 @2 @3 @4 @5 @6 @7 @8] -- @1..8 hasn&amp;#39;t 3C
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;P3 [#1 #2 #3 #4 #5 #6 #7 #8]
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;P4 [$1 $2 $3 $4 $5 $6 $7 $8]
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;다음 기록은 &lt;code&gt;2 A 3 3A yes&lt;&#x2F;code&gt; 입니다. &lt;code&gt;p A q ks yes&lt;&#x2F;code&gt; 형태의 기록은 다음과 같은 정보를 제공합니다.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;플레이어 &lt;code&gt;p&lt;&#x2F;code&gt;의 손에 &lt;code&gt;k*&lt;&#x2F;code&gt; 꼴의 카드가 있습니다. 위와 같습니다.&lt;&#x2F;li&gt;
+&lt;li&gt;플레이어 &lt;code&gt;q&lt;&#x2F;code&gt;의 손에 &lt;code&gt;ks&lt;&#x2F;code&gt; 카드가 있습니다. &lt;code&gt;q&lt;&#x2F;code&gt;의 손에 있는 아는 카드 중에 &lt;code&gt;ks&lt;&#x2F;code&gt;가 있다면 아무 정보도 주지 않습니다. 없다면, &lt;code&gt;q&lt;&#x2F;code&gt;의 손에 있는 모르는 카드 중 하나가 &lt;code&gt;ks&lt;&#x2F;code&gt;입니다. 일반성을 잃지 않고 맨 마지막 카드가 &lt;code&gt;ks&lt;&#x2F;code&gt;라고 할 수 있습니다. 모르는 카드가 없다면 반칙의 존재가 확실한데, 그런 경우가 실제로 발생할 수 있는지는 잘 모르겠습니다.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;pre class=&quot;z-code&quot;&gt;&lt;code&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;P1 [!1 !2 !3 !4 !5 !6 !7 !8] -- !1..8 has 3*
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;P2 [@1 @2 @3 @4 @5 @6 @7 @8 #8=3A] -- @1..8 hasn&amp;#39;t 3C, @1..8 has 3*
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;P3 [#1 #2 #3 #4 #5 #6 #7]
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;P4 [$1 $2 $3 $4 $5 $6 $7 $8]
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;다음 기록은 &lt;code&gt;2 A 4 3D yes&lt;&#x2F;code&gt; 입니다. 같은 방식으로 처리합니다. 손에 이미 3A가 있으니 “&lt;code&gt;3*&lt;&#x2F;code&gt; 꼴의 카드가 있음“은 아무 정보도 주지 않습니다.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;z-code&quot;&gt;&lt;code&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;P1 [!1 !2 !3 !4 !5 !6 !7 !8] -- !1..8 has 3*
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;P2 [@1 @2 @3 @4 @5 @6 @7 @8 #8=3A $8=3D] -- @1..8 hasn&amp;#39;t 3C, @1..8 has 3*
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;P3 [#1 #2 #3 #4 #5 #6 #7]
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;P4 [$1 $2 $3 $4 $5 $6 $7]
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;다음 기록은 &lt;code&gt;2 A 1 3B no&lt;&#x2F;code&gt; 입니다.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;z-code&quot;&gt;&lt;code&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;P1 [!1 !2 !3 !4 !5 !6 !7 !8] -- !1..8 has 3*, !1..8 hasn&amp;#39;t 3B
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;P2 [@1 @2 @3 @4 @5 @6 @7 @8 #8=3A $8=3D] -- @1..8 hasn&amp;#39;t 3C, @1..8 has 3*
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;P3 [#1 #2 #3 #4 #5 #6 #7]
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;P4 [$1 $2 $3 $4 $5 $6 $7]
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;다음 기록은 &lt;code&gt;1 A 4 5B yes&lt;&#x2F;code&gt; 입니다.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;z-code&quot;&gt;&lt;code&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;P1 [!1 !2 !3 !4 !5 !6 !7 !8 $7=5B] -- !1..8 has 3*, !1..8 hasn&amp;#39;t 3B, !1..8 has 5*
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;P2 [@1 @2 @3 @4 @5 @6 @7 @8 #8=3A $8=3D] -- @1..8 hasn&amp;#39;t 3C, @1..8 has 3*
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;P3 [#1 #2 #3 #4 #5 #6 #7]
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;P4 [$1 $2 $3 $4 $5 $6]
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;다음 기록은 &lt;code&gt;1 Q 5&lt;&#x2F;code&gt; 입니다. &lt;code&gt;p Q k&lt;&#x2F;code&gt; 형태의 기록은 플레이어 &lt;code&gt;p&lt;&#x2F;code&gt;의 손에 &lt;code&gt;kA&lt;&#x2F;code&gt;, &lt;code&gt;kB&lt;&#x2F;code&gt;, &lt;code&gt;kC&lt;&#x2F;code&gt;, &lt;code&gt;kD&lt;&#x2F;code&gt; 카드가 있다는 정보를 제공합니다. 그런데 이 플레이어의 모르는 카드에 대한 정보가 이미 있었으니, 카드를 공개하면서 이 정보도 업데이트해야 합니다.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;!1..z has k*&lt;&#x2F;code&gt; 정보가 있는 상태에서 &lt;code&gt;!z&lt;&#x2F;code&gt; 가 &lt;code&gt;ks&lt;&#x2F;code&gt; 라는 정보를 얻었으면, 앞의 정보는 더 이상 의미가 없으므로 제거합니다. 다른 세트의 카드라는 정보를 얻었으면, &lt;code&gt;!1..(z-1) has k*&lt;&#x2F;code&gt; 로 수정합니다.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;!1..z hasn&#x27;t ks&lt;&#x2F;code&gt; 정보가 있는 상태에서 &lt;code&gt;!z&lt;&#x2F;code&gt; 가 &lt;code&gt;ks&lt;&#x2F;code&gt; 라는 정보를 얻었으면 반칙의 존재가 확실합니다. 아니라면 &lt;code&gt;!1..(z-1) hasn&#x27;t ks&lt;&#x2F;code&gt; 로 수정합니다.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;pre class=&quot;z-code&quot;&gt;&lt;code&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;P1 [!1 !2 !3 !4 !5] -- !1..5 has 3*, !1..5 hasn&amp;#39;t 3B
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;P2 [@1 @2 @3 @4 @5 @6 @7 @8 #8=3A $8=3D] -- @1..8 hasn&amp;#39;t 3C, @1..8 has 3*
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;P3 [#1 #2 #3 #4 #5 #6 #7]
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;P4 [$1 $2 $3 $4 $5 $6]
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;quartet: (!6=5A $7=5B !7=5C !8=5D)
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;이제 아직 행방이 밝혀지지 않은 카드들을 모르는 카드에 잘 배정해서 모든 정보와 일치시킬 수 있는지 확인해야 합니다. 뭔가 매칭 문제를 닮았으니, 플로우 모델링을 시도해보면 다음 LR-flow 모델이 만들어집니다.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;source, sink, P1, P2, P3, P4 정점을 만듭니다.&lt;&#x2F;li&gt;
+&lt;li&gt;각 플레이어 &lt;code&gt;p&lt;&#x2F;code&gt; 와 세트 &lt;code&gt;k&lt;&#x2F;code&gt; 의 쌍을 나타내는 &lt;code&gt;pk&lt;&#x2F;code&gt; 정점을 만듭니다. &lt;code&gt;Pp&lt;&#x2F;code&gt; 에서 &lt;code&gt;pk&lt;&#x2F;code&gt; 로 간선을 긋습니다. 용량은 4, 최소 유량은 &lt;code&gt;p&lt;&#x2F;code&gt; 에 “&lt;code&gt;has k*&lt;&#x2F;code&gt;” 정보가 있다면 1, 아니면 0으로 둡니다.&lt;&#x2F;li&gt;
+&lt;li&gt;행방이 밝혀지지 않은 카드를 나타내는 &lt;code&gt;ks&lt;&#x2F;code&gt; 정점을 만듭니다. &lt;code&gt;p&lt;&#x2F;code&gt; 에 “&lt;code&gt;hasn&#x27;t ks&lt;&#x2F;code&gt;” 정보가 없다면 &lt;code&gt;pk&lt;&#x2F;code&gt; 에서 &lt;code&gt;ks&lt;&#x2F;code&gt; 로 간선을 긋습니다. 용량은 1, 최소 유량은 0으로 둡니다.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;ks&lt;&#x2F;code&gt; 에서 sink로 간선을 긋습니다. 용량과 최소 유량은 1로 둡니다.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;이제 LR-flow 를 돌려서 해가 있는지 확인하면 됩니다.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;white-check-mark-46y-compression&quot;&gt;✅ 46Y. Compression&lt;&#x2F;h1&gt;
+&lt;p&gt;다음 그리디 전략을 생각해볼 수 있습니다.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;우선 연속된 같은 글자들을 하나로 합칩니다.&lt;&#x2F;li&gt;
+&lt;li&gt;그러면 1과 0이 번갈아서 나오는 형태가 되는데, 연속된 10이나 01들을 하나로 합칩니다. 마지막에는 0, 1, 01, 10, 010, 101 중 하나가 남습니다.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;이 전략은 최적입니다. 왜냐?&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;정답의 길이가 1일 필요충분조건은 “한 종류의 글자로만 이루어져 있음“입니다. 0이 하나라도 있다면 0을 전부 지울 수 없고, 1도 마찬가지이기 때문에, 0과 1이 모두 있는 문자열은 길이를 2보다 짧게 줄일 수 없습니다.&lt;&#x2F;li&gt;
+&lt;li&gt;첫 글자를 바꿀 수 없습니다. 첫 글자를 바꾸려면 지워야 되는데, 그러면 문자열이 &lt;code&gt;[abcde]abcdefgh&lt;&#x2F;code&gt; 꼴이므로 지운 후에도 첫 글자가 유지됩니다.&lt;&#x2F;li&gt;
+&lt;li&gt;마찬가지로 마지막 글자도 바꿀 수 없습니다.&lt;&#x2F;li&gt;
+&lt;li&gt;01, 10, 010, 101은 (첫 글자, 마지막 글자)가 모두 다르고, 가능한 4가지 경우를 모두 커버하기 때문에, 0과 1이 모두 있는 문자열의 최종 결과는 넷 중에 정확히 하나로 정해져 있습니다.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;46z-archaeological-recovery&quot;&gt;46Z. Archaeological Recovery&lt;&#x2F;h1&gt;
+&lt;p&gt;TODO&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;white-check-mark-47b-schedule&quot;&gt;✅ 47B. Schedule&lt;&#x2F;h1&gt;
+&lt;p&gt;먼저 주어진 $n$과 $w$에 대해 답이 유한인지 판별해 봅시다. 그러려면 길이 $n$의 이진 문자열 (편의상 1, 2가 아니라 0, 1이라고 합시다) $w$개를 만들어서 다음 조건을 만족시켜야 합니다.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;인덱스 $i$에 대해, $j$번째 문자열의 $i$번째 문자가 &lt;code&gt;1&lt;&#x2F;code&gt; 인 모든 $j$의 집합을 $S_j$라고 하자. 모든 서로 다른 인덱스 $i$, $j$에 대해, (1) $S_i \cup S_j$에 없는 원소가 존재하고, (2) $S_i$와 $S_j$는 서로 부분집합 관계가 아니며, (3) $S_i \cap S_j$는 공집합이 아니어야 한다.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;(1) (2) (3)은 해당 인덱스 쌍에 &lt;code&gt;00&lt;&#x2F;code&gt;, &lt;code&gt;01&lt;&#x2F;code&gt;, &lt;code&gt;10&lt;&#x2F;code&gt;, &lt;code&gt;11&lt;&#x2F;code&gt;이 모두 존재함과 동치입니다.&lt;&#x2F;p&gt;
+&lt;p&gt;일반성을 잃지 않고 첫 번째 문자열이 &lt;code&gt;00...00&lt;&#x2F;code&gt; 이라고 하면 (1)은 저절로 해결됩니다. (2)와 (3)이 문제인데, 방향을 바꿔서 ${1, \cdots, w}$의 부분집합 $n$개를 만든다고 합시다. 일단 (2)만 있다고 하면 &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Sperner%27s_theorem&quot;&gt;슈페르너의 정리&lt;&#x2F;a&gt;에 의해 가능한 $n$의 최댓값은 $\binom{w-1}{[\frac{w-1}{2}]}$ 입니다. 실제 해는 ${2, \cdots, w}$의 모든 $[\frac{w-1}{2}]$ 크기 부분집합을 쓰면 됩니다.&lt;&#x2F;p&gt;
+&lt;p&gt;(3)이 들어가도 결론은 비슷합니다. &lt;a href=&quot;https:&#x2F;&#x2F;citeseerx.ist.psu.edu&#x2F;document?repid=rep1&amp;amp;type=pdf&amp;amp;doi=4f85bedf628d70dc0d7b67f87c289966dfa46a90&quot;&gt;이 논문&lt;&#x2F;a&gt;에 따르면 가능한 $n$의 최댓값은 $\binom{w-1}{[\frac{w-1}{2}]+1}$ 입니다. 실제 해는 ${2, \cdots, w}$의 모든 $[\frac{w-1}{2}]+1$ 크기 부분집합을 쓰면 됩니다.&lt;&#x2F;p&gt;
+&lt;p&gt;이제 본 문제로 돌아갑시다. 주어진 $n$에 대해, 가능한 $n$의 최댓값이 그 이상이 되는 가장 작은 $w’$을 찾습니다. $w’ &amp;gt; w$라면 답은 무한입니다. $w’ \leq w$라면 답은 $w’$입니다. $w$ 대신 $w’$가 주어져도 답이 $w’$이니, 그보다 큰 $w$를 줘도 $w’$보다 작은 답을 만들 수 없기 때문입니다. 실제 해는 위에서 만든 이진 문자열 $w’$개를 돌아가면서 계속 출력하면 됩니다.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;47e-a-recurring-problem&quot;&gt;47E. A Recurring Problem&lt;&#x2F;h1&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;codeforces.com&#x2F;blog&#x2F;entry&#x2F;128559?#comment-1141729&quot;&gt;Benq 코멘트&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;For each continuation of length 4 up to a certain bound, count the number of recurrences with that continuation. This allows us to find the first four values of the continuation. Then, given the first four values of the continuation, we can enumerate all recurrences with that continuation, which turns out to be bounded by 4836557 for the given constraints. Though I had to spend several hours to fix the MLE &#x2F; TLE &#x2F; WA verdicts (the memory usage is barely under 2TB) …&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;codeforces.com&#x2F;blog&#x2F;entry&#x2F;128559?#comment-1141850&quot;&gt;arknave 코멘트&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;That looks largely correct. The main idea to speed up the solution and reduce its memory consumption is: for each continuation, instead of just counting the number of recurrences that begin with that continuation, compute all possible next values to this continuation, along with their frequencies. This lets you prune out a bunch of useless continuations since the values get very sparse after the first few values in the sequence.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h1 id=&quot;47f-tilting-tiles&quot;&gt;47F. Tilting Tiles&lt;&#x2F;h1&gt;
+&lt;p&gt;사실 이 퍼즐에서 할 수 있는 행동은 거의 없습니다.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;같은 방향으로 두 번 밀 이유가 없습니다. 이 퍼즐은 2048 게임이 아닙니다.&lt;&#x2F;li&gt;
+&lt;li&gt;한 번 밀고 나서 바로 반대 방향으로 밀 이유가 없습니다. 그럼 바로 전 밀기가 의미가 없어집니다. 그래서 매번 바로 전 밀기 방향에 수직인 방향으로 밀어야 됩니다.&lt;&#x2F;li&gt;
+&lt;li&gt;처음에 x 방향으로 밀고, 다음에 x와 수직인 y 방향으로 밀었다면, 그 다음에는 x의 반대 방향으로 밀어야 합니다. y에 수직이어야 되는데 다시 x 방향으로 미는 건 효과가 없기 때문입니다.&lt;&#x2F;li&gt;
+&lt;li&gt;따라서 실제로 의미가 있는 행동은 소용돌이처럼 시계나 반시계 방향으로 돌아가면서 미는 것뿐입니다. 맨 처음 방향과 소용돌이의 회전 방향에 따라 총 8개의 후보가 있습니다.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;이제 한 소용돌이를 잡고, 그 전략으로 우리가 원하는 배치를 만들 수 있는지 판별해 봅시다. 시작 방향과 관계없이 네 방향으로 한 번씩 미는 것을 “소용돌이 한 바퀴 돌기“라고 부릅시다.&lt;&#x2F;p&gt;
+&lt;p&gt;첫 소용돌이를 돌고 나면 이후로 소용돌이 한 바퀴마다 공백의 위치가 같아짐을 증명할 수 있습니다. 예를 들어 5번 민 상태와 9번 민 상태는 각 칸에 적힌 글자는 다를 수 있어도, 각 칸이 공백인지 아닌지 여부는 같습니다.&lt;&#x2F;p&gt;
+&lt;p&gt;따라서 우리가 할 일은&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;하나의 소용돌이로 치지 않고 따로 밀 횟수 $s$를 설정합니다. $0 \leq s \leq 5$ 입니다. (5도 고려해야 후술할 전략으로 모든 경우가 커버됩니다.)&lt;&#x2F;li&gt;
+&lt;li&gt;소용돌이 방향으로 $s$번 밉니다. 공백의 위치가 우리가 원하는 배치와 다르면 실패입니다.&lt;&#x2F;li&gt;
+&lt;li&gt;이제 공백은 됐고, 글자가 모두 맞을 때까지 소용돌이를 한 바퀴 단위로 돌립니다.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;여기서 끝나면 좋겠지만, 필요한 소용돌이 횟수가 너무 커서 시간 안에 안 돌 것입니다.&lt;&#x2F;p&gt;
+&lt;p&gt;소용돌이 1회는 공백이 아닌 글자들을 특정 순열에 따라 이동시키는 것으로 볼 수 있습니다. 그 순열을 얻어내려면 공백이 아닌 위치에 1, 2, 3, …을 차례대로 써넣고 소용돌이를 한 바퀴 돌리면 됩니다. 결국 우리가 풀어야 되는 문제는 다음과 같습니다.&lt;&#x2F;p&gt;
+&lt;p&gt;“시작 문자열, 끝 문자열, 순열이 주어졌을 때, 순열을 반복 적용시켜 시작 문자열을 끝 문자열로 만들 수 있는가?”&lt;&#x2F;p&gt;
+&lt;p&gt;순열을 사이클로 분할합니다. 그중 한 사이클의 시점에서 문제를 바라보면,&lt;&#x2F;p&gt;
+&lt;p&gt;“시작 문자열, 끝 문자열이 주어졌을 때, 시작 문자열을 회전시켜 끝 문자열로 만들 수 있는가?”&lt;&#x2F;p&gt;
+&lt;p&gt;단, 여기서의 시작과 끝 문자열은 그 사이클이 갖고 있는 문자들만 그 사이클 순서대로 뽑아서 만들어야 합니다. 이건 KMP나 해싱 등을 써서 풀 수 있습니다. 예를 들어 KMP를 쓴다면, 끝 문자열을 복제하고 이어 붙여서 두 배로 늘리고, 거기서 시작 문자열을 찾으면 됩니다. (어디서 들어본 말 같죠? 물론 서로 다른 대회에서 나왔습니다.)&lt;&#x2F;p&gt;
+&lt;p&gt;한 사이클이라도 위 질문에 대한 답이 “아니오“라면 실패입니다. 여기서 끝나면 좋겠지만, 모든 답이 “예“여도 전체가 성공이란 보장은 없습니다. 예를 들어&lt;&#x2F;p&gt;
+&lt;pre class=&quot;z-code&quot;&gt;&lt;code&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;abcd --&amp;gt; cdab
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;ef --&amp;gt; fe
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;위 두 경우 각각은 “예“이지만, 첫 번째 경우는 4k+2번, 두 번째 경우는 홀수 번 회전시켜야 되기 때문에, 순열을 아무리 적용해도 두 경우가 동시에 만족될 수는 없습니다. 따라서 단순히 “만들 수 있는가?“가 아니라 다음 문제를 풀어야 합니다.&lt;&#x2F;p&gt;
+&lt;p&gt;“시작 문자열, 끝 문자열이 주어졌을 때, 시작 문자열을 x칸 오른쪽으로 회전시켰을 때 끝 문자열이 될 필요충분조건이 $x \equiv a (mod\ m)$이라고 하자. $a$와 $m$은 얼마인가?”&lt;&#x2F;p&gt;
+&lt;p&gt;다행히도 “만들 수 있는가?“를 풀 수 있다면 위 문제도 쉽게 풀 수 있습니다. 이제 모든 사이클에 대해 모듈로 방정식 $x \equiv a (mod\ m)$을 모으고, 그 연립방정식의 해가 존재하면 성공, 아니면 실패입니다. 이제 중국인의 나머지 정리를 쓰면 됩니다. $m$의 최소공배수가 너무 클 수 있어서 정확한 해를 구하기는 어렵지만, 확장 유클리드로 해를 구하는 과정을 들여다 보면 사실 해의 존재성만 판별하는 건 gcd 하나로 충분함을 알 수 있습니다. “확장“도 지우고 그냥 유클리드 알고리즘을 쓰면 됩니다.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;white-check-mark-47h-jet-lag&quot;&gt;✅ 47H. Jet Lag&lt;&#x2F;h1&gt;
+&lt;p&gt;$k$초 동안 자고 일어났을 때 다음 $k$초 동안은 잘 수 없다는 조건이 거슬립니다. 이 조건이 없었다면 가능한 한 일찍 자고 늦게 일어나는 그리디 전략이 통했을 것입니다. 구체적으로,&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;첫 이벤트 이전 기간, 또는 인접한 두 이벤트 사이의 빈 기간을 “공백기“라고 합시다. 즉 타임라인은 공백기와 이벤트가 번갈아서 나열되어 있습니다.&lt;&#x2F;li&gt;
+&lt;li&gt;첫 공백기 내내 잡니다. $k$초 동안 자면 다음 $2k$초 동안 깨어있을 수 있습니다.&lt;&#x2F;li&gt;
+&lt;li&gt;그 다음 공백기부터는, 잤을 때 더 늦게까지 깨어있을 수 있다면 내내 자고, 아니면 건너뜁니다.&lt;&#x2F;li&gt;
+&lt;li&gt;한 번이라도 이벤트가 끝날 때까지 깨어있을 수 없다면 불가능합니다.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;다행히도 “다음 $k$초 동안은 잘 수 없다는 조건“이 들어가도 위에서 만든 전략을 조금 수정해서 재활용할 수 있습니다. 인접한 잠 스케줄이 새로운 조건에 위배되면, 둘 중 앞쪽의 스케줄을 앞당겨서 더 일찍 일어나게 바꾸면 됩니다. $k$초 동안 잘 수 없다는 조건이 없었을 때 해가 존재하지 않는다면, 조건을 추가했을 때 해도 당연히 존재하지 않습니다.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;white-check-mark-47i-waterworld&quot;&gt;✅ 47I. Waterworld&lt;&#x2F;h1&gt;
+&lt;p&gt;$nm$개 조각 각각의 겉넓이를 구하고, 그 조각에 배정된 값과 곱하여 모두 합해야 됩니다.&lt;&#x2F;p&gt;
+&lt;p&gt;같은 경도에 있는 조각의 겉넓이는 같습니다. 회전축을 기준으로 한 칸 만큼 돌리면 완전히 똑같은 모양이 나오기 때문입니다. 그러므로 특정 경도에 있는 조각의 겉넓이를 구하려면, 그 경도 범위로 구를 잘랐을 때 그 부분의 겉넓이를 구하고 $m$으로 나누면 됩니다.&lt;&#x2F;p&gt;
+&lt;p&gt;이를 구하려면 회전체의 겉넓이 공식을 쓰면 됩니다. $t$에 대한 매개변수 곡선 $(x(t), y(t)), t \in [a, b]$를 $x$축을 중심으로 돌렸을 때 나오는 회전체의 겉넓이는 다음과 같습니다.&lt;&#x2F;p&gt;
+&lt;p&gt;$2 \pi \int_a^b y(t) \sqrt{(\frac{dx}{dt})^2 + (\frac{dy}{dt})^2} dt$&lt;&#x2F;p&gt;
+&lt;p&gt;구체적으로, 구 $x^2 + y^2 + z^2 = r^2$를 $t_1 \leq x \leq t_2$ 범위로 잘랐을 때 그 부분의 겉넓이를 구해 봅시다. 우리가 원하는 호의 매개변수 곡선은 $(r \cos t, r \sin t), t \in [cos^{-1} \frac{x_2}{r}, cos^{-1} \frac{x_1}{r}]$입니다. 위 공식에 대입해 보면 $\sqrt{(\frac{dx}{dt})^2 + (\frac{dy}{dt})^2} = r$이므로, $A = 2 \pi r^2 \int_{t_1}^{t_2} \sin t \ dt = 2 \pi r^2 [\cos t]_{t_1}^{t_2} = 2 \pi r (x_2-x_1)$ 입니다.&lt;&#x2F;p&gt;
+&lt;p&gt;그러니까, 어느 경도 범위로 자르느냐에 관계 없이 범위의 길이가 같으면 겉넓이도 같습니다. 결론적으로 모든 조각의 겉넓이가 같으므로, 그냥 입력된 수들의 평균을 출력하면 됩니다…&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;47k-alea-iacta-est&quot;&gt;47K. Alea Iacta Est&lt;&#x2F;h1&gt;
+&lt;p&gt;$6^d$개의 상태가 있는 그래프를 생각합시다. 정점마다 어느 주사위를 고정할지를 잘 정해서, 랜덤 워크를 했을 때 도착점 중 하나에 도달하는 데 필요한 걷기 횟수의 기댓값을 최소화해야 합니다. 연립방정식을 세워서 가우스 소거 같은 걸 하기에는 어림도 없는 크기입니다.&lt;&#x2F;p&gt;
+&lt;p&gt;기댓값의 근사값을 구해도 충분하고, 그 값도 작은 편이기 때문에, 모든 정점의 기댓값을 특정 초기값으로 잡고 수렴할 때까지 계산을 돌려도 될 것처럼 생겼습니다. (아마?? 월파 라이브 방송에서 들은 거긴 한데 확실하진 않습니다… TODO) 아쉽게도 이 그래프는 간선이 너무 많아서 시간 안에 수렴은 커녕 한 번 돌리기도 어렵습니다. 사실상 완전그래프입니다! 모델링을 조금 수정해서, 정점이 좀 더 많아지더라도 간선이 선형 수준으로 떨어지도록 합시다.&lt;&#x2F;p&gt;
+&lt;p&gt;첫 번째 최적화는 전략과 굴리기를 분리하는 것입니다. 주사위마다 글자 6개뿐만 아니라 “곧 다시 굴릴 예정“을 의미하는 &lt;code&gt;?&lt;&#x2F;code&gt;를 추가해 총 $7^d$개의 상태를 만듭니다. &lt;code&gt;?&lt;&#x2F;code&gt;이 없는 상태에서는 일부 주사위를 &lt;code&gt;?&lt;&#x2F;code&gt;로 만드는 총 $2^d$개의 간선을 추가합니다. 이 간선은 우리가 전략을 세워서 정점마다 하나씩 선택해야 합니다. 또한 &lt;code&gt;?&lt;&#x2F;code&gt;이 있는 상태에서는 &lt;code&gt;?&lt;&#x2F;code&gt;를 다시 굴리는 총 $6^{\text{?의 개수}}$개의 간선을 추가합니다. 이 간선은 매번 균일한 확률로 무작위로 선택됩니다. 이렇게 해도 두 번째 종류의 간선이 너무 많습니다.&lt;&#x2F;p&gt;
+&lt;p&gt;두 번째 최적화는 한 번에 한 주사위만 &lt;code&gt;?&lt;&#x2F;code&gt;로 바꾸거나 굴리는 것입니다. 즉 다음과 같이 상태를 만듭니다.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;(1) 주사위가 모두 굴려진 상태&lt;&#x2F;li&gt;
+&lt;li&gt;(2) 모두 굴려진 후, 첫 $i$개의 주사위를 &lt;code&gt;?&lt;&#x2F;code&gt;로 바꾸거나 바꾸지 않은 상태&lt;&#x2F;li&gt;
+&lt;li&gt;(3) &lt;code&gt;?&lt;&#x2F;code&gt;를 모두 결정한 후, 첫 $i$개의 주사위가 굴려진 상태&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;상태 개수는 어림잡아서 백만 단위로 나옵니다. 이제 (1)-&amp;gt;(2)와 (2)-&amp;gt;(2) 방향 전이의 개수는 상태 당 2개, (2)-&amp;gt;(3) 방향 전이의 개수는 상태 당 $d$개로 상한이 잡히기 때문에, 충분히 계산을 돌릴 수 있을 만큼 간선 개수가 줄었습니다.&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
+          <title>ICPC World Finals 2021 풀이</title>
+          <pubDate>Sat, 03 Dec 2022 00:00:00 +0000</pubDate>
+          <author>jh05013</author>
+          <link>https://jh05013.github.io/blog/wf2021/</link>
+          <guid>https://jh05013.github.io/blog/wf2021/</guid>
+          <description xml:base="https://jh05013.github.io/blog/wf2021/">&lt;p&gt;11월에 ICPC World Finals 2021에 참가했습니다.
+이후 11월 말까지 한 문제를 제외한 나머지를 모두 풀었고, 이 글에서 모든 문제의 풀이를 정리합니다.&lt;&#x2F;p&gt;
+&lt;p&gt;최근 3년과 달리 상대적으로 쉬운 (플래 하급 이하) 문제가 좀 더 많이 나왔는데,
+그것들을 푸느라 더 어려운 문제에 쓸 시간이 부족했습니다.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;a-crystal-crosswind&quot;&gt;A: Crystal Crosswind&lt;&#x2F;h1&gt;
+&lt;p&gt;바람의 방향이 $(w_x, w_y)$, 가장자리의 집합이 $S$라고 하면 다음과 같은 정보를 얻습니다.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;(1) $(x, y) \in S$일 경우, $(x, y)$은 분자고, $(x - w_x, y - w_y)$는 빈칸입니다.&lt;&#x2F;li&gt;
+&lt;li&gt;(2) $(x, y) \notin S$일 경우, $(x, y)$가 빈칸이거나 $(x - w_x, y - w_y)$가 분자입니다.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;두 번째 조건은 “(2A) $(x, y)$가 분자면 $(x - w_x, y - w_y)$도 분자”,
+혹은 “(2B) $(x - w_x, y - w_y)$가 빈칸이면 $(x, y)$도 빈칸“과 동치입니다.&lt;&#x2F;p&gt;
+&lt;p&gt;먼저 분자가 가장 적은 경우부터 구해봅시다.
+우선 (1)로부터 무조건 분자여야 하는 칸이 정해집니다.
+그리고 (2A)로부터 추가로 무조건 분자여야 하는 칸이 어디인지 알 수 있습니다.
+(2A)를 반복적으로 적용시키다가 더 이상 무조건 분자여야 하는 칸이 안 생길 때가 바로 답입니다.
+나머지 모든 칸을 빈칸으로 둬도 모든 규칙이 만족되기 때문입니다.
+따라서 (2A)에 해당하는 각 칸 $(x, y)$에서 $(x - w_x, y - w_y)$로 간선을 긋고,
+(1)에 해당하는 칸들을 시작점으로 하여 그래프 순회를 해주면 됩니다.
+이때 각 칸이 적어도 한 번 방문되었을 경우 그 칸에는 분자가 있고, 아니면 빈칸입니다.&lt;&#x2F;p&gt;
+&lt;p&gt;분자가 가장 많은 경우도 비슷합니다.
+(1)로부터 무조건 빈칸이어야 하는 칸이 정해지고, 여기에 (2B)를 반복적으로 적용시켜야 합니다.
+하지만 여기서 끝나는 게 아니라, (3) 격자의 바깥은 전부 빈칸입니다.
+격자의 바깥에는 칸이 너무 많으니까 이걸 일일이 다 체크하지 말고, 여기다가 (2B)를 한 번 적용시켜서,
+각 칸 $(x, y)$에 대해 $(x - w_x, y - w_y)$가 격자 바깥이면 $(x, y)$를 빈칸으로 두면 됩니다.
+이제 (2B)에 해당하는 간선들을 긋고,
+(1)과 (3 + 2B)에 해당하는 칸들을 시작점으로 하여 그래프 순회를 해주면 됩니다.&lt;&#x2F;p&gt;
+&lt;p&gt;시간 복잡도는 $O(d_x d_y k)$입니다.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;b-dungeon-crawler&quot;&gt;B: Dungeon Crawler&lt;&#x2F;h1&gt;
+&lt;p&gt;시작점을 루트로 잡읍시다.&lt;&#x2F;p&gt;
+&lt;p&gt;열쇠와 함정을 무시할 경우, 트리 순회를 하는데 가장 깊은 (루트에서 가장 먼) 점에서 멈추는 것이 최적입니다.
+따라서 답은 &lt;code&gt;2*(간선 길이의 합) - (가장 깊은 점의 깊이)&lt;&#x2F;code&gt;입니다.&lt;&#x2F;p&gt;
+&lt;p&gt;이제 함정과 열쇠가 있다고 합시다. 우선 함정이 열쇠의 조상이면 &lt;code&gt;impossible&lt;&#x2F;code&gt;입니다.
+아닐 경우, 가장 마지막으로 방문하는 정점이 d라고 합시다. 가장 깊은 점이 아닐 수도 있습니다.
+열심히 케이스 분석을 해보면서, 각 경로를 지나는 횟수를 아래 그림에서 빨간 글씨로 표시해보면
+다음과 같습니다.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;wf211.png&quot; alt=&quot;.&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;함정과 열쇠의 LCA를 $l$, 열쇠와 $d$의 LCA를 $z$라고 하면
+답은 &lt;code&gt;2*(간선 길이의 합) - (d의 깊이) + 2*(z에서 l까지 거리)&lt;&#x2F;code&gt;입니다.
+모든 $d$에 대해 이걸 계산하고 최솟값을 찾으면 됩니다.&lt;&#x2F;p&gt;
+&lt;p&gt;쿼리를 같은 시작점들끼리 묶어, 각 시작점마다 $O(n)$ 시간 전처리를 한 번씩 해줄 수 있다고 합시다.
+그 후 각 쿼리를 어떻게든 $O(n)$에 수행하면 $O(n^2 + qn)$이고, 이는 약 4억이므로 시간 내에 돌아갑니다.&lt;&#x2F;p&gt;
+&lt;p&gt;저기서 시간이 걸리는 요인은 (1) LCA 계산, (2) 거리 계산입니다.&lt;&#x2F;p&gt;
+&lt;p&gt;(1) LCA의 경우, 모든 정점과 열쇠의 LCA를 구하는 것이 문제입니다.
+LCA는 희소 배열 외에도 오일러 투어 + 구간 최솟값 쿼리로 풀 수 있음이 알려져 있습니다.
+이 구간 최솟값도 범위의 한쪽 끝이 정해져 있기 때문에,
+세그먼트 트리 같은 걸 쓸 필요 없이 그냥 범위를 하나씩 늘려 주면서 최솟값을 갱신하면
+전체 $O(n)$에 모든 LCA를 구할 수 있습니다.&lt;&#x2F;p&gt;
+&lt;p&gt;(2) 거리 계산의 경우, $z$와 $l$은 조상 관계이기 때문에 두 정점의 깊이의 차를 구하면 됩니다.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;c-fair-division&quot;&gt;C: Fair Division&lt;&#x2F;h1&gt;
+&lt;p&gt;첫 번째 해적이 받는 금화의 비율은 $\sum_{i=0}^{\infty}(1-f)^{ni} = \frac{1}{1-(1-f)^n}$입니다.
+$(j+1)$번째 해적이 받는 금화의 비율은 $\frac{(1-f)^j}{1-(1-f)^n}$입니다.
+따라서 금화의 비는 $1 : (1-f) : \cdots : (1-f)^{n-1}$입니다.
+$f = \frac{p}{q}$이고 $p$와 $q$가 서로소라고 하면, 금화의 비는
+$q^{n-1} : q^{n-2}(q-p) : \cdots : (q-p)^{n-1}$입니다.
+이 수들은 서로소이므로 $q^{n-1} + \cdots + (q-p)^{n-1}$의 합이 $m$의 약수여야 합니다.&lt;&#x2F;p&gt;
+&lt;p&gt;그러려면 일단 $q^{n-1} \leq m$이어야 되는데, $n-1 \geq 5$이고
+$m \leq 10^{18}$이기 때문에 $q \leq 3981$까지만 보면 됩니다. (1000이 아닙니다!)
+오버플로우를 막으려면 저 $n$개 항을 통째로 합하는 게 아니라,
+하나하나 더하면서 $m$을 넘을 때 바로 끊어줘야 합니다.
+시간 복잡도는 $O(m^{2&#x2F;(n-1)})$입니다.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;d-guardians-of-the-gallery&quot;&gt;D: Guardians of the Gallery&lt;&#x2F;h1&gt;
+&lt;p&gt;대회 당시 유일하게 아무도 못 푼 문제였습니다.
+아쉽게도 딱 한 테스트케이스에서 틀린 팀이 있었다고 합니다.&lt;&#x2F;p&gt;
+&lt;p&gt;우선 조각상이 보이는 영역을 구해야 합니다. 조각상에서 각 꼭짓점으로 반직선을 긋습니다.
+각 반직선에 대해, 그 반직선이 미술관의 어디까지 닿는지를 계산합니다.
+간단하게 생각하면 반직선과 각 선분의 교점을 구하고 가장 가까운 교점을 구하면 되는데,
+실제로는 반직선의 왼쪽과 오른쪽 영역이 모두 막히는 교점까지 가야 합니다.
+예를 들어 아래 그림에서 A 방향으로 그은 반직선은 A에서 끝나는 게 아니라
+오른쪽 영역까지 막히는 B까지 가야 합니다.
+각 선분이 어느 방향에서 교차하는지를 구하고, 교점을 가까운 순으로 정렬한 다음 하나씩 확인하면 됩니다.
+시간 복잡도는 $O(n^2)$이고, 이 다각형에는 변이 $O(n)$개 있습니다.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;wf212.png&quot; alt=&quot;.&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;이제 출발점에서 목표 영역까지 가는 최단거리를 구해야 합니다. 최단경로는 다음과 같은 형태입니다.
+(1) 우선 미술관의 꼭짓점 몇 개를 거치고, (2) 마지막에 목표 영역의 한 변에 수직인 방향으로 직진합니다.&lt;&#x2F;p&gt;
+&lt;p&gt;(1)은 출발점, 목표 영역의 꼭짓점 및 미술관의 꼭짓점들을 정점으로 잡고,
+서로 이동 가능한 정점 쌍을 이어 그래프를 만든 뒤 데이크스트라 알고리즘을 돌려서 구할 수 있습니다.
+정점 쌍이 서로 이동 가능한지 판별하려면 둘을 잇는 선분이 미술관의 각 변과 (끝점 제외하고)
+안 겹치는지 판별하면 됩니다. 시간 복잡도는 $O(n^3)$입니다.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;wf213.png&quot; alt=&quot;.&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;마지막으로, (2)는 각 정점에서 목표 영역의 각 변으로 수선을 긋고,
+마찬가지로 미술관의 각 변과 안 겹치는지 + 수선이 실제로 그 변과 만나는지 판별하면 됩니다.
+시간 복잡도는 $O(n^3)$입니다.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;e-hand-of-the-free-marked&quot;&gt;E: Hand of the Free Marked&lt;&#x2F;h1&gt;
+&lt;p&gt;우선 Fitch Cheney trick의 원본부터 분석해 봅시다.
+이 마술은 본질적으로 &lt;strong&gt;52개 카드 집합에서의 크기 5의 조합&lt;&#x2F;strong&gt;에서
+&lt;strong&gt;52개 카드 집합에서의 크기 4의 순열&lt;&#x2F;strong&gt;로 가는 일대일함수를 만드는 문제입니다.
+조교는 조합에서 순열로 함수를 적용하고, 마술사는 그 순열에서 다시 조합으로 역함수를 적용하는 것이죠.&lt;&#x2F;p&gt;
+&lt;p&gt;카드가 전체 $n$개이고 그중에서 $k$개를 뽑는다면,
+전자는 $A := \frac{n!}{k!(n-k)!}$개이고, 후자는 $B := \frac{n!}{(n-k+1)!}$인데,
+$A \leq B$이면 일대일함수가 존재할 것 같이 생겼습니다.
+계산해보면 $n = k!+k-1$일 때 정확히 $A = B$이고,
+$n$이 그보다 커지면 $A &amp;gt; B$라서 일대일함수가 존재할 수 없습니다.
+물론 순열을 이루는 카드 4개가 모두 조합에 속해야 하기 때문에,
+$A \leq B$라고 해서 아무렇게나 일대일함수를 만들면 안 됩니다.
+다행히도 조건을 만족하는 일대일함수가 항상 존재합니다. 왜냐?&lt;&#x2F;p&gt;
+&lt;p&gt;전자와 후자를 잇는 이분그래프를 생각합시다. 카드가 많을 때 가능하다면 적을 때도 가능하니까,
+$n = k!+k-1$, $A = B$라고 합시다.
+이제 이 그래프에 완전 매칭이 존재함을 홀의 정리로 증명합니다.
+각 전자 조합은 정확히 $k!$개의 후자 순열과 인접하고, $A = B$니까
+각 후자 순열도 정확히 $k!$개의 전자 조합과 인접합니다.
+즉 이 그래프는 $k!$-regular graph입니다.
+이제 전자 조합을 $s$개 골랐다고 하면, 이 조합들은 $k!s$개의 간선과 연결되어 있기 때문에,
+적어도 $s$개의 후자 순열이 이 조합들과 인접해야 합니다.
+따라서 홀의 정리에 의해 완전 매칭이 존재합니다.&lt;&#x2F;p&gt;
+&lt;p&gt;$A &amp;gt; B$일 경우, 마술이 성공할 확률은 $\frac{B}{A}$입니다.
+함숫값이 가능한 한 안 겹치도록 함수를 만들었으면, 전자의 원소 중에서 함수를 취하고
+“역함수“를 취했을 때 자기 자신으로 돌아올 수 있는 원소가 $B$개이기 때문입니다.&lt;&#x2F;p&gt;
+&lt;p&gt;이제 이 문제에서는 카드가 너무 많아서, &lt;del&gt;덱에서 카드를 몇 개 뺄 생각은 안 하고&lt;&#x2F;del&gt;
+카드에 마킹을 해놓아서 마술사가 마지막 카드의 마킹을 알 수 있습니다.
+얼핏 생각해보면 전자는 그대로 조합이고, 후자는 순열에다가 마킹 하나가 추가로 주어진 거니까
+그대로 $A$와 $B$를 구하면 될 것처럼 생겼지만,
+이러면 regular graph가 아니라서 위의 증명이 통하지 않습니다.&lt;&#x2F;p&gt;
+&lt;p&gt;그 대신, 마술사가 마지막만이 아니라 &lt;strong&gt;모든 카드의 마킹&lt;&#x2F;strong&gt;을 알 수 있다는 사실에 주목합시다.
+무슨 카드에 무슨 마킹이 있는지 외우면 그만이니까요.
+따라서 마킹의 조합은 마술사와 조교가 공유하는 정보입니다.
+그뿐만 아니라, 마킹의 조합을 고정하고 나면 &lt;strong&gt;원본 Fitch Cheney trick과 동일한 문제&lt;&#x2F;strong&gt;가 됩니다.
+마킹의 조합을 백트래킹으로 뽑아내고, 각 조합에 대해 그 조합이 실제로 뽑힐 확률과
+그 조합에서 마술이 성공할 확률을 곱하여 모두 더하면 답을 얻습니다.&lt;&#x2F;p&gt;
+&lt;p&gt;마킹의 조합의 개수는 $m$과 $k$의 중복조합인데, $m=k=10$일 때 이는 $\binom{19}{10}=92378$이므로
+충분히 모두 뽑아낼 수 있습니다. 이제 각 마킹 $i$에 대해, 그 마킹이 된 카드가 전체 $A_i$개이고
+그중에서 $C_i$개를 뽑았다고 하면, 그 조합이 뽑힐 확률은
+$\frac{1}{\binom{n}{k}} \prod \binom{A_i}{C_i}$이고,
+그 조합에서 마술이 성공할 확률은
+$\min(1, \frac{1}{\prod \binom{A_i}{C_i}} (k-1)! \prod \binom{A_i}{C_i} \sum_{C_i &amp;gt; 0} \frac{\binom{A_i}{C_i - 1}}{\binom{A_i}{C_i}})$ $= \min(1, (k-1)! \sum_{C_i &amp;gt; 0}\frac{C_i}{A_i - C_i + 1})$
+입니다.&lt;&#x2F;p&gt;
+&lt;p&gt;저는 여기에 log를 씌워서 계산한 다음 exp로 되돌리는 식으로 구현했는데,
+&lt;code&gt;long double&lt;&#x2F;code&gt;도 안 되고 &lt;code&gt;__float128&lt;&#x2F;code&gt;까지 써야 $10^{-10}$ 정도의 절대오차로 통과했습니다.
+모범 코드는 &lt;code&gt;double&lt;&#x2F;code&gt;만 쓴 걸로 봐서 식을 어떻게 정리했느냐에 따라
+&lt;code&gt;double&lt;&#x2F;code&gt;로도 충분히 통과되는 것으로 보입니다.&lt;&#x2F;p&gt;
+&lt;p&gt;시간 복잡도는 $O(\binom{m+k-1}{k}m)$입니다.&lt;&#x2F;p&gt;
+&lt;p&gt;Fitch Cheney trick을 직접 선보이고 싶다면
+&lt;a href=&quot;https:&#x2F;&#x2F;www.acmicpc.net&#x2F;problem&#x2F;25434&quot;&gt;이 문제&lt;&#x2F;a&gt;와
+&lt;a href=&quot;https:&#x2F;&#x2F;www.acmicpc.net&#x2F;problem&#x2F;25460&quot;&gt;이 문제&lt;&#x2F;a&gt;를 풀어보시면 되겠습니다.
+참고로 간선이 너무 많아서 이분 매칭 알고리즘을 직접 돌리는 식으로는 풀 수 없고,
+매칭을 머리로 찾아내야 합니다.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;f-islands-from-the-sky&quot;&gt;F: Islands from the Sky&lt;&#x2F;h1&gt;
+&lt;p&gt;지문이 무서워 보이지만 (3차원 기하???),
+정작 읽어보면 대부분이 지문을 무서워 &lt;em&gt;보이게&lt;&#x2F;em&gt; 만드는 장치라고 느껴집니다.&lt;&#x2F;p&gt;
+&lt;p&gt;$\theta$에 대해 이분탐색을 합니다. $\theta$를 정하면 각 사다리꼴 영역이 정해집니다.
+비행기의 높이가 $h$이면 밑변의 길이는 $2h \tan \theta$이고,
+방향은 비행 경로를 90도씩 회전시켜서 구할 수 있습니다.
+이제 각 섬이 적어도 한 사다리꼴의 내부에 속하는지 판별합니다.
+사다리꼴은 볼록다각형이므로 섬의 모든 꼭짓점만 확인하면 됩니다.&lt;&#x2F;p&gt;
+&lt;p&gt;시간 복잡도는 $O((\sum_{i=1}^n n_i) m\log X)$입니다.&lt;&#x2F;p&gt;
+&lt;p&gt;저희 팀의 다른 팀원 분은 이분탐색 없이 풀었는데, 손 계산이 좀 들어갈 것 같습니다.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;g-mosaic-browsing&quot;&gt;G: Mosaic Browsing&lt;&#x2F;h1&gt;
+&lt;p&gt;패턴과 격자의 높이가 1일 경우
+&lt;a href=&quot;https:&#x2F;&#x2F;infossm.github.io&#x2F;blog&#x2F;2021&#x2F;08&#x2F;20&#x2F;wildcard-string-matching&#x2F;&quot;&gt;와일드카드 문자열 매칭&lt;&#x2F;a&gt;
+문제와 동일하고, FFT로 풀 수 있습니다.
+이 문제에서는 격자에 와일드카드가 없으므로 $T_j$는 안 곱해도 됩니다. 계수가 꽤 큰 편이므로 주의하세요.&lt;&#x2F;p&gt;
+&lt;p&gt;높이가 2 이상일 경우, 그냥 격자를 일렬로 펴고 패턴에 와일드카드 패딩을 붙이면 높이 1 문제로 환원됩니다.
+예를 들어 예제는 이렇게 될 겁니다.
+물론 몇몇 인덱스는 격자에 안 맞기 때문에 매칭이 되어도 출력하지 말아야 합니다.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;z-code&quot;&gt;&lt;code&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;패턴: 1 0 0 0 0 1
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;격자: 1 2 1 2 2 1 1 1 2 2 1 3
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;bitset으로 푸는 방법도 있다고 합니다…&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;h-prehistoric-programs&quot;&gt;H: Prehistoric Programs&lt;&#x2F;h1&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;atcoder.jp&#x2F;contests&#x2F;abc167&#x2F;tasks&#x2F;abc167_f&quot;&gt;AtCoder Beginner Contest 167F&lt;&#x2F;a&gt;와 같은 문제이고,
+&lt;a href=&quot;https:&#x2F;&#x2F;codeforces.com&#x2F;gym&#x2F;101341&#x2F;problem&#x2F;A&quot;&gt;다른 대회에서도&lt;&#x2F;a&gt; 몇 번 나왔다고 합니다.
+심지어 &lt;a href=&quot;https:&#x2F;&#x2F;www.acmicpc.net&#x2F;problem&#x2F;12776&quot;&gt;2016년 월드 파이널 Swap Space&lt;&#x2F;a&gt;와도 거의 같은 문제입니다!&lt;&#x2F;p&gt;
+&lt;p&gt;우선 주어진 문자열이 올바른 괄호 문자열인지 판별하는 문제를 생각해봅시다.
+PS를 입문할 때 접해보셨을 유명한 문제입니다.
+문자를 차례대로 보면서 &lt;code&gt;(&lt;&#x2F;code&gt;이면 카운터를 1 증가시키고 &lt;code&gt;)&lt;&#x2F;code&gt;이면 1 감소시킬 때,
+카운터가 단 한 번도 음수가 되지 않으면서 마지막에는 0이 되어야 합니다.&lt;&#x2F;p&gt;
+&lt;p&gt;이제 이 문제로 돌아와보면, 각 조각은 다음과 같은 정보로 표현할 수 있습니다.
+“이 조각을 사용하려면 카운터가 $x$ 이상이어야 하고, 사용하면 카운터가 $d$만큼 변한다.”&lt;&#x2F;p&gt;
+&lt;p&gt;모든 $d$의 합이 0이 아니면 당연히 &lt;code&gt;impossible&lt;&#x2F;code&gt;입니다. 이제 합이 0이라고 가정합시다.
+$d \geq 0$인 조각들을 &lt;strong&gt;올라가는 조각&lt;&#x2F;strong&gt;, $d &amp;lt; 0$인 조각들을 &lt;strong&gt;내려가는 조각&lt;&#x2F;strong&gt;이라고 합시다.
+그러면 먼저 올라가는 조각이 다 나오고, 그 다음에 내려가는 조각이 다 나와야 합니다.
+어떤 올바른 해에서 내려가는 조각 바로 다음에 올라가는 조각이 나왔다면
+그 둘을 교환해도 여전히 올바른 해가 되기 때문입니다.&lt;&#x2F;p&gt;
+&lt;p&gt;이 조건대로 나열하면 카운터는 올라가는 조각을 다 쓰면서 정점을 찍고 다시 내려가는 조각을 다 써서
+0으로 돌아오게 됩니다.
+그 정점을 기준으로 둘로 나누고, 내려가는 조각을 쓰는 과정을 뒤집으면,
+올라가는 조각을 쓰는 과정만 두 번 있는 형태가 됩니다.
+따라서 올라가는 조각만 쓰는 문제를 두 번 풀면 됩니다.&lt;&#x2F;p&gt;
+&lt;p&gt;이제 올라가는 조각들을 잘 정렬해야 되는데, 그 순서는 바로 $x$에 대한 오름차순입니다.
+어떤 올바른 해에서 $(x_1, d_1)$ 바로 다음에 $(x_2, d_2)$이 나오고 $x_1 &amp;gt; x_2$라면,
+$(x_1, d_1)$을 쓰는 순간에 카운터는 $c \geq x_1$인데,
+둘을 교환하면 $c \geq x_1 &amp;gt; x_2$, $c + d_2 \geq c \geq x_1$이라서
+여전히 올바른 해가 되기 때문입니다.&lt;&#x2F;p&gt;
+&lt;p&gt;이렇게 정렬했는데도 올바른 괄호 문자열이 안 되면 &lt;code&gt;impossible&lt;&#x2F;code&gt;이고,
+되면 그 순서를 그대로 출력해주면 됩니다.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;i-spider-walk&quot;&gt;I: Spider Walk&lt;&#x2F;h1&gt;
+&lt;p&gt;편의를 위해, 거미줄이 원형이 아니라 1번과 $N$번 가닥이 안 이어진 선형이라고 합시다.
+풀이는 거의 달라지지 않습니다. 이제 우리가 풀어야 하는 문제는 다음과 같습니다.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;사다리타기를 하는데, $i$번째 가닥에서 시작해서 $s$번째 가닥의 맨 밑에 도착하려고 합니다.
+그어야 하는 다리의 최소 개수를 각각의 $i$에 대해 구하세요.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;위에서 아래로 움직이면서 각 가닥으로부터 $s$번째 가닥까지 가는 게 아니라,
+거꾸로 아래에서 위로 움직이면서 $s$번째 가닥으로부터 각 가닥까지 간다고 생각합시다.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;code&gt;DP[i][j]&lt;&#x2F;code&gt;를, 첫 $i$개의 다리만 고려하고 나머지 다리를 자유롭게 그을 수 있을 때
+$j$번째 가닥에 오는 최소 비용이라고 합시다.
+&lt;code&gt;DP[0][..]&lt;&#x2F;code&gt;은 $s$를 시작으로 양옆으로 하나씩 늘어나는 형태일 것입니다.&lt;&#x2F;p&gt;
+&lt;p&gt;우선 &lt;code&gt;DP[i][..]&lt;&#x2F;code&gt;은 이웃한 DP 값들의 차이가 1 이하임을 염두에 둡시다.
+이웃한 DP 값이 2 이상 차이가 날 경우, 낮은 쪽에서 높은 쪽으로 다리를 이어주면
+더 좋은 해가 나오기 때문입니다.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;code&gt;DP[i][..]&lt;&#x2F;code&gt;가 계산되었을 때 &lt;code&gt;DP[i+1][..]&lt;&#x2F;code&gt;을 계산하려면,&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;i&lt;&#x2F;code&gt;번째 다리가 $a$와 $a+1$을 잇는다고 합시다.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;DP[i+1][a+1]&lt;&#x2F;code&gt;과 &lt;code&gt;DP[i+1][a]&lt;&#x2F;code&gt;에 각각 &lt;code&gt;DP[i][a]&lt;&#x2F;code&gt;와 &lt;code&gt;DP[i][a+1]&lt;&#x2F;code&gt;을 넣고,
+나머지 &lt;code&gt;DP[i+1][..]&lt;&#x2F;code&gt; 값들은 &lt;code&gt;DP[i][..]&lt;&#x2F;code&gt;를 그대로 따라갑니다.&lt;&#x2F;li&gt;
+&lt;li&gt;두 DP 값이 교환되면서 이웃한 DP 값의 차이가 2가 될 수 있습니다.
+이 경우 높은 쪽을 하나 낮춰줍니다. 일단 &lt;code&gt;DP[i+1][a]&lt;&#x2F;code&gt;와 &lt;code&gt;DP[i+1][a+1]&lt;&#x2F;code&gt;만 낮춰줍시다.&lt;&#x2F;li&gt;
+&lt;li&gt;그런데 저 값들을 낮추면서 또 다른 이웃한 DP 값의 차이가 2가 될 수 있습니다.
+얘네들은 한꺼번에 낮춰줍시다. &lt;code&gt;DP[i+1][a] = v&lt;&#x2F;code&gt;라고 할 때, 각 &lt;code&gt;DP[i+1][..]&lt;&#x2F;code&gt;를 다시 계산합니다. &lt;code&gt;DP[i+1][b]&lt;&#x2F;code&gt;에는 현재 값과 &lt;code&gt;v + (a에서 b까지의 거리)&lt;&#x2F;code&gt; 중 최솟값을 넣으면 됩니다.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;DP[i+1][a+1] = v&#x27;&lt;&#x2F;code&gt;도 마찬가지로 써서 각 &lt;code&gt;DP[i+1][..]&lt;&#x2F;code&gt;를 다시 계산합니다.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;여기까지 하면 $O(nm)$입니다.&lt;&#x2F;p&gt;
+&lt;p&gt;네 번째, 다섯 번째 과정에서 &lt;code&gt;DP[i+1][b]&lt;&#x2F;code&gt;들을 효율적으로 계산해야 합니다.
+v + (a에서 b까지의 거리)&lt;code&gt;는 절댓값 함수이기 때문에, 기울기가 1 또는 -1인 일차함수 여러 개로 표현할 수 있습니다. 따라서 이는 세그먼트 트리 lazy propagation으로 최적화할 수 있습니다. Lazy 값을 &lt;&#x2F;code&gt;(p, q)&lt;code&gt;로 둬서 &lt;&#x2F;code&gt;min(현재 값, x+p, -x+q)`을 표현하면 됩니다. 시간 복잡도는 $O(n + m \log n)$입니다.&lt;&#x2F;p&gt;
+&lt;p&gt;이외에도 DP 값의 차이가 1인 이웃한 인덱스들을 그룹으로 묶어서 &lt;code&gt;std::set&lt;&#x2F;code&gt;으로 관리하는 풀이가 있습니다. 네 번째 과정에서 최대 하나의 그룹이 통째로 내려갈 것입니다. 따라서 내려갈 때 양옆의 그룹과 합쳐야 되면 합치고, DP 값을 교환할 때 그룹을 분리하는 식으로 구현할 수 있습니다.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;j-splitstream&quot;&gt;J: Splitstream&lt;&#x2F;h1&gt;
+&lt;p&gt;우선 각 노드에 들어가는 수의 개수를 계산합니다. 1번을 입력으로 받는 노드는 정확히 $m$개의 수를 받습니다. Split 노드는 자신이 입력으로부터 받은 양을 두 출력 노드에 대강 반씩 나눠줍니다. 정확한 양은 자신에 들어가는 수의 개수의 홀짝성에 따라 다릅니다. Merge 노드는 출력 노드에 자신이 두 입력으로부터 받은 양 만큼 넘겨줍니다. 이 모든 것은 재귀 DP를 돌리거나, 위상 정렬하고 그 순서대로 DP를 돌려서 구할 수 있습니다.&lt;&#x2F;p&gt;
+&lt;p&gt;쿼리를 처리하려면, $x$에서부터 입력 노드를 타고 거꾸로 거슬러 올라가면서 $k$를 관리하면 됩니다. 현재 보고 있는 입력이 split 노드의 출력일 경우 그 노드의 입력으로 올라가고, $k$는 대강 두 배가 됩니다. 정확한 양은 그 입력이 split 노드의 어느 방향 출력인지에 따라 다릅니다. Merge 노드일 때는 조금 복잡합니다. Merge 노드의 두 입력에 들어가는 수가 각각 $a$, $b$개라고 합시다. $k \leq 2 \times \min(a, b)$라면, $k$의 홀짝성에 따라 어느 입력으로 올라가는지가 다르고 $k$는 대강 절반이 됩니다. 아니라면, 둘 중 개수가 큰 입력으로 올라가고 $k$는 $\min(a, b)$만큼 감소합니다.&lt;&#x2F;p&gt;
+&lt;p&gt;거슬러 올라가다가 한 번이라도 $k$가 현재 입력에 있는 수의 개수를 넘어가면 &lt;code&gt;none&lt;&#x2F;code&gt;이고, 넘어가는 일 없이 1번 입력까지 올라갔으면 그 $k$를 그대로 출력하면 됩니다. $O(qn)$인데 $q$와 $n$이 모두 작기 때문에 시간 내에 잘 돌아갑니다.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;k-take-on-meme&quot;&gt;K: Take On Meme&lt;&#x2F;h1&gt;
+&lt;p&gt;각각의 밈은 벡터로 볼 수 있습니다. 노드 $v$의 최종 밈으로 가능한 모든 벡터의 집합을 $S_v$라고 합시다.&lt;&#x2F;p&gt;
+&lt;p&gt;우선 벡터의 집합 $S$와 $T$에 대해,&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;$-S = {-p : p \in S}$, 즉 모든 벡터를 180도 뒤집은 집합,&lt;&#x2F;li&gt;
+&lt;li&gt;$S + T = {p+q : p \in S, q \in T}$, 즉 두 집합에서 하나씩 뽑아 합치는 모든 경우를 담은 집합이라고 합시다. 이를 “집합의 덧셈“이라고 합시다. 마찬가지로 3개, $\cdots$, $k$개의 집합에 대해서도 덧셈을 정의할 수 있습니다.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;이제 $S_v$를 다음과 같이 계산합니다.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;리프 노드이고 해당하는 밈이 $p$일 경우, $S_v = { p }$입니다.&lt;&#x2F;li&gt;
+&lt;li&gt;자식 노드가 $1, \cdots, k$라고 합시다. 어떤 $i$에 대해, $S_1, \cdots, S_k$ 중 $S_i$만 그대로 두고 나머지를 $-S$로 뒤집은 다음, 그 집합들을 전부 더한 것을 $T_i$로 정의합니다. 이제 $S_v = \bigcup_i T_i$입니다.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;참 쉽죠? 아쉽게도 밈이 9,000개를 넘는데, 이러면 절대로 문제를 풀 수 가없으니 출제자가 치명적인 약점을 남겨 놨죠. 이 문제의 치명적인 약점은 바로 좌표 범위와 차수가 작다는 것입니다. &lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=dQw4w9WgXcQ&quot;&gt;우리는 결코&lt;&#x2F;a&gt; 이 문제를 포기하지도, 실망시키지도, 마음 바꿔 버리고 떠나지도 않을 겁니다.&lt;&#x2F;p&gt;
+&lt;p&gt;사실 우리가 구해야 되는 건 $S_1$의 원소 중 원점에서 가장 먼 것입니다. 그러면 $S_v$의 원소를 다 들고 있지 말고, “원점에서 먼” 것들만 적당히 들고 있으면 되지 않을까요? 맞습니다. 각 벡터를 점으로 생각했을 때 볼록 껍질을 이루는 것들만 들고 있으면 됩니다. 그러니까 $S_v$는 그냥 벡터의 집합이 아니라 볼록다각형이라고 생각해도 충분합니다.&lt;&#x2F;p&gt;
+&lt;p&gt;볼록다각형으로 생각하면 둘을 더하는 것도 간편합니다. 이를 &lt;a href=&quot;https:&#x2F;&#x2F;cp-algorithms.com&#x2F;geometry&#x2F;minkowski.html&quot;&gt;민코프스키 합&lt;&#x2F;a&gt;이라고 하고, 선형 시간에 구할 수 있습니다. 합집합은 그냥 볼록 껍질 알고리즘을 아무거나 쓰면 됩니다.&lt;&#x2F;p&gt;
+&lt;p&gt;이렇게 하면 최적화가 매우 많이 된다는 건 짐작 가능하지만, 정확한 시간 복잡도를 구하기는 어렵습니다. 대충 어림잡아 봅시다.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;좌표 범위가 $X$일 때 볼록 다각형의 점의 개수는 $O(X^{2&#x2F;3})$임이 &lt;a href=&quot;https:&#x2F;&#x2F;codeforces.com&#x2F;blog&#x2F;entry&#x2F;62183&quot;&gt;알려져 있습니다&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;어떤 노드 $v$의 자식 노드가 $k$개이고, $v$ 서브트리 안에 리프 노드가 $f$개라고 하면, 좌표 범위는 $Xf$이므로 최종적으로 $O((Xf)^{2&#x2F;3})$개의 점이 남고, 이는 $O(k \log k(Xf)^{2&#x2F;3})$ 정도에 계산할 수 있습니다.&lt;&#x2F;li&gt;
+&lt;li&gt;따라서 $S_1$은 $O(n \log k(Xn)^{2&#x2F;3})$ 정도에 계산할 수 있습니다.&lt;&#x2F;li&gt;
+&lt;li&gt;$n = 10^4, k = 100, X = 10^3$을 넣으면 약 32억이 나옵니다.&lt;&#x2F;li&gt;
+&lt;li&gt;서브트리가 작을 때는 $O((Xn)^{2&#x2F;3})$개보다 훨씬 적은 점이 쓰이고, 서브트리가 클 때도 매번 최악의 케이스가 나오는 건 불가능에 가깝기 때문에, 실제로는 32억보다 훨씬 적은 연산이 들 것임을 짐작할 수 있습니다. 이론적으로도 더 작은 상한을 얻는 게 가능할 것 같습니다.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;실제로 돌려 보면 별다른 최적화를 하지 않아도 여유롭게 통과합니다. 제 구현은 약 200 ms가 걸립니다.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;l-where-am-i&quot;&gt;L: Where Am I?&lt;&#x2F;h1&gt;
+&lt;p&gt;각 시작점에서 출발했을 때 각 마커를 언제 방문하는지 계산합니다. &lt;a href=&quot;https:&#x2F;&#x2F;www.acmicpc.net&#x2F;problem&#x2F;25294&quot;&gt;이 문제&lt;&#x2F;a&gt;를 풀어보시면 좋습니다. $O(N^2M)$에 구할 수 있고, 사실 $O((NM)^2)$에 시뮬레이션 돌려서 계산해도 잘 짜면 시간 내에 돈다고 합니다. ($N$은 격자의 크기, $M$은 마커의 개수)&lt;&#x2F;p&gt;
+&lt;p&gt;각 시작점마다 그 방문 시각들을 정렬합니다. 그 후 그 목록들을 다시 한 번 사전순으로 정렬합니다. 예를 들면 이런 식으로 나올 겁니다. (정확한 수는 아니고 그냥 아무거나 쓴 겁니다.)&lt;&#x2F;p&gt;
+&lt;pre class=&quot;z-code&quot;&gt;&lt;code&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;[0, 1, 5, 10]: (1, 3)
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;[0, 1, 6, 7]: (2, 4)
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;[1, 5, 7, 12]: (3, 3)
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;[1, 5, 9, 13]: (4, 1)
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;[1, 7, 10, 12]: (2, 1)
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;[1, 9, 12, 15]: (4, 4)
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;...
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;code&gt;(3, 3)&lt;&#x2F;code&gt;과 &lt;code&gt;(4, 1)&lt;&#x2F;code&gt;을 처음으로 구별 가능한 시점은 7입니다. 6까지는 둘 다 마커를 1, 5에서 방문해서 서로 구별할 수 없지만, 7이 되면서 &lt;code&gt;(3, 3)&lt;&#x2F;code&gt; 쪽만 마커를 방문하기 때문입니다. 이를 일반화해보면, 목록이 $A$와 $B$인 두 지점을 구별 가능한 최초의 시점은 $A[i] \neq B[i]$인 가장 작은 $i$에 대해 $\min(A[i], B[i])$입니다.&lt;&#x2F;p&gt;
+&lt;p&gt;이 비교 과정을 모든 목록으로 확장해봅시다. 시점 0이 되면 &lt;code&gt;(1, 3)&lt;&#x2F;code&gt;과 &lt;code&gt;(2, 4)&lt;&#x2F;code&gt;가 나머지 전부와 구별이 됩니다. 이제 재귀적으로 &lt;code&gt;(1, 3)&lt;&#x2F;code&gt;과 &lt;code&gt;(2, 4)&lt;&#x2F;code&gt;를 구별하고, 나머지 전부를 서로 구별하면 됩니다.&lt;&#x2F;p&gt;
+&lt;p&gt;$solve(t, l, r)$을 현재 시각이 $t$일 때 $l$번째부터 $r$번째 목록까지 구별하는 함수라고 합시다. $l &amp;gt; r$일 경우 할 게 없습니다. $l = r$일 경우 $l$번째 목록이 시각 $t$에서 유일하게 결정됩니다. $l &amp;lt; r$일 경우, $l$번째 목록이 마커를 다시 방문하는 순간까지 시각을 올렸다가, 그 시각 $t’$에 마커를 방문하는 목록이 $l$부터 $k$번째라면, $solve(t’, l, k)$와 $solve(t’, k+1, r)$을 재귀적으로 호출해주면 됩니다.&lt;&#x2F;p&gt;
+&lt;p&gt;출력할 때 $y$ 순으로 먼저 비교해서 정렬해야 한다는 점을 주의하세요.&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
+          <title>BOJ 18796 이동하기 4</title>
+          <pubDate>Sat, 04 Jun 2022 00:00:00 +0000</pubDate>
+          <author>jh05013</author>
+          <link>https://jh05013.github.io/blog/boj18796/</link>
+          <guid>https://jh05013.github.io/blog/boj18796/</guid>
+          <description xml:base="https://jh05013.github.io/blog/boj18796/">&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;acmicpc.net&#x2F;problem&#x2F;18796&quot;&gt;https:&#x2F;&#x2F;acmicpc.net&#x2F;problem&#x2F;18796&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;pre class=&quot;z-code&quot;&gt;&lt;code&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;60  +---+---+---+       +60-+60-+60-+
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;    |   |   |   |       10  90  80  70
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;20  +---+---+---+       +20-+20-+20-+
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;    |   |   |   |       10  90  80  70
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;90  +---+---+---+       +90-+90-+90-+
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;    10  90  80  70
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;예제 입력 1과 각 이동의 비용을 그림으로 나타내면 위와 같습니다.
+출력은 $10 + 20 + 20 + 20 + 70 = 140$입니다.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;munjeyi-jaeguseong&quot;&gt;문제의 재구성&lt;&#x2F;h1&gt;
+&lt;p&gt;먼저, 생각하기 쉽도록 문제를 조금 변형해 봅시다.&lt;&#x2F;p&gt;
+&lt;p&gt;맨 처음에 경로 하나가 주어집니다. 이 경로는 아래로 쭉 이동한 다음 오른쪽으로 쭉 이동합니다.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;z-code&quot;&gt;&lt;code&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;60  +
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;    |
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;20  +
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;    |
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;90  +---+---+---&amp;gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;    10  90  80  70
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;이 경로가 아래, 오른쪽 순서로 지나간 칸이 있으면
+이 칸을 오른쪽, 아래 순서로 지나가도록 경로를 변경할 수 있습니다.
+이때 경로의 비용도 변화하는데, 그 변화량은
+인접한 두 $B_c$ 값의 차와 인접한 두 $A_r$ 값의 차를 합하여 계산할 수 있습니다.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;z-code&quot;&gt;&lt;code&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;60  +
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;    |
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;20  +---+          cost = (20-90) + (90-10)
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;        |               = 10
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;90      +---+---&amp;gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;    10  90  80  70
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;이제 문제는 이렇게 바뀝니다.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;격자가 있습니다. 칸 $(x, y)$를 칠하는 비용은 $Cost[x,y] := R[x] + C[y]$입니다.&lt;&#x2F;li&gt;
+&lt;li&gt;몇 개의 칸을 색칠할 건데, 색칠한 칸은 첫 열부터 마지막 열까지 높이가 단조감소하는 히스토그램을 이루어야 합니다.&lt;&#x2F;li&gt;
+&lt;li&gt;비용을 최소화하세요.&lt;&#x2F;li&gt;
+&lt;li&gt;편의를 위해, 비용이 최소이더라도 칸을 더 칠하면서 비용을 유지시킬 수 있다면 최적해가 아니라고 간주합시다.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;이 최소 비용을 계산한 다음, 초기 경로의 비용에 더하면 원래 문제의 답을 얻습니다.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;z-code&quot;&gt;&lt;code&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;    +---+---+---+
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt; 40 |120|30 |30 |
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;    +---+---+---+
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;-70 |10 |-80|-80|
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;    +---+---+---+
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;     80  -10 -10
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;예제 입력 1을 히스토그램 버전으로 재구성하면 위와 같이 됩니다.
+$R$은 (-70, 40), $C$는 (80, -10, -10)입니다.
+이 문제의 최적해는 아래 세 칸을 칠하는 것으로 -150의 비용이 들고,
+초기 경로의 비용은 $10 \times 2 + 90 \times 3 = 290$이므로 출력은 $290 - 150 = 140$입니다.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;myeoc-gaji-gwancal&quot;&gt;몇 가지 관찰&lt;&#x2F;h1&gt;
+&lt;p&gt;우선 첫 번째 열부터 봅시다. 최적해에서 첫 번째 열의 높이가 $i$라고 합시다.
+즉 $(1, 1), (2, 1), \cdots, (i, 1)$을 칠했고 $(i+1, 1)$은 칠하지 않은 상태입니다.&lt;&#x2F;p&gt;
+&lt;p&gt;그러면 다음이 성립합니다.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;$Cost[i+1, 1] &amp;gt; 0$. 안 그러면 $(i+1, 1)$을 칠하지 않을 이유가 없습니다.&lt;&#x2F;li&gt;
+&lt;li&gt;만약 두 번째 열이 $i$층을 칠하지 않았다면, $Cost[i, 1] \leq 0 \wedge Cost[i, 2] &amp;gt; 0$.
+첫 번째 부등식이 성립하지 않으면 $(i, 1)$을 지우는 것이 더 좋고,
+두 번째 부등식이 성립하지 않으면 $(i, 2)$를 칠하는 것이 더 좋습니다.&lt;&#x2F;li&gt;
+&lt;li&gt;만약 두 번째 열도 $i$층을 칠했다면, $Cost[i+1,1] + Cost[i+1,2] &amp;gt; 0$.
+안 그러면 $(i, 1)$과 $(i, 2)$를 칠하지 않는 것이 더 좋습니다.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;pre class=&quot;z-code&quot;&gt;&lt;code&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;   +---+---+---+      +---+---+---+
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;i+1|   |   |   |   i+1|   |   |   |
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;   +---+---+---+      +---+---+---+
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;i  |###|   |   |   i  |###|###|   |
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;   +---+---+---+      +---+---+---+
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;i-1|###|   |   |   i+1|###|###|   |
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;   +---+---+---+      +---+---+---+
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;   |###|###|   |      |###|###|   |
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;   +---+---+---+      +---+---+---+
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;    1   2              1   2
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;ilbanhwa&quot;&gt;일반화&lt;&#x2F;h2&gt;
+&lt;p&gt;이를 일반화해봅시다. 만약 1, 2, 3, …, $k$번째 열이 정확히 $i$층까지 칠했고 $k+1$번째 열이 $i$층을 칠하지 않았다면,&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;$Cost[i, 1] + \cdots + Cost[i, k] \leq 0$.
+안 그러면 $(i, 1), \cdots, (i, k)$를 지우는 것이 더 좋습니다.&lt;&#x2F;li&gt;
+&lt;li&gt;$Cost[i+1, 1] + \cdots + Cost[i+1, k] &amp;gt; 0$.
+안 그러면 $(i+1, 1), \cdots, (i+1, k)$를 칠하는 것이 더 좋습니다.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;pre class=&quot;z-code&quot;&gt;&lt;code&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;   +---+---+---+---+---+
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;i+1|   |   |   |   |   |
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;   +---+---+---+---+---+
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;i  |###|###|###|   |   |
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;   +---+---+---+---+---+
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;i-1|###|###|###|###|   |
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;   +---+---+---+---+---+
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;   |###|###|###|###|###|
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;   +---+---+---+---+---+
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;    1       k   k+1
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;geureomyeon-mueoseul-al-su-issnayo&quot;&gt;그러면 무엇을 알 수 있나요?&lt;&#x2F;h2&gt;
+&lt;p&gt;두 부등식을 정리하면 $kR[i] + C[1] + \cdots + C[k] \leq 0 &amp;lt; kR[i+1] + C[1] + \cdots + C[k]$이므로,
+$R[i] &amp;lt; R[i+1]$임을 알 수 있습니다.
+히스토그램을 어떻게 칠하든 위에서 제시한 $k$는 반드시 존재하므로,
+이는 **최적해의 첫 번째 열이 정확히 $i$층까지 칠했다면 $R[i] &amp;lt; R[i+1]$**임을 의미합니다.
+그리고 이 관찰은 꼭 첫 번째 열에서만 적용되는 건 아닙니다.
+**최적해의 어느 열이 정확히 $i$층까지 칠했을 경우, $R[i] &amp;lt; R[i+1]$**입니다.&lt;&#x2F;p&gt;
+&lt;p&gt;반대로 말하면, &lt;strong&gt;$R[i] \geq R[i+1]$이면 $i$층에서 멈출 일이 없습니다&lt;&#x2F;strong&gt;.
+즉 어떤 열이든 i층을 칠하면 i+1층도 반드시 칠해야 합니다.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;geureomeuro-iceungeul-jiubsida&quot;&gt;그러므로 i층을 지웁시다&lt;&#x2F;h1&gt;
+&lt;p&gt;$R[i] \geq R[i+1]$이라면 $i$층과 $i+1$층을 아예 “합체“해줍시다. 즉&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;기존의 $R$ 배열이 $[R[1], \cdots, R[i], R[i+1], R[i+2], \cdots, R[N]]$이었다면,&lt;&#x2F;li&gt;
+&lt;li&gt;새로운 $R$ 배열은 $[R[1], \cdots, R[i] + R[i+1], R[i+2], \cdots, R[N]]$이 됩니다.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;그런데 이렇게 그냥 합체해 버리면 칸을 칠하는 비용이 전과 맞지 않게 됩니다.
+왜냐하면 합체 전에 $(i, 1)$과 $(i+1, 1)$을 칠하는 비용은 $R[i] + R[i+1] + 2C[1]$이었는데,
+합체 후에 $(i, 1)$을 칠하는 비용은 $R[i] + R[i+1] + C[1]$이기 때문입니다.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;haegyeol-bangbeob&quot;&gt;해결 방법&lt;&#x2F;h2&gt;
+&lt;p&gt;이를 해결하기 위해, 각 층마다 &lt;strong&gt;높이&lt;&#x2F;strong&gt; 값을 도입합니다. $i$층의 높이를 $H[i]$라고 할 때,
+$Cost[i, j] := R[i] + H[i]C[j]$로 정의하고, 두 층을 합칠 때는 $R$과 $H$ 값을 모두 합치면 됩니다.&lt;&#x2F;p&gt;
+&lt;pre class=&quot;z-code&quot;&gt;&lt;code&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;   +---+---+---+---+---+
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;i  |###|###|###|   |   |
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;   |###|###|###|   |   |
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;   +---+---+---+---+---+
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;i-1|###|###|###|###|   |
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;   +---+---+---+---+---+
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;   |###|###|###|###|###|
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;   +---+---+---+---+---+
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;    1       k   k+1
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;myeoc-gaji-gwancal-v2&quot;&gt;몇 가지 관찰 v2&lt;&#x2F;h2&gt;
+&lt;p&gt;이제 위에서 본 그리디 전략을 다시 적용해 봅시다.
+만약 1, 2, 3, …, $k$번째 열이 정확히 $i$층까지 칠했고 $k+1$번째 열이 $i$층을 칠하지 않았다면,&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;$Cost[i, 1] + \cdots + Cost[i, k] = kR[i] + H[i]\mathscr{C} \leq 0$ ($\mathscr{C} := C[1] + \cdots + C[k]$).&lt;&#x2F;li&gt;
+&lt;li&gt;$Cost[i+1, 1] + \cdots + Cost[i+1, k] = kR[i+1] + H[i+1]\mathscr{C} &amp;gt; 0$.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;따라서 $k \frac{R[i]}{H[i]} + \mathscr{C} \leq 0 &amp;lt; k \frac{R[i+1]}{H[i+1]} + \mathscr{C}$이므로,
+$\frac{R[i]}{H[i]} &amp;lt; \frac{R[i+1]}{H[i+1]}$입니다.
+같은 이유로, $\frac{R[i]}{H[i]} \geq \frac{R[i+1]}{H[i+1]}$이면
+$i$층과 $i+1$층을 합체해줄 수 있습니다.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;eoddeohge-habcehaeya-haneunga&quot;&gt;어떻게 합체해야 하는가?&lt;&#x2F;h1&gt;
+&lt;p&gt;이제 우리가 할 일은 $\frac{R[i]}{H[i]} \geq \frac{R[i+1]}{H[i+1]}$인
+$i$를 찾아 합체하는 과정을 이러한 $i$가 존재하지 않을 때까지 반복하는 것입니다.
+그런데 이러한 $i$가 여러 개라면 무엇을 먼저 합체해야 할까요?&lt;&#x2F;p&gt;
+&lt;p&gt;그 답은… 상관없습니다. &lt;strong&gt;어떤 순서로 합체를 하더라도 최종적으로는 똑같은 배열이 됩니다.&lt;&#x2F;strong&gt;
+왜일까요? $H$의 누적합을 $x$좌표, $R$의 누적합을 $y$좌표로 두고 점을 찍어봅시다.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;move41.png&quot; alt=&quot;&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;각각의 $H[i]$, $R[i]$ 쌍은 $i$번째와 $i+1$번째 점을 잇는 선분에 해당되고,
+어떤 $i$에 대해 $i$번째 선분의 기울기가 $i+1$번째 선분의 기울기보다 크거나 같으면
+$i+1$번째 점을 제거할 수 있습니다. 최종적으로는 선분들의 기울기가 단조증가하게 됩니다.
+따라서, 어떤 순서로 합체를 하더라도 결국에는 아래로 볼록한 볼록 껍질만 남습니다.&lt;&#x2F;p&gt;
+&lt;p&gt;합체 과정은 monotone chain 알고리즘처럼 스택으로 구현할 수 있습니다.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;move42.png&quot; alt=&quot;&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;이렇게 분수를 직선의 기울기로 생각하는 발상은 &lt;a href=&quot;https:&#x2F;&#x2F;www.acmicpc.net&#x2F;problem&#x2F;16760&quot;&gt;이 문제&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;www.acmicpc.net&#x2F;problem&#x2F;12122&quot;&gt;이 문제&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;codeforces.com&#x2F;contest&#x2F;1300&#x2F;problem&#x2F;E&quot;&gt;이 문제&lt;&#x2F;a&gt; 등에서도 쓸 수 있습니다.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;yeol-habce&quot;&gt;열 합체&lt;&#x2F;h1&gt;
+&lt;p&gt;지금까지의 논리를 $C$에도 적용할 수 있습니다.
+각 열마다 &lt;strong&gt;너비&lt;&#x2F;strong&gt; $W[j]$ 값을 도입하고, $Cost[i, j] := R[i]W[j] + C[j]H[i]$로 정의한 뒤,
+$\frac{C[j]}{W[j]}$ 값이 단조증가하도록 열을 합쳐 줍시다.&lt;&#x2F;p&gt;
+&lt;p&gt;거의 다 왔습니다!&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;bunhae&quot;&gt;분해&lt;&#x2F;h1&gt;
+&lt;p&gt;이제 아주 중요한 일이 일어납니다.
+볼록 껍질의 둘레를 따라 각 $x$좌표마다 다시 점을 찍어서 볼록 껍질을 다시 $N$개의 선분으로 분해해 봅시다.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;move43.png&quot; alt=&quot;&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;그러면 볼록 껍질은 바뀌지 않았기 때문에 최적해도 바뀌지 않습니다.
+선분들의 기울기는 여전히 단조증가합니다.
+그런데 이제 모든 $H[i]$가 1이기 때문에, 이는 $R[i]$가 단조증가함을 의미합니다.
+마찬가지로 모든 $W[j]$가 1이면서 $C[j]$도 단조증가하도록 바꿀 수 있습니다.
+답을 바꾸지 않으면서 $R$과 $C$가 단조증가한다는 매우 강력한 조건을 추가한 것입니다.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;mamuri&quot;&gt;마무리&lt;&#x2F;h2&gt;
+&lt;p&gt;이제 나머지는 간단합니다. $Cost[i, j] &amp;gt; 0$이라면
+$Cost[i+1, j]$와 $Cost[i, j+1]$도 모두 양수이기 때문에,
+$Cost[i, j] \leq 0$인 모든 $(i, j)$는 높이가 단조감소하는 히스토그램의 형태를 갖습니다.
+&lt;strong&gt;따라서 그 히스토그램이 그냥 최적해입니다.&lt;&#x2F;strong&gt;
+히스토그램 및 비용은 투 포인터와 누적합으로 찾을 수 있습니다.&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
+          <title>IOI 2012-1-2 낙하산 고리들</title>
+          <pubDate>Sat, 04 Jun 2022 00:00:00 +0000</pubDate>
+          <author>jh05013</author>
+          <link>https://jh05013.github.io/blog/boj5811/</link>
+          <guid>https://jh05013.github.io/blog/boj5811/</guid>
+          <description xml:base="https://jh05013.github.io/blog/boj5811/">&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.acmicpc.net&#x2F;problem&#x2F;5811&quot;&gt;https:&#x2F;&#x2F;www.acmicpc.net&#x2F;problem&#x2F;5811&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;seobeutaeseukeu-1&quot;&gt;서브태스크 1&lt;&#x2F;h1&gt;
+&lt;p&gt;각각의 정점이 중요한 고리인지 O(N)에 확인하면 됩니다.
+즉, 해당 정점을 지웠을 때 나머지가 체인으로 구성되어 있는지 확인하면 됩니다.
+가장 간단한 방법은 다음 조건을 검사하는 것이라고 생각됩니다.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;포레스트여야 합니다. 즉, 사이클이 없어야 합니다.&lt;&#x2F;li&gt;
+&lt;li&gt;모든 정점의 차수가 2 이하여야 합니다.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;seobeutaeseukeu-2-3&quot;&gt;서브태스크 2, 3&lt;&#x2F;h1&gt;
+&lt;p&gt;CountCritical이 호출될 때마다 모든 중요한 고리를 O(N)에 찾는 것이 목표입니다.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;관찰 1.&lt;&#x2F;strong&gt; 정점을 지우면 나머지 정점의 차수가 최대 1 감소합니다.
+따라서, 차수가 4 이상인 정점 v가 있으면 v만 중요한 고리가 될 수 있습니다.
+v가 아닌 정점을 지우면 v의 차수는 3 이상이라서 절대로 체인을 이룰 수 없기 때문입니다.&lt;&#x2F;p&gt;
+&lt;p&gt;차수가 4 이상인 정점이 있으면 그중 아무거나 하나를 잡고 중요한 고리인지 확인하면 됩니다.
+따라서 O(N)에 풀립니다.
+(그런 정점이 여러 개면 아무 것도 중요한 고리가 될 수 없지만, 그 경우를 따로 처리할 필요는 없습니다.)&lt;&#x2F;p&gt;
+&lt;p&gt;이제 그런 정점이 없다고 가정합시다.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;관찰 2.&lt;&#x2F;strong&gt; 차수가 3인 정점 v가 있으면 v 및 v에 인접한 정점만 중요한 고리가 될 수 있습니다.&lt;&#x2F;p&gt;
+&lt;p&gt;차수가 3인 정점이 있으면, 그중 아무거나 하나를 잡고 그 정점 및 그에 인접한 정점 3개를 확인하면 됩니다.
+후보가 4개이므로 O(N)에 풀립니다.&lt;&#x2F;p&gt;
+&lt;p&gt;이제 그런 정점도 없다고 가정합시다.
+모든 정점의 차수가 2 이하이면, 모든 연결 요소는 체인이거나 사이클입니다.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;관찰 3.&lt;&#x2F;strong&gt; 사이클이 있으면 그 사이클에 있는 정점만 중요한 고리가 될 수 있습니다.
+연결 요소 중 사이클이 없으면 답은 N, 하나이면 답은 그 사이클의 크기와 같고, 두 개 이상이면 답은 0입니다.&lt;&#x2F;p&gt;
+&lt;p&gt;따라서 직접 정점을 지워볼 필요 없이 답을 그래프의 구조만 보고 알아낼 수 있습니다.
+이번에도 O(N)에 풀립니다.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;seobeutaeseukeu-4-5&quot;&gt;서브태스크 4, 5&lt;&#x2F;h1&gt;
+&lt;p&gt;간선을 추가하면서 위의 세 가지 관찰을 동적으로 관리하는 것이 목표입니다.
+관찰 3부터 시작해서 거꾸로 올라가는 것이 좋습니다.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;gwancal-3-coejeoghwa&quot;&gt;관찰 3 최적화&lt;&#x2F;h2&gt;
+&lt;p&gt;차수가 3 이상인 정점이 생기지 않는다는 가정 하에 답을 동적으로 관리하려면 분리 집합을 사용하면 됩니다.
+분리 집합에 크기까지 추가로 저장해 둡시다. 이제 답은 두 단계에 걸쳐 바뀌는데,&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;처음에는 답이 N입니다.&lt;&#x2F;li&gt;
+&lt;li&gt;이미 연결된 두 점이 연결될 경우 사이클이 하나 형성됩니다.
+사이클이 처음으로 형성될 경우, 답은 해당 연결 요소의 크기와 같습니다.&lt;&#x2F;li&gt;
+&lt;li&gt;이미 연결된 두 점이 또 연결될 경우 답은 0입니다.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;그러다가 차수가 3인 정점이 생기는 순간, 이 자료구조를 파기하고 아래의 “관찰 2 최적화”
+단락으로 넘어가면 됩니다. 정점의 차수는 그냥 배열로 관리하면 됩니다.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;gwancal-2-coejeoghwa&quot;&gt;관찰 2 최적화&lt;&#x2F;h2&gt;
+&lt;p&gt;이제 새로운 자료구조를 생각해야 합니다.
+후보가 최대 4개니까, 각각의 후보에 대해 “이 후보를 지웠을 때 나머지가 체인을 이루는가“를
+판별할 수 있으면 좋을 것입니다. 즉 후보 v가 실제로 중요한 고리인지 확인하려면&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;v와 연결된 간선을 모두 지우고,&lt;&#x2F;li&gt;
+&lt;li&gt;나머지가 포레스트를 이루면서 최대 차수가 2인지 확인하고,&lt;&#x2F;li&gt;
+&lt;li&gt;지운 간선을 모두 복원하면 됩니다.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;하지만 간선을 지우는 건 일반적으로 매우 어려운 작업입니다.&lt;&#x2F;p&gt;
+&lt;p&gt;이를 해결하려면 그 4개의 후보가 한 번 정해진 후로 바뀌지 않는다는 점을 활용하면 됩니다.
+(정확히는, 바꿀 필요가 없습니다.) 후보를 a, b, c, d라고 합시다.
+간선을 하나 추가할 때마다 a를 지우고 확인한 다음 도로 추가하지 말고,
+애초부터 a를 미리 지워놓고 간선이 추가될 때마다 확인해 줍시다. b, c, d도 마찬가지입니다.&lt;&#x2F;p&gt;
+&lt;p&gt;즉 다음과 같은 자료구조를 a, b, c, d 하나씩 총 4개 만들면 됩니다.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;이 자료구조는 특정 정점 v를 &lt;strong&gt;무시&lt;&#x2F;strong&gt;합니다.&lt;&#x2F;li&gt;
+&lt;li&gt;간선을 추가하려고 할 때, 간선의 양끝 점 중 하나가 v이면 &lt;strong&gt;무시&lt;&#x2F;strong&gt;합니다.&lt;&#x2F;li&gt;
+&lt;li&gt;그래프 전체가 체인으로 이루어져 있는지 검사합니다.
+이는 서브태스크 1에서 제시한 방법을 쓰면 분리 집합으로 구현할 수 있습니다.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;이 자료구조를 새로 만드는 순간, 지금까지 나왔던 Link 쿼리들을 전부 이 자료구조에 적용시켜야 합니다.
+관찰 3에서 쓴 자료구조에서 Link 쿼리들을 저장해 뒀다가, 관찰 2로 넘어갈 때 그대로 Link해주면 됩니다.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;gwancal-1-coejeoghwa&quot;&gt;관찰 1 최적화&lt;&#x2F;h2&gt;
+&lt;p&gt;관찰 1은 구현할 필요도 없습니다. 차수가 4 이상인 정점이 있든 없든
+후보는 위에서 정한 a, b, c, d 중에 있다는 사실은 바뀌지 않습니다.&lt;&#x2F;p&gt;
+&lt;p&gt;서브태스크 2, 3에서 관찰 1이 필요했던 이유는
+차수가 매우 큰 정점에다가 그와 인접한 정점까지 다 확인하면 후보가 O(N)개나 되기 때문인데,
+이미 관찰 2를 최적화하면서 후보를 O(1)개로 좁혀 버렸기 때문에 관찰 1은 이제 필요가 없습니다.&lt;&#x2F;p&gt;
+&lt;p&gt;각 쿼리에 대한 시간 복잡도는 amortized O(logN)입니다.&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
+          <title>BOJ 22906 장난감 오렌지 만들기</title>
+          <pubDate>Sun, 22 May 2022 00:00:00 +0000</pubDate>
+          <author>jh05013</author>
+          <link>https://jh05013.github.io/blog/boj22906/</link>
+          <guid>https://jh05013.github.io/blog/boj22906/</guid>
+          <description xml:base="https://jh05013.github.io/blog/boj22906/">&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.acmicpc.net&#x2F;problem&#x2F;22906&quot;&gt;https:&#x2F;&#x2F;www.acmicpc.net&#x2F;problem&#x2F;22906&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;seobeutaeseukeu-1&quot;&gt;서브태스크 1&lt;&#x2F;h1&gt;
+&lt;p&gt;사실 이 문제는 그래프로 모델링할 수 있습니다.
+연결 고리의 색이 a, b인 블록은 정점 a와 b를 잇는 간선으로 보면,
+각 쿼리는 정확히 l번째부터 r번째까지의 간선만으로 만들어진 그래프를
+최소 개수의 회로(circuit)로 분할하는 문제가 됩니다.&lt;&#x2F;p&gt;
+&lt;p&gt;모든 정점의 번호가 1 이상 2N 이하라고 합시다. 아니라면 좌표 압축을 하면 됩니다.&lt;&#x2F;p&gt;
+&lt;p&gt;l번째부터 r번째까지의 간선만 이은 다음, 각각의 연결 요소에 대해 문제를 풀고 합치면 답을 구할 수 있습니다.
+연결 요소에 간선이 없다면 최소 회로는 0개입니다.
+차수가 홀수인 정점이 하나라도 있다면 회로로 분할할 수 없습니다.
+그렇지 않다면 오일러 회로를 만들 수 있기 때문에 최소 회로는 1개입니다.&lt;&#x2F;p&gt;
+&lt;p&gt;따라서, 쿼리의 답은 차수가 홀수인 정점이 하나라도 있다면 -1,
+아니면 간선이 최소 하나인 연결 요소의 개수와 같습니다.
+쿼리가 들어올 때마다 DFS를 하면 O(QN)이 됩니다. 실제로 오일러 회로를 만들 필요는 없습니다.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;seobeutaeseukeu-2&quot;&gt;서브태스크 2&lt;&#x2F;h1&gt;
+&lt;p&gt;차수가 홀수인 정점이 존재하는지를 빠르게 알아내야 합니다.&lt;&#x2F;p&gt;
+&lt;p&gt;수열 &lt;code&gt;a1, b1, a2, b2, ..., aN, bN&lt;&#x2F;code&gt;을 생각해 봅시다.
+그러면 2l번째부터 2r+1번째까지 보았을 때, 정확히 홀수 개 들어있는 수가 존재하는지 판별하는 문제가 됩니다.&lt;&#x2F;p&gt;
+&lt;p&gt;“같은 수가 짝수 개“라는 키워드에서 XOR을 생각할 수 있습니다.
+각 정점마다 랜덤으로 64비트 정수 “레이블“을 부여한 다음,
+2l번째부터 2r+1번째까지 정점의 레이블 값을 XOR합시다.
+이 값이 0이라면, &lt;em&gt;1에  가까운 확률로&lt;&#x2F;em&gt; 모든 수가 짝수 개씩 존재합니다.
+0이 아니라면, &lt;em&gt;무조건&lt;&#x2F;em&gt; 홀수 개 들어있는 수가 적어도 하나 존재합니다.&lt;&#x2F;p&gt;
+&lt;p&gt;수열의 값이 중간에 바뀌지 않으므로, 구간 XOR은 누적 합으로 쿼리 당 O(1),
+총 O(N+Q)에 구할 수 있습니다.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;seobeutaeseukeu-3&quot;&gt;서브태스크 3&lt;&#x2F;h1&gt;
+&lt;p&gt;서브태스크 2의 방법으로 답이 -1인지 아닌지는 알 수 있습니다.
+이제 답이 -1이 아니면 “간선이 최소 하나인 연결 요소의 개수“를 세야 되는데,
+일단 간선이 최소 하나라는 조건은 무시하고 그냥 연결 요소의 개수를 다 세어 봅시다.
+그런데 사실 이것도 어렵기 때문에, 이걸 또 두 서브태스크로 나눠서 생각해야 합니다.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Easy 버전: 모든 쿼리의 l이 같습니다.&lt;&#x2F;li&gt;
+&lt;li&gt;Hard 버전: 추가 제약 조건이 없습니다.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;yeongyeol-yosoyi-gaesu-easy&quot;&gt;연결 요소의 개수 (Easy)&lt;&#x2F;h2&gt;
+&lt;p&gt;우선 모든 쿼리의 l이 같다고 합시다.
+그러면 모든 쿼리를 r에 대한 오름차순으로 정렬한 후 분리 집합으로 풀 수 있습니다.
+l번째 간선부터 차례대로, 간선이 두 연결 요소 사이를 이을 때마다, 그 둘을 합쳐 주고 개수를 1 줄이면 됩니다.&lt;&#x2F;p&gt;
+&lt;p&gt;사실 쿼리를 정렬할 필요도 없습니다. 실제로 연결 요소를 합치는 데 사용된 간선들을 모아 놓으면,
+&lt;code&gt;[l, r]&lt;&#x2F;code&gt;에 대한 답은 n - (번호가 r 이하인 간선의 개수)입니다.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;yeongyeol-yosoyi-gaesu-hard&quot;&gt;연결 요소의 개수 (Hard)&lt;&#x2F;h2&gt;
+&lt;p&gt;실제로 연결 요소를 합치는 데 사용된 간선들은 스패닝 포레스트를 이룰 것입니다.
+l번째 간선에서부터 위 과정으로 만들어진 스패닝 포레스트를 F(l)이라고 합시다.&lt;&#x2F;p&gt;
+&lt;p&gt;F(l)이 있을 때, F(l-1)은 어떻게 구할 수 있을까요?
+우선 l-1번째 간선을 볼 때는 아무 간선도 없으므로, F(l)에다가 l-1번째 간선을 추가해 봅시다.
+만약 l-1번째 간선이 F(l)의 서로 다른 연결 요소를 이었다면, 이게 그냥 F(l-1)입니다.&lt;&#x2F;p&gt;
+&lt;p&gt;l-1번째 간선이 F(l)의 하나의 연결 요소 안에 놓여 있는 경우가 문제입니다.
+l-1번째 간선이 정점 a와 b를 잇는다고 합시다.
+그러면 F(l-1)을 만드는 과정은 F(l)과 거의 같은데, a와 b가 한 연결 요소로 모이는 시점이 앞당겨집니다.
+그리고 &lt;strong&gt;F(l)에서 a와 b 사이의 경로 중 가장 마지막으로 추가된 간선&lt;&#x2F;strong&gt;이 무시됩니다.
+나머지 간선은 변화가 없습니다.&lt;&#x2F;p&gt;
+&lt;p&gt;따라서 F(l-1)은, F(l)을 구한 다음,
+a와 b 사이의 경로 중 번호가 가장 큰 간선을 제거하고 a와 b를 바로 이으면 구할 수 있습니다.
+링크-컷 트리로 모든 F(i)를 O(NlogN)에 구할 수 있습니다.&lt;&#x2F;p&gt;
+&lt;p&gt;쿼리 &lt;code&gt;[l, r]&lt;&#x2F;code&gt;에 대한 답은 n - (F(l)에서 번호가 r 이하인 간선의 개수)입니다.
+쿼리를 l에 대한 내림차순으로 정렬하고, F(n), F(n-1), …, F(1)을
+차례대로 구하면서 모든 쿼리의 답을 펜윅 트리로 O(Q+NlogN)에 구할 수 있습니다.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;ganseoni-issneun-yeongyeol-yosoyi-gaesu&quot;&gt;간선이 있는 연결 요소의 개수&lt;&#x2F;h2&gt;
+&lt;p&gt;실제 답은 (차수가 1 이상인 정점의 개수) - (F(l)에서 번호가 r 이하인 간선의 개수)이기 때문에,
+이제 차수가 1 이상인 정점의 개수를 구해야 합니다.&lt;&#x2F;p&gt;
+&lt;p&gt;이 값은 수열 &lt;code&gt;a1, b1, a2, b2, ..., aN, bN&lt;&#x2F;code&gt;의 2l번째부터 2r+1번째까지의 수 중
+서로 다른 수의 개수와 같습니다.
+&lt;a href=&quot;https:&#x2F;&#x2F;www.acmicpc.net&#x2F;problem&#x2F;14897&quot;&gt;BOJ 14897 서로 다른 수와 쿼리 1&lt;&#x2F;a&gt;의
+풀이를 그대로 쓰면 됩니다. Mo’s algorithm 말고 오프라인 + 펜윅 트리를 권장합니다.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.acmicpc.net&#x2F;problem&#x2F;14898&quot;&gt;BOJ14898 서로 다른 수와 쿼리 2&lt;&#x2F;a&gt;의 풀이인
+온라인 + 머지 소트 트리를 써도 시간 내에 돌아갑니다.&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
+          <title>BOJ 20846 수열과 쿼리 40</title>
+          <pubDate>Thu, 04 Feb 2021 00:00:00 +0000</pubDate>
+          <author>jh05013</author>
+          <link>https://jh05013.github.io/blog/boj20846/</link>
+          <guid>https://jh05013.github.io/blog/boj20846/</guid>
+          <description xml:base="https://jh05013.github.io/blog/boj20846/">&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;acmicpc.net&#x2F;problem&#x2F;20846&quot;&gt;https:&#x2F;&#x2F;acmicpc.net&#x2F;problem&#x2F;20846&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;ige-museun-kweoriya&quot;&gt;이게 무슨 쿼리야?&lt;&#x2F;h1&gt;
+&lt;p&gt;각각의 쿼리는 수열 B의 접미사 배열을 만들었을 때 K번째 원소가 무엇인지 묻는 쿼리로 생각할 수 있습니다.&lt;&#x2F;p&gt;
+&lt;p&gt;수열 A의 접미사 배열을 만들고, 쿼리를 (d mod M)에 대한 오름차순으로 정렬합니다.
+이제 d를 하나씩 올려 가는데, 그럴 때마다 수열 A의 모든 원소를 하나씩 올린다고 생각하지 말고,
+A에 있는 원소 중 M-d가 “새로운 최솟값“이 된다고 합시다.
+이렇게 하면 원소가 바뀌는 횟수는 최대 N회입니다.
+이제 관건은 접미사 배열을 어떻게 동적으로 관리하는지입니다.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;jaryogujo&quot;&gt;자료구조&lt;&#x2F;h1&gt;
+&lt;p&gt;정해가 이것일지는 모르겠으나, 저는 접미사 트리로 풀었습니다.&lt;&#x2F;p&gt;
+&lt;p&gt;접미사 트리는 여러 강력한 기능을 갖고 있는데, 그중 하나는
+트리를 DFS 순회하되 사전순으로 작은 자식부터 차례대로 방문하면
+(termination symbol은 -1이라고 합시다), 리프 노드를 방문한 순서가 곧 접미사 배열이 된다는 것입니다.
+따라서 수열 A의 접미사 트리를 만들고, 오일러 투어 트릭을 써서 일자로 편 다음,
+그걸 동적으로 관리함과 동시에 K번째 리프 노드를 찾을 수 있으면 됩니다.&lt;&#x2F;p&gt;
+&lt;p&gt;이제 원소 M-d가 “새로운 최솟값“이 된다고 합시다.
+그러면 모든 노드 p에 대해, label이 M-d로 시작하는 자식 v가 (존재하면) 현재 마지막 자식일 것이고,
+이 v가 첫 번째 자식으로 옮겨집니다.
+단, label이 termination symbol로 시작하는 자식이 있으면 대신 두 번째 자식으로 옮겨집니다.
+오일러 투어 트릭을 생각해 보면 이는 부분배열을 잡아서
+v의 서브트리의 크기 만큼 오른쪽으로 시프트하는 것이라고 생각할 수 있습니다.&lt;&#x2F;p&gt;
+&lt;p&gt;따라서 다음을 지원하는 자료구조를 사용하면 됩니다.&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;접미사 트리의 노드가 주어졌을 때, 이것이 현재 오일러 투어에서 몇 번째에 위치하는지 찾기&lt;&#x2F;li&gt;
+&lt;li&gt;부분배열을 오른쪽으로 시프트하기&lt;&#x2F;li&gt;
+&lt;li&gt;현재 오일러 투어에서 K번째 리프 노드 찾기&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;jaryogujo-hana-deo&quot;&gt;자료구조 하나 더&lt;&#x2F;h2&gt;
+&lt;p&gt;스플레이 트리로 위 셋을 전부 구현할 수 있습니다.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;1번 연산은 접미사 트리의 노드 v에 대응되는 스플레이 트리의 노드 x를 찾고,
+x를 스플레이한 다음 x의 왼쪽 서브트리의 크기를 구하면 됩니다.&lt;&#x2F;li&gt;
+&lt;li&gt;2번 연산은 부분배열 뒤집기 연산 세 번으로 구현할 수 있습니다.&lt;&#x2F;li&gt;
+&lt;li&gt;3번 연산은 스플레이 트리의 각 노드마다
+“해당 (스플레이 트리) 노드의 서브트리에 있는 접미사 트리의 리프 노드 개수“를 저장해 두고,
+루트에서부터 하나씩 내려가면 됩니다.
+단, 그 전에 스플레이 트리가 균형이 잡혀 있음이 보장되어야 O(logN)이 됩니다.
+만약 그게 보장이 안 된다면, 스플레이 트리를 만든 직후에 아무 노드나 잡아서 스플레이하는 걸
+10,000번 정도 반복하면 됩니다.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;참고로 제 코드는 10799 바이트입니다.&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
+          <title>제1회 논산 코드 페스티벌 풀이</title>
+          <pubDate>Mon, 06 Apr 2020 00:00:00 +0000</pubDate>
+          <author>jh05013</author>
+          <link>https://jh05013.github.io/blog/noncofe/</link>
+          <guid>https://jh05013.github.io/blog/noncofe/</guid>
+          <description xml:base="https://jh05013.github.io/blog/noncofe/">&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.acmicpc.net&#x2F;category&#x2F;detail&#x2F;2206&quot;&gt;https:&#x2F;&#x2F;www.acmicpc.net&#x2F;category&#x2F;detail&#x2F;2206&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;18857-jib-ddeonawa-yeolca-tago&quot;&gt;18857 집 떠나와 열차 타고&lt;&#x2F;h1&gt;
+&lt;p&gt;선인장의 block-cut tree를 생각해 봤을 때, 정점 1과 N 사이에 있는 경로만 생각해도 충분합니다.
+그런 경로만 생각하면 그래프는 대충 이런 형태가 됩니다.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;noncofe1.png&quot; alt=&quot;&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;이제 1번 정점에서 N번 정점으로 못 가게 하려면, 이 그래프의 BCC 중 하나를 완전히 끊어야 합니다. 완전히 안 끊고 예를 들어 사이클에서 하나의 간선만 제거한다거나 그러면 소용이 없습니다. 따라서, 각각의 BCC를 끊는 비용을 구하고, 그 중 최솟값을 구하면 됩니다.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;18858-hunryeonsoro-ganeun-nal&quot;&gt;18858 훈련소로 가는 날&lt;&#x2F;h1&gt;
+&lt;p&gt;DPu[i][j] = “길이 i, 마지막 정수 j이며, 마지막 두 수가 오름차순인 경우의 수”,
+DPd[i][j]는 거의 똑같은데 “오름차순이 아닌 경우의 수“로 두면 O(NM^2)가 나옵니다.
+이것만으로 시간 내에 돌아가지만, prefix sum을 적절히 사용하여 O(NM)으로 줄일 수도 있습니다.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;18859-bumonimgge-keunjeol-hago&quot;&gt;18859 부모님께 큰절 하고&lt;&#x2F;h1&gt;
+&lt;p&gt;감소수열과 증가수열을 생각하지 말고,
+맨 첫 원소를 공유하는 두 개의 증가수열로 분해한다고 생각해 봅시다.&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;맨 첫 원소는 수열의 최솟값이어야 합니다. 그 수를 m이라고 합시다.&lt;&#x2F;li&gt;
+&lt;li&gt;한 수열의 공차는 (m 제외 최솟값) - m이어야 합니다. 그 공차를 d라고 합시다. d = 0이면 답은 No입니다.&lt;&#x2F;li&gt;
+&lt;li&gt;m+d에서 시작해서 공차가 d인 등차수열을 적절히 제거했을 때, 남은 수들도 등차수열을 이루어야 합니다.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;3번은 어떻게 할까요? 수들을 정렬하고, 인접한 수들의 차를 모두 계산했을 때,
+그중 최솟값과 최댓값이 같아야만 등차수열을 이룰 수 있습니다.
+인접한 수의 차를 모두 저장하는 자료구조를 생각해 봅시다.
+여기서 수 x를 지우면, 이런 변화가 일어납니다.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;x 왼쪽과 오른쪽에 있는 수를 L, R이라고 합시다. L이나 R이 없을 수도 있습니다.&lt;&#x2F;li&gt;
+&lt;li&gt;L이 있으면, 자료구조에서 L-x가 제거됩니다. R이 있으면, 자료구조에서 x-R이 제거됩니다.&lt;&#x2F;li&gt;
+&lt;li&gt;그리고 L과 R이 모두 있으면, 자료구조에 R-L이 추가됩니다.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;따라서 수를 제거, 추가하고, 최솟값과 최댓값을 받아오는 자료구조를 쓰면 됩니다.
+가장 대표적인 것으로 multiset이 있고,
+&lt;a href=&quot;https:&#x2F;&#x2F;infossm.github.io&#x2F;blog&#x2F;2020&#x2F;08&#x2F;16&#x2F;heap&#x2F;&quot;&gt;임의의 원소 삭제가 가능한 힙&lt;&#x2F;a&gt;을 만들 수도 있습니다.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;18860-daemun-baggeul-naseol-ddae&quot;&gt;18860 대문 밖을 나설 때&lt;&#x2F;h1&gt;
+&lt;p&gt;특정 펌프가 처음으로 작동을 시작한다고 하면, 전체 과정은 이렇게 생각할 수 있습니다.&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;현재 작동 중인 펌프가 포함된 가장 작은 서브트리를 채웁니다.&lt;&#x2F;li&gt;
+&lt;li&gt;이제 석유가 넘쳐서 더 큰 서브트리로 흘러 가는데, 이 순간에 가능한 한 많은 펌프를 작동시켜야 합니다.
+x만큼의 석유가 넘치면 min(도달 가능한 펌프 개수, x)개의 펌프를 작동시킬 수 있습니다.&lt;&#x2F;li&gt;
+&lt;li&gt;그 다음 순간에는 도달 가능한 모든 펌프를 작동시킬 수 있습니다.&lt;&#x2F;li&gt;
+&lt;li&gt;1번으로 돌아갑니다.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;2번과 3번은 O(1)에 구현할 수 있습니다. 가장 시간이 오래 걸리는 부분은 1번인데,
+채워야 되는 서브트리의 크기를 미리 DP로 계산해 놓으면 이것도 O(1)에 구현할 수 있습니다.
+그리고 이 모든 과정은 O(logN)번 반복되므로,
+특정 펌프에서 시작할 때 다 채우는 데 걸리는 시간은 O(logN)만에 계산할 수 있습니다.&lt;&#x2F;p&gt;
+&lt;p&gt;모든 펌프에 대해 시간을 계산하면 됩니다.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;18861-gaseum-soge-mueosinga&quot;&gt;18861 가슴 속에 무엇인가&lt;&#x2F;h1&gt;
+&lt;p&gt;만약 그래프가 포레스트임이 보장된다면, 간선 추가, 삭제, 경로 최솟값을 구하는 쿼리가 됩니다.&lt;&#x2F;p&gt;
+&lt;p&gt;포레스트가 아니라면 어떨까요? 트리에 간선 하나를 추가해 봅시다.
+그러면 사이클이 정확히 하나 만들어집니다. 그 사이클의 간선 중 가중치가 가장 작은 것을 봅시다.
+(여러 개면 아무거나 선택합니다.) 그러면 그 간선은 더 이상 쓸모가 없습니다.
+3번 쿼리의 경우 그 간선을 쓰는 대신 사이클 반대 방향으로 돌아서 가면 되며,
+2번 쿼리의 경우 사이클의 다른 간선들이 제거되기 전에 자신이 먼저 제거되기 때문입니다.&lt;&#x2F;p&gt;
+&lt;p&gt;따라서 새로운 간선을 추가하기 전에, 가중치가 가장 작은 그 간선을 먼저 제거하면,
+결과에 영향을 주지 않으면서 포레스트를 유지시킬 수 있습니다. 결국 이것도 경로 최솟값 쿼리가 됩니다.
+이 모든 것은 링크-컷 트리로 구현할 수 있습니다. 신난다!&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;18862-aswiumi-namjiman&quot;&gt;18862 아쉬움이 남지만&lt;&#x2F;h1&gt;
+&lt;p&gt;EDIT(2022년):
+음… 사실 이 글을 네이버 블로그에 2년 전에 썼는데요, 이거랑 그 다음 두 문제는 풀이를 안 썼습니다.
+이 문제는 풀이가 정확히 기억나지 않아서 쓰려면 다시 풀어야 합니다…&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;18863-pul-han-pogi-cingu-eolgul&quot;&gt;18863 풀 한 포기 친구 얼굴&lt;&#x2F;h1&gt;
+&lt;p&gt;격자의 각 칸마다 (물론 도착점은 제외하고) 어떤 명령을 내릴 수 있는지 판별하면
+정점 NM개, 간선 10NM개 이하의 그래프가 만들어집니다.
+문제는 출발점에서 유한 개의 간선을 타고 도착점으로 오는 방법의 수를 구하는 것입니다.&lt;&#x2F;p&gt;
+&lt;p&gt;우선 특정 칸에서 특정 명령을 내릴 수 있는지 판별합시다.
+각 명령을 전처리하면서 “이 명령을 수행하는 동안,
+명령을 시작한 위치를 기준으로 이동하는 최소&#x2F;최대 x&#x2F;y좌표“를 구하면,
+특정 칸에서 이 명령을 내릴 때 격자를 벗어나는 경우가 존재하는지 O(1) 만에 판별할 수 있습니다.
+예를 들어 명령이 &lt;code&gt;EWN&lt;&#x2F;code&gt;이라면 최소&#x2F;최대 x좌표는 0과 1, 최소&#x2F;최대 y좌표는 -1과 0입니다.&lt;&#x2F;p&gt;
+&lt;p&gt;이제 그래프가 주어졌을 때, (1) 시작점에서 도달할 수 있으면서
+(2) 거기서부터 도착점으로 갈 수 있는 칸을 구합니다.
+이 두 조건 중 하나라도 만족하지 않는 칸은 욱제가 아예 도달할 수 없거나,
+욱제를 (N, M)으로 못 보내서 욱제의 훈련을 끝낼 수 없습니다.
+(1)은 그대로 그래프 순회를 돌리면 구할 수 있고,
+(2)는 모든 간선의 방향을 뒤집은 다음 도착점에서 그래프 순회를 돌리면 구할 수 있습니다.&lt;&#x2F;p&gt;
+&lt;p&gt;이렇게 정점을 쳐낸 후, 그래프에 사이클이 남아있으면 답은 -1이고,
+아니면 위상정렬 후 통상적인 DP로 답을 구할 수 있습니다.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;18864-modeun-geosi-saerobda&quot;&gt;18864 모든 것이 새롭다&lt;&#x2F;h1&gt;
+&lt;p&gt;예제 1은 불가능한 퍼즐로 알려진
+&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;15_puzzle#Solvability&quot;&gt;매우 유명한 퍼즐&lt;&#x2F;a&gt;입니다. 왜 불가능할까요?&lt;&#x2F;p&gt;
+&lt;p&gt;퍼즐의 각 조각마다 그 조각이 (조각이 없을 경우, 빈 칸이) 원래 어디로 와야 되는지를 계산하면,
+퍼즐 전체를 하나의 순열로 나타낼 수 있습니다.
+조각 하나를 움직이는 것은 조각과 빈 칸을 서로 바꾸는 것이므로
+순열에 또 다른 순열 (a b)를 곱하는 것과 같습니다.
+(a b)는 홀순열이므로, 조각 하나를 움직일 때마다 순열의 홀짝성이 바뀝니다.
+그런데 빈 칸이 맨 처음 상태와 마지막 상태에서 위치가 같기 때문에 조각은 짝수 번 움직여야 하고,
+따라서 맨 처음 상태와 마지막 상태는 홀짝성이 같습니다.
+그런데 실제로는 맨 처음 상태가 홀순열이고, 마지막 상태가 짝순열이기 때문에 이 퍼즐은 맞출 수 없습니다.&lt;&#x2F;p&gt;
+&lt;p&gt;이를 일반화하면 문제를 풀 수 있습니다.
+일단 여섯 차원 중 다섯 개의 크기가 1이면 예외처리를 해야 합니다.&lt;&#x2F;p&gt;
+&lt;p&gt;이제 맨 처음 상태의 홀짝성을 확인합니다.
+마지막 상태는 무조건 짝순열입니다.
+따라서 (맨 처음 상태가 홀순열)과 (빈 칸이 홀수 번 움직여야 함)이 동치가 아니면 이 퍼즐은 맞출 수 없습니다.
+반대로 동치이면 이 퍼즐은 맞출 수 있는데, 이건 증명하기 조금 까다롭습니다.
+한번에 한 레이어씩 맞추면 되던 걸로 기억합니다.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;18865-ije-dasi-sijagida&quot;&gt;18865  이제 다시 시작이다&lt;&#x2F;h1&gt;
+&lt;p&gt;한 스피커에 대해, 볼륨을 점차 증가시키면 훈련소 내부에서 소리가 들리는 영역이 다음과 같이 변합니다.&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;a초까지는 들리는 영역이 없습니다.&lt;&#x2F;li&gt;
+&lt;li&gt;a초부터 b초까지는 한 변의 길이가 V-a인 직각이등변삼각형이 됩니다.&lt;&#x2F;li&gt;
+&lt;li&gt;b초부터 c초까지는 한 변의 길이가 V-a인 직각이등변삼각형에서, 위쪽 또는 오른쪽 일부분을 제거한 형태가 됩니다. 단, 둘 중 한 부분만 제거됩니다. b=c일 수도 있습니다.&lt;&#x2F;li&gt;
+&lt;li&gt;c초부터 d초까지는 위쪽과 오른쪽을 둘 다 제거한 형태가 됩니다.&lt;&#x2F;li&gt;
+&lt;li&gt;d초부터는 직사각형이 되고 영역이 더 이상 변하지 않습니다.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;noncofe2.png&quot; alt=&quot;.&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;이제 영역의 넓이가 어떻게 변하는지 생각해 봅시다.
+1번의 경우 따로 해야 될 일이 없습니다. 2번의 경우, a초부터 시작하는 이차함수를 만들 수 있습니다.&lt;&#x2F;p&gt;
+&lt;p&gt;3번의 경우, V-a 크기의 직각이등변삼각형의 넓이에서 제거된 부분의 넓이를 빼면 됩니다.
+V-a 삼각형의 넓이는 2번에서 이미 추가되었기 때문에 그대로 쓰면 되고,
+제거된 부분은 직각이등변삼각형이므로 이차함수로 나타낼 수 있습니다. 4번도 마찬가지입니다.
+5번의 경우 두 “제거된 부분“이 겹친 것이라고 생각할 수 있습니다.
+따라서 겹친 부분의 넓이를 다시 더해줘야 합니다.
+이 겹친 부분도 직각이등변삼각형이므로 이차함수로 나타낼 수 있습니다.&lt;&#x2F;p&gt;
+&lt;p&gt;이걸 구현하려면 이런 자료구조가 필요합니다.&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;특정 시간 t부터 정의되는 이차함수를 추가한다.&lt;&#x2F;li&gt;
+&lt;li&gt;특정 시간 t에서 이차함수들의 합을 구한다.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;이건 펜윅 트리를 3개 만들어서 풀 수 있습니다.
+각 펜윅 트리는 이차함수의 이차항의 계수, 일차항의 계수, 상수항을 각각 저장하면 됩니다.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;18866-jeolmeun-nalyi-saengiyeo&quot;&gt;18866 젊은 날의 생이여&lt;&#x2F;h1&gt;
+&lt;p&gt;1~K년이 젊은 날이 될 수 있는지 판별해 봅시다.&lt;&#x2F;p&gt;
+&lt;p&gt;먼저, K년까지의 행복도 중 최솟값은 이후의 행복도 중 최댓값보다 커야 합니다.
+그걸 판별하려면 행복도 중 누락된 값을 아예 “없는 데이터“로 취급해도 무방합니다.
+어차피 K년까지의 행복도 중 누락된 값은 매우 크게 잡아야 하고,
+이후의 행복도 중 누락된 값은 매우 낮게 잡아야 하기 때문입니다.
+마찬가지로, K년까지의 피로도 중 최댓값이 이후의 피로도 중 최솟값보다 낮아야 합니다.&lt;&#x2F;p&gt;
+&lt;p&gt;따라서 “첫 x년의 최소 행복도”, “첫 x년의 최대 피로도”, “마지막 x년의 최대 행복도”,
+“마지막 x년의 최소 피로도“를 모두 구하면 됩니다. DP로 풀 수 있습니다.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;18867-pyeonji-ggog-haedao&quot;&gt;18867 편지 꼭 해다오&lt;&#x2F;h1&gt;
+&lt;p&gt;제한이 많이 널널하기 때문에, 여러 가지 방법으로 풀 수 있습니다.&lt;&#x2F;p&gt;
+&lt;p&gt;가장 짧은 답안을 찾고 싶다면 냅색을 풀면 됩니다.
+&lt;code&gt;[a-zA-Z0-9]&lt;&#x2F;code&gt;에 있는 글자만 사용할 때는 5글자가 가장 짧습니다.&lt;&#x2F;p&gt;
+</description>
+      </item>
+    </channel>
+</rss>
