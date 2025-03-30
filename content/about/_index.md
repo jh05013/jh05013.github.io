@@ -10,9 +10,9 @@ See [the list of related stuff I use](/about/uses).
 I solve algorithmic problems.
 
 [jh05013 on BOJ](https://www.acmicpc.net/user/jh05013),
-[solved.ac](solved.ac/profile/jh05013), and
-[Project Euler](https://projecteuler.net/about).
-![jh05013's Project Euler stats](https://projecteuler.net/profile/jh05013.png)
+[solved.ac](https://solved.ac/profile/jh05013), and
+[Project Euler](https://projecteuler.net/profile/jh05013.png).
+![jh05013's Project Euler stats image (if you can't see it, click the link above)](https://projecteuler.net/profile/jh05013.png)
 
 [Rust snippets, feel free to use.](https://jh05013.github.io/ps_snippets/ps_snippets/)
 
@@ -51,3 +51,4 @@ The Witness, Cuphead, Gorogoa, What Remains of Edith Finch, Superliminal,
 The Talos Principle 2
 
 (Yes, I like puzzle games)
+
