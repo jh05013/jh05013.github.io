@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>jh05013 - game</title>
+      <link>https://jh05013.github.io</link>
+      <description></description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://jh05013.github.io/tags/game/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Thu, 30 Jan 2025 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Porgy My Beloved</title>
+          <pubDate>Thu, 30 Jan 2025 00:00:00 +0000</pubDate>
+          <author>jh05013</author>
+          <link>https://jh05013.github.io/blog/ufo50-porgy/</link>
+          <guid>https://jh05013.github.io/blog/ufo50-porgy/</guid>
+          <description xml:base="https://jh05013.github.io/blog/ufo50-porgy/">&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;ufo1.jpeg&quot; alt=&quot;game selection screen of UFO 50, indicating that I obtained the cherry disk on Porgy, and additionally played Block Koala and Pilot Quest.&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;I heard of &lt;a href=&quot;https:&#x2F;&#x2F;store.steampowered.com&#x2F;app&#x2F;1147860&#x2F;UFO_50&#x2F;&quot;&gt;this UFO 50 thing&lt;&#x2F;a&gt;
+while participating in Galactic Puzzle Hunt 2024.
+The idea of 50 fully-fleshed games was something I could not ignore -
+it’s too good to be true! So December last year, I went ahead and grabbed it.&lt;&#x2F;p&gt;
+&lt;p&gt;My first pick was Porgy because the fish looked cute.
+It also ended up being my first gold and cherry, before golding anything else.
+I’ll just say, I loved every moment of the 7 hours I spent on this game!
+And I’m not even a fan of Metroid-vania. Porgy just clicked well despite that.
+&lt;small&gt;&lt;small&gt;Granted, I did look up the map on the internet for a tiny bit.&lt;&#x2F;small&gt;&lt;&#x2F;small&gt;&lt;&#x2F;p&gt;
+&lt;blockquote class=&quot;tip&quot;&gt;
+	&lt;p class=&quot;alert-title&quot;&gt;
+		&lt;i class=&quot;icon&quot;&gt;&lt;&#x2F;i&gt;Tip&lt;&#x2F;p&gt;
+	&lt;p&gt;The Porgy experience gets tremendously better once you realize:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Your fuel bar is &lt;em&gt;not&lt;&#x2F;em&gt; a timer. It’s actually an odometer.
+You don’t use fuel by staying in place. Feel free to take it slow!&lt;&#x2F;li&gt;
+&lt;li&gt;You don’t use fuel by firing torpedo either. Spam torpedo.&lt;&#x2F;li&gt;
+&lt;li&gt;You can hold B to keep firing torpedo, and lock your direction
+(e.g. move left while shooting to the right).&lt;&#x2F;li&gt;
+&lt;li&gt;When you return to the base without dying, you save your progress;
+this includes upgrades, destroyed 2x2 big rocks, and &lt;strong&gt;damage dealt to bosses&lt;&#x2F;strong&gt;.
+Seriously, 2nd layer bosses are pretty much impossible without realizing this.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;A common complaint with Porgy seems to be that there are too few equipment slots,
+but I think it was fine?
+I saw a main challenge of this game as establishing and mastering your
+exploration strategies under various limitations.
+Equipment choice especially was a fun puzzle and I think
+it made the gameplay a bit more interesting for me, in spite of
+having to run back and forth a lot.
+I mentally named a few of those sets as “Observer Porgy”, “Excavator Porgy”,
+“Combatant Porgy”, “Treasure Hunter Porgy”, and so on.&lt;&#x2F;p&gt;
+&lt;p&gt;My only wish is that the buster upgrade could have been permanent
+because it’s almost always necessary.
+All in all, the first experience with UFO 50 was a delight
+and I can’t wait for the other 49 games.&lt;&#x2F;p&gt;
+</description>
+      </item>
+    </channel>
+</rss>
